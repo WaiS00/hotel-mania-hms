@@ -5,7 +5,8 @@ Hotel management failures are the inability to provide a service that is expecte
 
 The name Hotel Mania has a deep meaning behind naming as mania has a meaning of an excessive enthusiasm towards a certain topic/ object and in this case, it’s the enthusiasm towards the hotel itself. This can encourage the workers in the hotel to perform at their very best and will need to have the amount of enthusiasm that can impress and leave meaningful positive feedback towards the customers and their satisfaction.
 
-![image](https://user-images.githubusercontent.com/56108922/180375098-f40770de-cb64-43fd-b0e7-77686d5bd5c5.png)
+![image](https://user-images.githubusercontent.com/56108922/180375167-40398491-008f-493b-9e9c-8d5982cbb228.png)
+
 Figure 1.0: Logo of Hotel Mania
 
 The hotel management system aims to provide hotels with a fully functional system that consists of all functions that are
