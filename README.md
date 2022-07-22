@@ -1,5 +1,5 @@
-# hotel-mania-hms
-Capstone Project (Chin Wai Siong 19124313)
+# Hotel Mania, An All-in-One Hotel Management System 
+## Capstone Project (Chin Wai Siong 19124313)
 
 Hotel management failures are the inability to provide a service that is expected from the customer, and it is also known as service failure in a hospitality faculty. Hotel management failures can cause customers’ satisfaction to drop significantly, and they will think that their desired experience is being cheated and will be having bad feedback from the hospitality faculty [2]. 
 
