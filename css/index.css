@@ -1,1 +1,44 @@
 
+html body {
+    padding-top: 6.2em;
+   }
+   
+   .new{
+       padding-top: 1em;
+       padding-bottom: 1em;
+       text-align: center;
+   }
+   
+   .dslr-image{
+        width: 90%;
+        height:90%;
+   }
+   
+   .carouselimg{
+       width:10em;
+       height:30em;
+       text-align: center;
+       object-fit: cover;
+   }
+   
+   .view-btn{
+       background-color:#5389B1 !important;
+       border-color:#5389B1  !important;    
+   }
+   
+   .new-release-cam{
+       font-size:1.5em;
+   }
+   
+   .text-description{
+       text-decoration: none;
+       color:black;
+       font-size:1em;
+   }
+   
+   .row-center{
+       text-align: center;
+   }
+   
+   
+   
