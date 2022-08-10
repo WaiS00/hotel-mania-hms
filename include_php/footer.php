@@ -10,22 +10,22 @@
         ><i class="fa fa-facebook-f"></i
       ></a>
 
-      <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"
-        ><i class="fa fa-twitter"></i
+      <a class="btn btn-outline-dark btn-floating m-1" href="https://github.com/WaiS00/" role="button"
+        ><i class="fa fa-github"></i
       ></a>
 
       <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"
         ><i class="fa fa-google"></i
       ></a>
 
-      <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"
-        ><i class="fa fa-instagram"></i
+      <a class="btn btn-outline-dark btn-floating m-1" href="https://www.linkedin.com/in/waisiong00/" role="button"
+        ><i class="fa fa-linkedin"></i
       ></a>
 
     </section>
   </div>
 
   <div class="text-center p-3" style="background-color: #FCFAFA;">
-    © 2021 WaiS Copyright: <strong>Cannon-Studio Sdn Bhd</strong>   
+    © 2021 WaiS Copyright: <strong>Hotel Mania Sdn Bhd</strong>   
   </div>
 </footer>
