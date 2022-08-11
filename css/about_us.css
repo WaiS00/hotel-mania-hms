@@ -1,0 +1,21 @@
+.contactus{
+    margin-top: 20em;
+    height: 30em;
+}
+
+.map-responsive{
+    padding-left: 5em;
+}
+
+.h2{
+    font-size: 2.5em;
+}
+
+.responsive-iframe {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 20em;
+}
