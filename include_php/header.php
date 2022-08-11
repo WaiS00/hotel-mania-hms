@@ -5,7 +5,7 @@
 
 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 fixed-top">
   <div class="container-fluid">
-    <a href="homepage.php" class="navbar-brand">
+    <a href="index.php" class="navbar-brand">
       <img src="resources/hm_logo.png" alt="logo" width="100" height="auto" class="d-inline-block align-text-top">
     </a>
     <button
@@ -29,10 +29,10 @@
         <a class="nav-link" aria-current="page" href="index.php">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="main/about_us.php">About Us</a>
+        <a class="nav-link" href="about_us.php">About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="main/facilities.php">Facilities</a>
+        <a class="nav-link" href="facilities.php">Facilities</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
