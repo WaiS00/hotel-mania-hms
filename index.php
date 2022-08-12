@@ -67,7 +67,7 @@
         <div class="card mb-3 shadow-lg p-3 mb-5 bg-white rounded">
         <div class="row g-0 row-center">
             <div class="col-md-4">
-            <img src="resources/facilities-swimming.png" class="img-fluid rounded-start dslr-image" alt="...">
+            <img src="resources/facilities-swimming3.png" class="img-fluid rounded-start dslr-image" alt="...">
             </div>
             <div class="col-md-2">
             </div>
