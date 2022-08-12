@@ -99,7 +99,7 @@
         if(isset($_SESSION['name'])){
         ?>
                 <li class="nav-item">
-                    <a href="session_logout.php" class="nav-link"><i class="bi bi-box-arrow-right logout"></i> Logout</a>
+                    <a href="backend/session_logout.php" class="nav-link"><i class="bi bi-box-arrow-right logout"></i> Logout</a>
                 </li>
         <?php 
             } else {
