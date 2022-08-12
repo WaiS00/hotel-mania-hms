@@ -10,8 +10,8 @@ html body {
    }
    
    .dslr-image{
-        width: 90%;
-        height:90%;
+        width: 30vm;
+        height:0vm;
    }
    
    .carouselimg{
