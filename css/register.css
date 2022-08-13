@@ -6,6 +6,10 @@
     border-spacing:0.4em;
 }
 
+html body {
+    padding-top: 15em;
+}
+
 .center2 {
     margin-top: 2em;
     margin-left: auto;
@@ -71,4 +75,9 @@ td {
 	color: #ffffff;
 	border-radius: 2px;
 	cursor:pointer;
+}
+
+legend{
+    text-align: center;
+    font-weight:bold;
 }

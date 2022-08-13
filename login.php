@@ -21,19 +21,19 @@
 <body>
 
 <form action="" method="post">
-			<table width="450" class="center2">
-				<h1 class="titleName2">Login</h1>
+			<table class="center2">
+				<legend>Login</legend>
 				<tr>
 					<td><label>Username</label></td>
-					<td><input type="text" name="username" required/>
+					<td><input type="text" name="username" class="form-control" required/>
 				</tr>
 				<tr>
 					<td><label>Password</label></td>
-					<td><input type="password" name="pwd" required/>
+					<td><input type="password" name="pwd" class="form-control" required/>
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="submit" value="Submit" class="submitbtn2">
+					<td><input type="submit" value="Submit" class="btn btn-primary submitbtn2">
 				</tr>
 			</table>		
 		</form>
