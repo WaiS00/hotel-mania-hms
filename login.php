@@ -25,15 +25,15 @@
 				<h1 class="titleName2">Login</h1>
 				<tr>
 					<td><label>Username</label></td>
-					<td><input type="text" name="username" />
+					<td><input type="text" name="username" required/>
 				</tr>
 				<tr>
 					<td><label>Password</label></td>
-					<td><input type="password" name="pwd" />
+					<td><input type="password" name="pwd" required/>
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="submit" value="submit" class="submitbtn2">
+					<td><input type="submit" value="Submit" class="submitbtn2">
 				</tr>
 			</table>		
 		</form>
