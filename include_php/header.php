@@ -79,20 +79,6 @@
     ?>
 
     <ul class="navbar-nav ms-auto">
-      
-      <?php 
-      if($_SESSION['type'] != 'admin'){
-        // is user not admin, then it's customer 
-        // display cart for user to add in products
-      ?>
-      <li class="nav-item">
-        <a href="cart_main.php" class="nav-link"><i class="bi bi-cart"></i> Cart</a>
-      </li>
-      <?php
-      }else{
-      }
-      ?>
-
       <li class="nav-item">
         <?php 
         // every user that has login shares this function (logout)
