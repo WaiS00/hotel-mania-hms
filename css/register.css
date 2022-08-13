@@ -17,7 +17,7 @@
 .submitbtn{
     margin-bottom: 10em;
     margin-top: 1em;
-    background-color: #5389B1;
+    background-color: #5389B1 !important;
     color: white;
 	border: 0;
 	padding: 3px 10px;
@@ -30,7 +30,7 @@
 .submitbtn2{
     margin-bottom: 16em;
     margin-top: 1em;
-    background-color: #5389B1;
+    background-color: #5389B1 !important;
     color: white;
 	border: 0;
 	padding: 3px 10px;
@@ -64,7 +64,7 @@ td {
 .update{
     margin-bottom: 16em;
     margin-top: 1em;
-    background-color: #5389B1;
+    background-color: #5389B1 !important;
     color: white;
 	border: 0;
 	padding: 3px 10px;

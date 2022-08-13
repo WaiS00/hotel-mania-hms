@@ -12,7 +12,7 @@
     <link href="css/register.css" type="text/css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Hotel Mania</title>
-    <link rel="icon" href="resources/hms_logo.png" />
+    <link rel="icon" href="resources/hm_logo.png" />
 </HEAD>
 
 <body>
@@ -22,31 +22,35 @@
 			<h1 class="titleName">Register</h1>
 			<tr>
 				<td><label>Username</label></td>
-				<td><input type="text" name="username" />
+				<td><input type="text" name="username" required />
 			</tr>
 			<tr>
 				<td><label>Password</label></td>
-				<td><input type="password" name="pwd" />
+				<td><input type="password" name="pwd" required />
 			</tr>
 			<tr>
 				<td><label>Re-Enter Password</label></td>
-				<td><input type="password"  />
+				<td><input type="password" required  />
 			</tr>
 			<tr>
 				<td><label>Telephone No</label></td>
-				<td><input type="text" name="telno"  />
+				<td><input type="text" name="telno"  required />
 			</tr> 
 				<tr>
 				<td><label>Address</label></td>
-				<td><input type="text" name="address"  />
+				<td><input type="text" name="address" required  />
 			</tr> 
 			<tr>
 				<td><label>Email</label></td>
-				<td><input type="text" name ="email"  />
+				<td><input type="text" name ="email"  required />
 			</tr>
 			<tr>
 				<td><label>Full Name</label></td>
-				<td><input type="text" name= "full_name"  />
+				<td><input type="text" name= "full_name" required  />
+			</tr> 
+			<tr>
+				<td><label>IC/Passport Number</label></td>
+				<td><input type="text" name= "ic_num" required  />
 			</tr> 
 																																		
 			<tr>
