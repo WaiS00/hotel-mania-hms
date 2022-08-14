@@ -20,8 +20,8 @@
 <body>
 
 <?php
-        $query = "SELECT * FROM product_list WHERE category='Normal'";
-        $product_array = $product_db->getNormal($query);
+        $query = "SELECT * FROM product_list WHERE category='Deluxe'";
+        $product_array = $product_db->getDeluxe($query);
         if (!empty($product_array)) {
             foreach ($product_array as $key => $value) {
         ?> 
