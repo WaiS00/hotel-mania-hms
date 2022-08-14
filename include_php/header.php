@@ -39,9 +39,9 @@
           Rooms
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-          <li><a class="dropdown-item" href="room-executive.php">Executive Room</a></li>
           <li><a class="dropdown-item" href="room-normal.php">Normal Room</a></li>
-          <li><a class="dropdown-item" href="room-couple.php">Couple Room</a></li>
+          <li><a class="dropdown-item" href="room-deluxe.php">Deluxe Room</a></li>
+          <li><a class="dropdown-item" href="room-executive.php">Executive Room</a></li>
           <li><a class="dropdown-item" href="room-list.php">View All Room</a></li>
         </ul>
       </li>
