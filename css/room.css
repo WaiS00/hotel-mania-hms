@@ -1,0 +1,21 @@
+html body {
+    padding-top: 6.2em;
+   }
+
+.w-100 {
+height: 45vh;
+}
+
+.firstcard{
+    padding-bottom: 3em;
+}
+
+.row1 {
+    padding-top: 6.2em;
+    padding-bottom: 6.2em;
+   }
+
+.submitbtn2{
+    background-color: #5389B1 !important;
+
+}
