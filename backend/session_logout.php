@@ -1,16 +1,16 @@
 <?php 
   session_start();
 
-  if (isset($_SESSION['name']))
+  if (isset($_SESSION['fullName']))
   {
-    $name = htmlspecialchars($_SESSION['name']);
+    $name = htmlspecialchars($_SESSION['fullName']);
     
     destroy_session_and_data();
     
     echo "<script type='text/javascript'>alert('Logout Successfully');</script>";
     echo "<script type='text/javascript'>window.location.href = '../login.php';</script>";
   }
-  else echo "Please <a href='login.php'>Click Here</a> to log in.";
+  else echo "Please <a href='./login.php'>Click Here</a> to log in.";
   
   function destroy_session_and_data()
 {

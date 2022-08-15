@@ -25,22 +25,22 @@ if(isset($_POST['username']) && isset($_POST['pwd'])){
     }
 
     $row = $result->fetch();
-    $fn  = $row['name'];
+    $fn  = $row['fullName'];
     $un  = $row['login'];
     $pw  = $row['pass'];
-    $ty  = $row['type'];
+    $ty  = $row['userType'];
 
     if (password_verify( $pw_temp, $pw))
     {
       session_start();
 
-      $_SESSION['name'] = $fn;
-      $_SESSION['type'] = $ty;
+      $_SESSION['fullName'] = $fn;
+      $_SESSION['userType'] = $ty;
 
-      if($_SESSION['type'] == 'customer'){
+      if($_SESSION['userType'] == 'customer'){
         echo "<script type='text/javascript'>alert('Login Successfully');</script>";
         echo "<script type='text/javascript'>window.location.href = './index.php';</script>";
-      }else if($_SESSION['type'] == 'admin'){
+      }else if($_SESSION['userType'] == 'worker'){
         echo "<script type='text/javascript'>window.location.href = './index.php';</script>";
       }
 
