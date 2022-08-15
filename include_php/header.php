@@ -20,7 +20,7 @@
   <div class="collapse navbar-collapse" id="navmenu">
   
   <?php 
-      if($_SESSION['type'] != 'admin'){
+      if($_SESSION['userType'] != 'worker'){
         // is user not admin, then it's customer 
         // display cart for user to add in products
   ?>
@@ -82,7 +82,7 @@
       <li class="nav-item">
         <?php 
         // every user that has login shares this function (logout)
-        if(isset($_SESSION['name'])){
+        if(isset($_SESSION['fullName'])){
         ?>
                 <li class="nav-item">
                     <a href="backend/session_logout.php" class="nav-link"><i class="bi bi-box-arrow-right logout"></i> Logout</a>
