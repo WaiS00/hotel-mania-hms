@@ -42,7 +42,7 @@
                 </div>
         </div>
         <div class="carousel-item">
-            <img src="resources/hm_homepage1.png" class="d-block w-100 carouselimg" alt="...">
+            <img src="resources/facilities-swimming.png" class="d-block w-100 carouselimg" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5> Hotel Mania</h5>
                     <p> “The Most Cheap-pluck HMS Award”</p>
