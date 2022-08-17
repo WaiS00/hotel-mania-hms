@@ -61,7 +61,7 @@
                 </td>
 			</tr>
             <tr>
-				<td><label>Checkout Date</label></td>
+                <td><label>Checkout Date</label></td>
 				<td>
                     <div class="input-group date" id="datepicker2">
                         <input type="text" class="form-control" id="date2" required>
@@ -74,10 +74,9 @@
                 </td>
 			</tr>
             <tr>   
-                <td>
-                    <h3>Difference in days: </h3>
-                    <h3 id="ans">0 </h3>
-                    <h3>Days</h3>
+                <td><label>Difference in days:</label>
+                    <h4 style="display: inline-block" id="ans">0 </h4>
+                <td><label> days</label>
                 </td>
             </tr>
 
