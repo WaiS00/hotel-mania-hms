@@ -51,7 +51,7 @@
 				<td><label>Checkin Date</label></td>
 				<td>
                     <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" id="date1" required>
                             <div class="input-group-append">
                                 <div class="input-group-text bg-white d-block">
                                     <i class="fa fa-calendar"></i>
@@ -64,7 +64,7 @@
 				<td><label>Checkout Date</label></td>
 				<td>
                     <div class="input-group date" id="datepicker2">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" id="date2" required>
                             <div class="input-group-append">
                                 <div class="input-group-text bg-white d-block">
                                     <i class="fa fa-calendar"></i>
@@ -72,7 +72,15 @@
                             </div>
                     </div>
                 </td>
-			</tr>																													
+			</tr>
+            <tr>   
+                <td>
+                    <h3>Difference in days: </h3>
+                    <h3 id="ans">0 </h3>
+                    <h3>Days</h3>
+                </td>
+            </tr>
+
 		</table>		
 	</form>
 <?php include 'include_php/footer.php';?>
