@@ -48,7 +48,7 @@
                 </select>
 			</tr>  
             <tr>
-				<td><label>Date Time</label></td>
+				<td><label>Checkin Date</label></td>
 				<td>
                     <div class="input-group date" id="datepicker">
                         <input type="text" class="form-control">
@@ -60,7 +60,19 @@
                     </div>
                 </td>
 			</tr>
-																																		
+            <tr>
+				<td><label>Checkout Date</label></td>
+				<td>
+                    <div class="input-group date" id="datepicker2">
+                        <input type="text" class="form-control">
+                            <div class="input-group-append">
+                                <div class="input-group-text bg-white d-block">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                            </div>
+                    </div>
+                </td>
+			</tr>																													
 		</table>		
 	</form>
 <?php include 'include_php/footer.php';?>
