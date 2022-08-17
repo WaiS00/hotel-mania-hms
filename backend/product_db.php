@@ -34,6 +34,14 @@ class product_db extends DBController{
         $productResult = $this->getDBResult($query);
         return $productResult;
     }
+
+    function getRoomType()
+    {
+        $query = "SELECT roomType FROM roomdb";
+        
+        $productResult = $this->getDBResult($query);
+        return $productResult;
+    }
 }
 
 ?>
