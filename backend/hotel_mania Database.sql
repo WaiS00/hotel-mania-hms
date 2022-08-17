@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 15, 2022 at 06:30 PM
+-- Generation Time: Aug 17, 2022 at 05:57 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -31,7 +31,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `attendancedb` (
   `attendanceId` int(11) NOT NULL,
   `clockinDateTime` datetime NOT NULL,
-  `clockoutDateTime` datetime NOT NULL
+  `clockoutDateTime` datetime NOT NULL,
+  `workerId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -42,10 +43,12 @@ CREATE TABLE `attendancedb` (
 
 CREATE TABLE `bookingdb` (
   `bookingId` int(11) NOT NULL,
-  `checkInDateTime` datetime NOT NULL,
-  `checkOutDateTime` datetime NOT NULL,
+  `checkInDate` date NOT NULL,
+  `roomType` enum('Normal','Deluxe','Executive') NOT NULL,
+  `checkOutDate` date NOT NULL,
   `bookingTotalPrice` double NOT NULL,
-  `numberOfGuest` int(11) NOT NULL
+  `numberOfGuest` int(11) NOT NULL,
+  `customerId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -139,13 +142,15 @@ CREATE TABLE `workerdb` (
 -- Indexes for table `attendancedb`
 --
 ALTER TABLE `attendancedb`
-  ADD PRIMARY KEY (`attendanceId`);
+  ADD PRIMARY KEY (`attendanceId`),
+  ADD KEY `test3` (`workerId`);
 
 --
 -- Indexes for table `bookingdb`
 --
 ALTER TABLE `bookingdb`
-  ADD PRIMARY KEY (`bookingId`);
+  ADD PRIMARY KEY (`bookingId`),
+  ADD KEY `test2` (`customerId`);
 
 --
 -- Indexes for table `customerdb`
@@ -217,6 +222,18 @@ ALTER TABLE `workerdb`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `attendancedb`
+--
+ALTER TABLE `attendancedb`
+  ADD CONSTRAINT `test3` FOREIGN KEY (`workerId`) REFERENCES `workerdb` (`workerId`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `bookingdb`
+--
+ALTER TABLE `bookingdb`
+  ADD CONSTRAINT `test2` FOREIGN KEY (`customerId`) REFERENCES `customerdb` (`customerId`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `customerdb`
