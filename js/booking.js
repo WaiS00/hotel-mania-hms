@@ -1,4 +1,11 @@
 $(function() {
+    $ ( '#ddlselect' ).change(function()  {
+        var displaycourse= $("#ddlselect option:selected").text();
+        document.getElementById("txtresults").innerHTML = displaycourse;
+    } ) 
+});
+
+$(function() {
     $ ( '#datepicker' ) . datepicker ( {
         format: 'yyyy-mm-dd'
     } ) ;
@@ -14,7 +21,4 @@ $(function() {
         document.getElementById("ans").innerHTML = days;
     }) ;
 });
-
-
-
 
