@@ -49,7 +49,6 @@ if(isset($_POST['username']) && isset($_POST['pwd'])){
     else echo "<script type='text/javascript'>alert('Incorrect username/ password');</script>";
   }
 
-
   function sanitise($pdo, $str)
   {
     $str = htmlentities($str);
