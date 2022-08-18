@@ -16,8 +16,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="js/booking.js"> </script>
     <title>Hotel Mania</title>
     <link rel="icon" href="resources/hm_logo.png"/>
 </head>
@@ -37,8 +39,8 @@
 			<tr>
 				<td><label>Room Type</label></td>
 				<td>
-                <select class="form-select" aria-label="Default select example" required>
-                    <option value="">Select Room Type </option>
+                <select class="form-select" id="ddlselect" required>
+                    <option value="" selected disabled>Select Room Type </option>
                     <?php
                     if (!empty($product_array)) {
                         foreach ($product_array as $key => $value) {
@@ -79,13 +81,15 @@
                 <td><label> days</label>
                 </td>
             </tr>
+            <tr>
+                <td><label>Room Type Selected:</label>
+                <td><h4 style="display: inline-block" id="txtresults">None </h4>
+            </tr>
 
 		</table>		
 	</form>
 <?php include 'include_php/footer.php';?>
 
-    <!-- Bootstrap JS CDN -->
-    <script src="js/booking.js"> </script>
 </body>
 
 </html>
