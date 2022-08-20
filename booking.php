@@ -87,7 +87,7 @@
                 <td><h4 style="display: inline-block" id="txtresults">None </h4>
             </tr>
             <tr>
-				<td><input type="submit" value="Submit" name="submit" class="btn btn-primary submitbtn"></td>
+				<td><input id="Button" type="submit" value="Submit" name="submit" class="btn btn-primary submitbtn"></td>
 			</tr>
 		</table>		
 	</form>
