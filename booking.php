@@ -87,7 +87,14 @@
                 <td><h4 style="display: inline-block" id="txtresults">None </h4>
             </tr>
             <tr>
+                <?php 
+            if(isset($_SESSION['fullName'])){
+?>
 				<td><input id="Button" type="submit" value="Submit" name="submit" class="btn btn-primary submitbtn"></td>
+                <?php }else{  
+                    echo "<script type='text/javascript'>alert('Please login to perform this action.');</script>";
+                    echo "<script> location.href = './login.php';</script>";
+                }?>
 			</tr>
 		</table>		
 	</form>
