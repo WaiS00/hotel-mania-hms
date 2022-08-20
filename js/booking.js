@@ -19,8 +19,17 @@ $(function() {
         var end= $("#datepicker2").datepicker("getDate");
         days = (end- start) / (1000 * 60 * 60 * 24);
         document.getElementById("ans").innerHTML = days;
+
+        if (days >29) {
+            alert('Days selected more than 29 days, please select duration that are less than 29 days.');
+            document.getElementById("Button").disabled = true;
+        }else{
+            document.getElementById("Button").disabled = false;
+
+        }
     }) ;
 });
+
 
 
 
