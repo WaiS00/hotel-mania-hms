@@ -19,7 +19,6 @@
 <?php include 'include_php/header.php';?>
 
 <body>
-<form method="post">
 <div class="row">
   <div class="col-75">
     <div class="container1">
@@ -54,6 +53,7 @@
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
         </label>
+        <form method="post">
         <div class="row">
             <div class="col-50">
                 <input type="submit" id="Button" type="submit" name="submit" value="Continue to checkout" class="btn1">
@@ -65,6 +65,7 @@
       </form>
     </div>
   </div>
+</form>
 
   <div class="col-25">
     <div class="container1">
@@ -97,7 +98,6 @@
     </div>
   </div>
 </div>
-</form>
 <?php include 'include_php/footer.php';?>
 
     <!-- Bootstrap JS CDN -->
