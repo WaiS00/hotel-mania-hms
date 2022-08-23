@@ -25,6 +25,7 @@ if(isset($_POST['username']) && isset($_POST['pwd'])){
     }
 
     $row = $result->fetch();
+    $ui  = $row['userid'];
     $fn  = $row['fullName'];
     $un  = $row['login'];
     $pw  = $row['pass'];
@@ -33,11 +34,11 @@ if(isset($_POST['username']) && isset($_POST['pwd'])){
     if (password_verify( $pw_temp, $pw))
     {
       session_start();
-
+      $_SESSION['userId'] = $ui;
       $_SESSION['fullName'] = $fn;
       $_SESSION['userType'] = $ty;
 
-      if($_SESSION['userType'] == 'customer'){
+      if($_SESSION['userType'] == 'customer' && isset($_SESSION['userId'])){
         echo "<script type='text/javascript'>alert('Login Successfully');</script>";
         echo "<script type='text/javascript'>window.location.href = './index.php';</script>";
       }else if($_SESSION['userType'] == 'worker'){

@@ -82,7 +82,7 @@
       <li class="nav-item">
         <?php 
         // every user that has login shares this function (logout)
-        if(isset($_SESSION['fullName'])){
+        if(isset($_SESSION['fullName']) && ($_SESSION['userId'])){
         ?>
                 <li class="nav-item">
                     <a href="backend/session_logout.php" class="nav-link"><i class="bi bi-box-arrow-right logout"></i> Logout</a>
