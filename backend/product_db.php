@@ -50,6 +50,15 @@ class product_db extends DBController{
         $productResult = $this->getDBResult($query);
         return $productResult;
     }
+
+    function getRoomRate()
+    {
+        $query   = "SELECT * FROM roomdb";
+        
+        $productResult = $this->getDBResult($query);
+        return $productResult;
+    }
+
 }
 
 ?>
