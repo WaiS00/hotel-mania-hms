@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +16,7 @@
 </head>
 <?php require_once "backend/config.php"; ?>
 <?php include 'include_php/header.php';?>
+<?php require_once "backend/booking_backend.php"; ?>
 
 <body>
 <div class="row">
@@ -77,10 +79,21 @@
         if (!empty($product_array)) {
             foreach ($product_array as $key => $value) {
         ?> 
-      <p><a href="#">Room Type</a> <span class="price"><?php echo $product_array[$key]["roomType"]; ?></span></p>
+      <p><a>Room Type</a> <span class="spanclass roomType"><?php echo $product_array[$key]["roomType"]; ?></span></p>
+      <p><a>Check in Date</a> <span class="spanclass checkInDate"><?php echo $product_array[$key]["checkInDate"]; ?></span></p>
+      <p><a>Check out Date</a> <span class="spanclass checkoutDate"><?php echo $product_array[$key]["checkoutDate"]; ?></span></p>
+      <p><a>Day Differences</a> <span class="spanclass dayDiff"><?php echo $product_array[$key]["dayDiff"]; ?></span></p>
       <hr>
-      <p>Total <span id="price" name="price" class="price" style="color:black"><b>$30</b></span></p>
       <?php }} ?>
+      <?php
+        if(isset($_SESSION['roomType'])){
+          $query = "SELECT * FROM roomdb c, bookingcartdb b WHERE c.roomType=b.roomType";
+          $product_array = $product_db->getRoomRate($query);
+          if (!empty($product_array)) {
+              foreach ($product_array as $key => $value) {
+        ?> 
+      <p>Total <span class="spanclass price" style="color:black"><b><?php echo $product_array[$key]["roomRate"]; ?></b></span></p>
+      <?php }} }?>
     </div>
   </div>
 </div>
