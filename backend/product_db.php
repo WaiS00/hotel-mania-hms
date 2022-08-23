@@ -53,7 +53,7 @@ class product_db extends DBController{
 
     function getRoomRate()
     {
-        $query   = "SELECT * FROM roomdb";
+        $query   = "SELECT roomRate FROM roomdb";
         
         $productResult = $this->getDBResult($query);
         return $productResult;

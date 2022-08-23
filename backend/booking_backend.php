@@ -25,19 +25,8 @@
                 VALUES(NULL,'$select', '$checkInDate', '$checkoutdate', '$days', $customerid)";
                 
                 $result = $pdo->query($query);
+                echo "<script type='text/javascript'>window.location.href = './payment.php';</script>";
 
-                $query5   = "SELECT * FROM $tbl_name";
-                $result3  = $pdo->query($query5);
-                $row = $result3->fetch();
-                $rt  = $row['roomType'];
-
-                session_start();
-                $_SESSION['roomType'] = $rt;
-
-                if(isset($_SESSION['roomType'])){
-                        echo "<script type='text/javascript'>window.location.href = './payment.php';</script>";
-                }
-                
             }else{
                 echo "<script type='text/javascript'>alert('Please login or register your account.');</script>";
                 echo "<script> location.href = './login.php';</script>";
