@@ -1,4 +1,5 @@
 <?php session_start();?>
+<?php require_once "backend/booking_backend.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,14 +17,13 @@
 </head>
 <?php require_once "backend/config.php"; ?>
 <?php include 'include_php/header.php';?>
-<?php require_once "backend/booking_backend.php"; ?>
 
 <body>
+<form method="post">
 <div class="row">
   <div class="col-75">
     <div class="container1">
       <form action="/action_page.php">
-
         <div class="row">
           <div class="col-50">
             <h3>Payment</h3>
@@ -56,7 +56,7 @@
         </label>
         <div class="row">
             <div class="col-50">
-                <input type="submit" value="Continue to checkout" class="btn1">
+                <input type="submit" id="Button" type="submit" name="submit" value="Continue to checkout" class="btn1">
             </div>
             <div class="col-50">
                 <input type="cancel" value="Cancel" class="btn2 cancel">
@@ -91,11 +91,13 @@
               foreach ($product_array as $key => $value) {
         ?> 
       <p>Room Rate <span class="spanclass roomRate" style="color:black"><b><?php echo $product_array[$key]["roomRate"]; ?></b></span></p>
+      <p>Total Price<span class="spanclass roomRate" style="color:black"><b><?php echo $product_array[$key]["roomRate"]. ' x '. $product_array[$key]["dayDiff"].'='.$product_array[$key]["roomRate"]*$product_array[$key]["dayDiff"]; ?></b></span></p>
+
       <?php }} ?>
     </div>
   </div>
 </div>
-
+</form>
 <?php include 'include_php/footer.php';?>
 
     <!-- Bootstrap JS CDN -->
