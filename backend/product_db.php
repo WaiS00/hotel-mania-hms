@@ -42,6 +42,22 @@ class product_db extends DBController{
         $productResult = $this->getDBResult($query);
         return $productResult;
     }
+
+    function cartItem()
+    {
+        $query = "SELECT * FROM bookingcartdb";
+        
+        $productResult = $this->getDBResult($query);
+        return $productResult;
+    }
+
+    function getRoomRate()
+    {
+        $query   = "SELECT * FROM bookingcartdb b, roomdb c WHERE b.roomType= c.roomType";
+        
+        $productResult = $this->getDBResult($query);
+        return $productResult;
+    }
 }
 
 ?>
