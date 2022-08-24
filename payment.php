@@ -55,12 +55,13 @@
         <form method="post">
         <div class="row">
             <div class="col-50">
-                <input type="submit" id="Button" type="submit" name="submit" value="Continue to checkout" class="btn1" >
+                <input type="submit" id="Button" name="submit" value="Pay" class="btn1" >
             </div>
             <div class="col-50">
-                <input type="cancel" value="Cancel" class="btn2 cancel" readonly>
+                <input type="submit" id="Button" name="submit" value="Cancel" class="btn2 cancel" readonly>
             </div>
         </div>
+        </form>
     </div>
   </div>
 
@@ -94,7 +95,6 @@
     </div>
   </div>
 </div>
-              </form>
 <?php include 'include_php/footer.php';?>
 
     <!-- Bootstrap JS CDN -->
