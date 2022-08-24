@@ -1,5 +1,5 @@
 <?php session_start();?>
-<?php require_once "backend/booking_backend.php"; ?>
+<?php require_once "backend/payment_backend.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
