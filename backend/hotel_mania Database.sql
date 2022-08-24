@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 21, 2022 at 04:08 PM
+-- Generation Time: Aug 24, 2022 at 04:59 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -46,16 +46,16 @@ CREATE TABLE `bookingcartdb` (
   `roomType` enum('Normal','Deluxe','Executive') NOT NULL,
   `checkInDate` varchar(144) NOT NULL,
   `checkoutDate` varchar(144) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `dayDiff` varchar(144) NOT NULL
+  `dayDiff` varchar(144) NOT NULL,
+  `customerId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `bookingcartdb`
 --
 
-INSERT INTO `bookingcartdb` (`bookingcartId`, `roomType`, `checkInDate`, `checkoutDate`, `dayDiff`) VALUES
-(12, 'Normal', '2022-08-29', '2022-08-31', '2'),
-(48, 'Normal', '2022-08-01', '2022-08-30', '29');
+INSERT INTO `bookingcartdb` (`bookingcartId`, `roomType`, `checkInDate`, `checkoutDate`, `dayDiff`, `customerId`) VALUES
+(63, 'Normal', '2022-08-08', '2022-08-31', '23', 1);
 
 -- --------------------------------------------------------
 
@@ -65,14 +65,21 @@ INSERT INTO `bookingcartdb` (`bookingcartId`, `roomType`, `checkInDate`, `checko
 
 CREATE TABLE `bookingdb` (
   `bookingId` int(11) NOT NULL,
-  `checkInDate` date NOT NULL,
+  `checkInDate` varchar(144) NOT NULL,
+  `checkOutDate` varchar(144) NOT NULL,
   `roomType` enum('Normal','Deluxe','Executive') NOT NULL,
-  `checkOutDate` date NOT NULL,
   `bookingTotalPrice` double NOT NULL,
-  `numberOfGuest` int(11) NOT NULL,
   `customerId` int(11) NOT NULL,
-  `paymentStatus` enum('paid','unpaid') NOT NULL
+  `paymentStatus` enum('paid','unpaid') NOT NULL,
+  `bookingcartId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `bookingdb`
+--
+
+INSERT INTO `bookingdb` (`bookingId`, `checkInDate`, `checkOutDate`, `roomType`, `bookingTotalPrice`, `customerId`, `paymentStatus`, `bookingcartId`) VALUES
+(2, '2022-08-08', '2022-08-31', 'Normal', 2300, 1, 'paid', 63);
 
 -- --------------------------------------------------------
 
@@ -173,14 +180,16 @@ ALTER TABLE `attendancedb`
 -- Indexes for table `bookingcartdb`
 --
 ALTER TABLE `bookingcartdb`
-  ADD PRIMARY KEY (`bookingcartId`);
+  ADD PRIMARY KEY (`bookingcartId`),
+  ADD KEY `test6` (`customerId`);
 
 --
 -- Indexes for table `bookingdb`
 --
 ALTER TABLE `bookingdb`
   ADD PRIMARY KEY (`bookingId`),
-  ADD KEY `test2` (`customerId`);
+  ADD KEY `test2` (`customerId`),
+  ADD KEY `test7` (`bookingcartId`);
 
 --
 -- Indexes for table `customerdb`
@@ -224,13 +233,13 @@ ALTER TABLE `attendancedb`
 -- AUTO_INCREMENT for table `bookingcartdb`
 --
 ALTER TABLE `bookingcartdb`
-  MODIFY `bookingcartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `bookingcartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `bookingdb`
 --
 ALTER TABLE `bookingdb`
-  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `customerdb`
@@ -267,10 +276,17 @@ ALTER TABLE `attendancedb`
   ADD CONSTRAINT `test3` FOREIGN KEY (`workerId`) REFERENCES `workerdb` (`workerId`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
+-- Constraints for table `bookingcartdb`
+--
+ALTER TABLE `bookingcartdb`
+  ADD CONSTRAINT `test6` FOREIGN KEY (`customerId`) REFERENCES `customerdb` (`customerId`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
 -- Constraints for table `bookingdb`
 --
 ALTER TABLE `bookingdb`
-  ADD CONSTRAINT `test2` FOREIGN KEY (`customerId`) REFERENCES `customerdb` (`customerId`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `test2` FOREIGN KEY (`customerId`) REFERENCES `customerdb` (`customerId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `test7` FOREIGN KEY (`bookingcartId`) REFERENCES `bookingcartdb` (`bookingcartId`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `customerdb`

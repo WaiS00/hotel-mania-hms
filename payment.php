@@ -90,7 +90,6 @@
         ?> 
       <p>Room Rate <span class="spanclass roomRate" style="color:black"><b><?php echo $product_array[$key]["roomRate"]; ?></b></span></p>
       <p>Total Price<span class="spanclass roomRate" style="color:black"><b><?php echo $product_array[$key]["roomRate"]. ' x '. $product_array[$key]["dayDiff"].'='.$product_array[$key]["roomRate"]*$product_array[$key]["dayDiff"]; ?></b></span></p>
-
       <?php }} ?>
     </div>
   </div>
