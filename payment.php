@@ -22,7 +22,6 @@
 <div class="row">
   <div class="col-75">
     <div class="container1">
-      <form action="/action_page.php">
         <div class="row">
           <div class="col-50">
             <h3>Payment</h3>
@@ -56,16 +55,14 @@
         <form method="post">
         <div class="row">
             <div class="col-50">
-                <input type="submit" id="Button" type="submit" name="submit" value="Continue to checkout" class="btn1">
+                <input type="submit" id="Button" type="submit" name="submit" value="Continue to checkout" class="btn1" >
             </div>
             <div class="col-50">
-                <input type="cancel" value="Cancel" class="btn2 cancel">
+                <input type="cancel" value="Cancel" class="btn2 cancel" readonly>
             </div>
         </div>
-      </form>
     </div>
   </div>
-</form>
 
   <div class="col-25">
     <div class="container1">
@@ -98,6 +95,7 @@
     </div>
   </div>
 </div>
+              </form>
 <?php include 'include_php/footer.php';?>
 
     <!-- Bootstrap JS CDN -->
