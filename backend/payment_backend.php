@@ -6,7 +6,7 @@
   $query = "SELECT * FROM bookingcartdb b, roomdb c WHERE b.roomType= c.roomType";
   $product_array = $product_db->getRoomRate($query);
 
-  if(isset($_POST['submit'])){
+  if($_POST['submit'] == 'Pay'){
                 
     $tbl_name = 'bookingcartdb';
     $tbl_name2 = 'bookingdb';
@@ -38,12 +38,23 @@
     VALUES(NULL, '$checkInDate', '$checkOutDate', '$roomType', '$totalPrice', '$customerId', 'paid', '$bookingcartId' )";
     
     $result = $pdo->query($query1);
-    echo "<script type='text/javascript'>window.location.href = './index.php';</script>";
 
-}else{
+    $query2 = "DELETE FROM bookingcartdb";
+    $result = $pdo->query($query2);
+
+    echo "<script type='text/javascript'>alert('Payment Has Been Completed Successfully');</script>";
+    echo "<script type='text/javascript'>window.location.href = './index.php';</script>";
 }
 
 
+if($_POST['submit'] == 'Cancel'){
+                
+    $query1 = "DELETE FROM bookingcartdb";
+    $result = $pdo->query($query1);
+
+    echo "<script type='text/javascript'>window.location.href = './index.php';</script>";
+
+}
     
 
 ?>
