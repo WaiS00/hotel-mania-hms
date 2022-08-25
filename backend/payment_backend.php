@@ -43,7 +43,7 @@
     $result = $pdo->query($query2);
 
     echo "<script type='text/javascript'>alert('Payment Has Been Completed Successfully');</script>";
-    echo "<script type='text/javascript'>window.location.href = './index.php';</script>";
+    echo "<script type='text/javascript'>window.location.href = './booking_history.php';</script>";
 }
 
 
