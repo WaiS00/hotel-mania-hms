@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 24, 2022 at 04:59 PM
+-- Generation Time: Aug 25, 2022 at 03:57 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -50,13 +50,6 @@ CREATE TABLE `bookingcartdb` (
   `customerId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data for table `bookingcartdb`
---
-
-INSERT INTO `bookingcartdb` (`bookingcartId`, `roomType`, `checkInDate`, `checkoutDate`, `dayDiff`, `customerId`) VALUES
-(63, 'Normal', '2022-08-08', '2022-08-31', '23', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -79,7 +72,9 @@ CREATE TABLE `bookingdb` (
 --
 
 INSERT INTO `bookingdb` (`bookingId`, `checkInDate`, `checkOutDate`, `roomType`, `bookingTotalPrice`, `customerId`, `paymentStatus`, `bookingcartId`) VALUES
-(2, '2022-08-08', '2022-08-31', 'Normal', 2300, 1, 'paid', 63);
+(16, '2022-08-01', '2022-08-03', 'Deluxe', 400, 1, 'paid', 72),
+(17, '2022-08-01', '2022-08-25', 'Deluxe', 4800, 1, 'paid', 73),
+(18, '2022-08-16', '2022-08-25', 'Executive', 2700, 1, 'paid', 74);
 
 -- --------------------------------------------------------
 
@@ -187,9 +182,7 @@ ALTER TABLE `bookingcartdb`
 -- Indexes for table `bookingdb`
 --
 ALTER TABLE `bookingdb`
-  ADD PRIMARY KEY (`bookingId`),
-  ADD KEY `test2` (`customerId`),
-  ADD KEY `test7` (`bookingcartId`);
+  ADD PRIMARY KEY (`bookingId`);
 
 --
 -- Indexes for table `customerdb`
@@ -233,13 +226,13 @@ ALTER TABLE `attendancedb`
 -- AUTO_INCREMENT for table `bookingcartdb`
 --
 ALTER TABLE `bookingcartdb`
-  MODIFY `bookingcartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `bookingcartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `bookingdb`
 --
 ALTER TABLE `bookingdb`
-  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `customerdb`
@@ -280,13 +273,6 @@ ALTER TABLE `attendancedb`
 --
 ALTER TABLE `bookingcartdb`
   ADD CONSTRAINT `test6` FOREIGN KEY (`customerId`) REFERENCES `customerdb` (`customerId`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
--- Constraints for table `bookingdb`
---
-ALTER TABLE `bookingdb`
-  ADD CONSTRAINT `test2` FOREIGN KEY (`customerId`) REFERENCES `customerdb` (`customerId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `test7` FOREIGN KEY (`bookingcartId`) REFERENCES `bookingcartdb` (`bookingcartId`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `customerdb`
