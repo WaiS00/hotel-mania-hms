@@ -6,6 +6,10 @@
   $query = "SELECT * FROM bookingcartdb b, roomdb c WHERE b.roomType= c.roomType";
   $product_array = $product_db->getRoomRate($query);
 
+  $query4 = "SELECT r.roomImage FROM roomdb r, bookingcartdb b WHERE b.roomType = r.roomType";
+  $result4 = $pdo->query($query4);
+  $result4 = $result4->fetch(PDO::FETCH_ASSOC);
+
   if($_POST['submit'] == 'Pay'){
                 
     $tbl_name = 'bookingcartdb';
@@ -24,7 +28,8 @@
     $checkOutDate = $result3['checkoutDate'];
     $roomType = $result3['roomType'];
     $dayDiff = $result3['dayDiff'];
-
+    $roomImage = $result4['roomImage'];
+    
     if (!empty($product_array)) {
         foreach ($product_array as $key => $value) {
           $totalPrice = ($product_array[$key]["roomRate"])*$dayDiff;
@@ -34,8 +39,8 @@
     $customerId = $result3['customerId'];
     $bookingcartId = $result3['bookingcartId'];
 
-    $query1 = "INSERT INTO $tbl_name2 (bookingId, checkInDate, checkOutDate, roomType, bookingTotalPrice, customerId, paymentStatus, bookingcartId) 
-    VALUES(NULL, '$checkInDate', '$checkOutDate', '$roomType', '$totalPrice', '$customerId', 'paid', '$bookingcartId' )";
+    $query1 = "INSERT INTO $tbl_name2 (bookingId, checkInDate, checkOutDate, roomType, bookingTotalPrice, customerId, paymentStatus, bookingcartId, roomImage) 
+    VALUES(NULL, '$checkInDate', '$checkOutDate', '$roomType', '$totalPrice', '$customerId', 'paid', '$bookingcartId', '$roomImage' )";
     
     $result = $pdo->query($query1);
 
@@ -43,7 +48,7 @@
     $result = $pdo->query($query2);
 
     echo "<script type='text/javascript'>alert('Payment Has Been Completed Successfully');</script>";
-    echo "<script type='text/javascript'>window.location.href = './index.php';</script>";
+    echo "<script type='text/javascript'>window.location.href = './booking_history.php';</script>";
 }
 
 

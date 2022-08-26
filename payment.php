@@ -22,6 +22,7 @@
 <form method="post">
 <div class="row">
   <div class="col-75">
+  <form method="post">
     <div class="container1">
         <div class="row">
           <div class="col-50">
@@ -62,6 +63,7 @@
             </div>
         </div>
     </div>
+</form>
   </div>
   </form>
 
