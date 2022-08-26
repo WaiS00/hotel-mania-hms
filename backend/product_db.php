@@ -58,6 +58,14 @@ class product_db extends DBController{
         $productResult = $this->getDBResult($query);
         return $productResult;
     }
+
+    function getBookingHistory()
+    {
+        $query = "SELECT * FROM bookingdb";
+        
+        $productResult = $this->getDBResult($query);
+        return $productResult;
+    }
 }
 
 ?>
