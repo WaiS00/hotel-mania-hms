@@ -21,6 +21,7 @@
 <body>
 <div class="row">
   <div class="col-75">
+  <form method="post">
     <div class="container1">
         <div class="row">
           <div class="col-50">
@@ -33,17 +34,17 @@
               <i class="fa fa-cc-discover" style="color:orange;"></i>
             </div>
             <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="Name">
+            <input type="text" id="cname" name="cardname" placeholder="Name" required>
             <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required>
             <div class="row">
               <div class="col-50">
                 <label for="expmonth">Expiry (Valid Till)</label>
-                <input type="text" id="expmonth" name="expmonth" placeholder="MM/YY">
+                <input type="text" id="expmonth" name="expmonth" placeholder="MM/YY" required>
               </div>
               <div class="col-50">
                 <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352">
+                <input type="text" id="cvv" name="cvv" placeholder="352" required>
               </div>
             </div>
           </div>
@@ -52,7 +53,6 @@
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
         </label>
-        <form method="post">
         <div class="row">
             <div class="col-50">
                 <input type="submit" id="Button" name="submit" value="Pay" class="btn1" >
@@ -61,8 +61,8 @@
                 <input type="submit" id="Button" name="submit" value="Cancel" class="btn2 cancel" readonly>
             </div>
         </div>
-        </form>
     </div>
+</form>
   </div>
 
   <div class="col-25">
