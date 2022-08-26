@@ -6,3 +6,10 @@ h4{
     text-align: center;
     padding-bottom: 1em;
 }
+
+.card {
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+}
+

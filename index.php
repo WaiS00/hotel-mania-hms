@@ -62,7 +62,7 @@
 
     <section id="new-release">
     <div class="container new">
-        <i href="#" class="bi bi-newspaper new-release-cam"> New Facilities !</i>
+        <i href="facilities.php" class="bi bi-newspaper new-release-cam"> New Facilities !</i>
     </div>
         <div class="card mb-3 shadow-lg p-3 mb-5 bg-white rounded">
         <div class="row g-0 row-center">
@@ -79,7 +79,7 @@
                     <p class="card-text"><small class="text-muted">While stock last hehe</small></p>
                     <?php if($_SESSION['type'] != 'admin'){
                         ?>
-                    <a href="product-list.php" class="btn view-btn" role="button" style="color:white;">Click here to view more!</a>
+                    <a href="facilities.php" class="btn view-btn" role="button" style="color:white;">Click here to view more!</a>
                     <?php 
                         }else{
                     ?>
