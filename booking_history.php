@@ -18,6 +18,7 @@
 <?php include 'include_php/header.php';?>
 
 <body>
+<h4>Booking History</h4>
 <?php
         $query = "SELECT * FROM bookingdb";
         $product_array = $product_db->getBookingHistory($query);
