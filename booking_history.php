@@ -24,14 +24,21 @@
         if (!empty($product_array)) {
             foreach ($product_array as $key => $value) {
         ?> 
-<div class="card mb-3">
-  <img src="<?php echo $product_array[$key]["roomImage"]; ?>" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"><?php echo $product_array[$key]["roomType"]; ?></h5>
-    <p class="card-text">Check-in Date: <?php echo $product_array[$key]["checkInDate"]; ?></p>
-    <p class="card-text">Check-out Date: <?php echo $product_array[$key]["checkOutDate"]; ?></p>
-    <p class="card-text"><small class="text-muted"> <p class="card-text">Total Booking Price: <?php echo $product_array[$key]["bookingTotalPrice"]; ?></p></small></p>
-    <p class="card-text"><small class="text-muted"> <p class="card-text">Payment Status: <?php echo $product_array[$key]["paymentStatus"]; ?></p></small></p>  </div>
+<div class="card mb-3" style="max-width: 100em;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="<?php echo $product_array[$key]["roomImage"]; ?>" class="card-img-top" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $product_array[$key]["roomType"]; ?></h5>
+        <p class="card-text">Check-in Date: <?php echo $product_array[$key]["checkInDate"]; ?></p>
+        <p class="card-text">Check-out Date: <?php echo $product_array[$key]["checkOutDate"]; ?></p>
+        <p class="card-text"><small class="text-muted"> <p class="card-text">Total Booking Price: <?php echo $product_array[$key]["bookingTotalPrice"]; ?></p></small></p>
+        <p class="card-text"><small class="text-muted"> <p class="card-text">Payment Status: <?php echo $product_array[$key]["paymentStatus"]; ?></p></small></p>  
+      </div>
+    </div>
+  </div>
 </div>
 
 <?php }} ?>
