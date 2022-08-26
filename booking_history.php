@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php require_once "backend/config.php"; ?>
 
 <head>
     <meta charset="UTF-8">
@@ -19,14 +20,24 @@
 <body>
 
 
+
 <div class="card mb-3">
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-  </div>
+  <?php
+        $query = "SELECT * FROM bookingdb";
+        $product_array = $product_db->getBookingHistory($query);
+        if (!empty($product_array)) {
+            foreach ($product_array as $key => $value) {
+        ?> 
+    <h5 class="card-title"><?php echo $product_array[$key]["roomType"]; ?></h5>
+    <p class="card-text">Check-in Date: <?php echo $product_array[$key]["checkInDate"]; ?></p>
+    <p class="card-text">Check-out Date: <?php echo $product_array[$key]["checkOutDate"]; ?></p>
+    <p class="card-text"><small class="text-muted"> <p class="card-text">Total Booking Price: <?php echo $product_array[$key]["bookingTotalPrice"]; ?></p></small></p>
+    <p class="card-text"><small class="text-muted"> <p class="card-text">Payment Status: <?php echo $product_array[$key]["paymentStatus"]; ?></p></small></p>  </div>
 </div>
+
+<?php }} ?>
 
 <?php include 'include_php/footer.php';?>
 
