@@ -18,18 +18,15 @@
 <?php include 'include_php/header.php';?>
 
 <body>
-
-
-
-<div class="card mb-3">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-  <?php
+<?php
         $query = "SELECT * FROM bookingdb";
         $product_array = $product_db->getBookingHistory($query);
         if (!empty($product_array)) {
             foreach ($product_array as $key => $value) {
         ?> 
+<div class="card mb-3">
+  <img src="<?php echo $product_array[$key]["roomImage"]; ?>" class="card-img-top" alt="...">
+  <div class="card-body">
     <h5 class="card-title"><?php echo $product_array[$key]["roomType"]; ?></h5>
     <p class="card-text">Check-in Date: <?php echo $product_array[$key]["checkInDate"]; ?></p>
     <p class="card-text">Check-out Date: <?php echo $product_array[$key]["checkOutDate"]; ?></p>
