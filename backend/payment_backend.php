@@ -1,7 +1,7 @@
 <?php 
 
   require_once 'SQL_login.php';
-  require_once "backend/config.php"; 
+  require_once "config.php"; 
 
   $query = "SELECT * FROM bookingcartdb b, roomdb c WHERE b.roomType= c.roomType";
   $product_array = $product_db->getRoomRate($query);
