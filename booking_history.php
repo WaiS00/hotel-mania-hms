@@ -37,6 +37,7 @@
         <p class="card-text">Check-out Date: <?php echo $product_array[$key]["checkOutDate"]; ?></p>
         <p class="card-text"><small class="text-muted"> <p class="card-text">Total Booking Price: <?php echo $product_array[$key]["bookingTotalPrice"]; ?></p></small></p>
         <p class="card-text"><small class="text-muted"> <p class="card-text">Payment Status: <?php echo $product_array[$key]["paymentStatus"]; ?></p></small></p>  
+        <a href="edit_booking.php?id=<?php echo $product_array[$key]["bookingId"];?>">Edit</a> | <a href="delete_booking.php?id=<?php echo $product_array[$key]["bookingId"];?>" onClick="return confirm('Are you sure you want to delete?')">Delete</a>
       </div>
     </div>
   </div>
