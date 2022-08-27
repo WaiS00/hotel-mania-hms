@@ -18,6 +18,7 @@
 <?php include 'include_php/header.php';?>
 
 <body>
+<form method="post">
 <h4>Booking History</h4>
 <?php
         $query = "SELECT * FROM bookingdb";
@@ -37,11 +38,12 @@
         <p class="card-text">Check-out Date: <?php echo $product_array[$key]["checkOutDate"]; ?></p>
         <p class="card-text"><small class="text-muted"> <p class="card-text">Total Booking Price: <?php echo $product_array[$key]["bookingTotalPrice"]; ?></p></small></p>
         <p class="card-text"><small class="text-muted"> <p class="card-text">Payment Status: <?php echo $product_array[$key]["paymentStatus"]; ?></p></small></p>  
+        <a href="backend/booking_history_backend.php?bookingId=<?php echo $product_array[$key]["bookingId"];?>" onClick="return confirm('Are you sure you want to delete?')"><i class="bi bi-trash"></i> Delete Booking</a>
       </div>
     </div>
   </div>
 </div>
-
+</form>
 <?php }} ?>
 
 <?php include 'include_php/footer.php';?>
