@@ -13,3 +13,9 @@ h4{
     margin-bottom: 10px; 
 }
 
+.receipt{
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
