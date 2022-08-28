@@ -10,6 +10,7 @@
     <!-- Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="  https://printjs-4de6.kxcdn.com/print.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <title>Hotel Mania</title>
     <link rel="icon" href="resources/hm_logo.png"/>
@@ -18,7 +19,6 @@
 <?php include 'include_php/header.php';?>
 
 <body>
-<form method="post">
 <h4>Booking History</h4>
 <?php
         $query = "SELECT * FROM bookingdb";
@@ -40,16 +40,29 @@
         <p class="card-text"><small class="text-muted"> <p class="card-text">Payment Status: <?php echo $product_array[$key]["paymentStatus"]; ?></p></small></p>  
         <a href="backend/booking_history_backend.php?bookingId=<?php echo $product_array[$key]["bookingId"];?>" onClick="return confirm('Are you sure you want to delete?')"><i class="bi bi-trash"></i> Delete Booking</a>
       </div>
+      <form method="post" action="#" id="printJS-form">
+        <div class="receipt">
+          <h3 class="card-text">Booking Receipt</h3>
+          <h3 class="card-text">Booking Receipt</h3>
+          <p class="card-text">Check-in Date: <?php echo $product_array[$key]["checkInDate"]; ?></p>
+          <p class="card-text">Check-out Date: <?php echo $product_array[$key]["checkOutDate"]; ?></p>
+          <p class="card-text">Room Type: <?php echo $product_array[$key]["roomType"]; ?></p>
+          <p class="card-text"><small class="text-muted"> <p class="card-text">Total Booking Price: <?php echo $product_array[$key]["bookingTotalPrice"]; ?></p></small></p>
+          <p class="card-text"><small class="text-muted"> <p class="card-text">Payment Status: <?php echo $product_array[$key]["paymentStatus"]; ?></p></small></p>  
+        </div>
+      </form>
     </div>
+    <button type="button" onclick="printJS('printJS-form', 'html')">Print Form</button>
   </div>
 </div>
-</form>
 <?php }} ?>
 
 <?php include 'include_php/footer.php';?>
 
     <!-- Bootstrap JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-</body>
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+
+  </body>
 
 </html>
