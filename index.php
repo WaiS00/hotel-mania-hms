@@ -77,7 +77,7 @@
                     <h2 class="card-title">Olympic-Size Swimming Pool </h2>
                     <p class="card-text text-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                     <p class="card-text"><small class="text-muted">While stock last hehe</small></p>
-                    <?php if($_SESSION['type'] != 'admin'){
+                    <?php if($_SESSION['userType'] != 'worker'){
                         ?>
                     <a href="facilities.php" class="btn view-btn" role="button" style="color:white;">Click here to view more!</a>
                     <?php 
