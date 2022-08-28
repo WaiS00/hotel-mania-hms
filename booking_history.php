@@ -50,32 +50,32 @@
             <p style="text-align:center;"> This is an automated generation of receipt for the current booking <br> Please find below a complete version of the receipt for the hotel room booking.<br> Please do not hesitate to contact me with any questions.<br>
             <br>Many thanks,
             <br>Wai Siong <br></p>
-
             <table style="margin-left: auto; margin-right: auto; border: 1px solid;border-collapse: collapse; width: 100%;">
               <tr>
                 <td style="border: 1px solid;">Check-in Date: </td>
-                <td style="border: 1px solid;"> <?php echo  $product_array[$key]["checkInDate"]; ?></td>
+                <td style="border: 1px solid;"> <?php echo $product_array[$key]["checkInDate"]; ?></td>
               </tr>
               <tr>
                 <td style="border: 1px solid;">Check-out Date: </td>
-                <td style="border: 1px solid;"> <?php echo  $product_array[$key]["checkOutDate"]; ?></td>
+                <td style="border: 1px solid;"> <?php echo $product_array[$key]["checkOutDate"]; ?></td>
               </tr>
               <tr>
                 <td style="border: 1px solid;">Total Booking Price: </td>
-                <td style="border: 1px solid;"> <?php echo  $product_array[$key]["bookingTotalPrice"]; ?></td>
+                <td style="border: 1px solid;"> <?php echo $product_array[$key]["bookingTotalPrice"]; ?></td>
               </tr>
               <tr>
                 <td style="border: 1px solid;">Payment Status: </td>
-                <td style="border: 1px solid;"> <?php echo  $product_array[$key]["paymentStatus"]; ?></td>
+                <td style="border: 1px solid;"> <?php echo $product_array[$key]["paymentStatus"]; ?></td>
               </tr>
             </table>
             <br><br>
             <p style="text-align:center;"> Hope to see you on your visit! </p>
         </div>
-      </form>
+        </form>
     </div>
   </div>
 </div>
+
 <?php }} ?>
 
 <?php include 'include_php/footer.php';?>
