@@ -43,7 +43,6 @@
       </div>
 
       <form method="post" action="#" id="printJS-form">
-
         <div class="receipt">
             <h1 style="text-align:center;">INVOICE</h1>
             <h3 style="text-align:center;">Booking Receipt</h3>
