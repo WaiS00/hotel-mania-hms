@@ -52,6 +52,10 @@
             <br>Wai Siong <br></p>
             <table style="margin-left: auto; margin-right: auto; border: 1px solid;border-collapse: collapse; width: 100%;">
               <tr>
+                <td style="border: 1px solid;">Room Type: </td>
+                <td style="border: 1px solid;"> <?php echo $product_array[$key]["roomType"]; ?></td>
+              </tr>              
+              <tr>
                 <td style="border: 1px solid;">Check-in Date: </td>
                 <td style="border: 1px solid;"> <?php echo $product_array[$key]["checkInDate"]; ?></td>
               </tr>
