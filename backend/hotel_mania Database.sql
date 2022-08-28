@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 25, 2022 at 03:57 PM
+-- Generation Time: Aug 28, 2022 at 02:20 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -64,17 +64,17 @@ CREATE TABLE `bookingdb` (
   `bookingTotalPrice` double NOT NULL,
   `customerId` int(11) NOT NULL,
   `paymentStatus` enum('paid','unpaid') NOT NULL,
-  `bookingcartId` int(11) NOT NULL
+  `bookingcartId` int(11) NOT NULL,
+  `roomImage` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `bookingdb`
 --
 
-INSERT INTO `bookingdb` (`bookingId`, `checkInDate`, `checkOutDate`, `roomType`, `bookingTotalPrice`, `customerId`, `paymentStatus`, `bookingcartId`) VALUES
-(16, '2022-08-01', '2022-08-03', 'Deluxe', 400, 1, 'paid', 72),
-(17, '2022-08-01', '2022-08-25', 'Deluxe', 4800, 1, 'paid', 73),
-(18, '2022-08-16', '2022-08-25', 'Executive', 2700, 1, 'paid', 74);
+INSERT INTO `bookingdb` (`bookingId`, `checkInDate`, `checkOutDate`, `roomType`, `bookingTotalPrice`, `customerId`, `paymentStatus`, `bookingcartId`, `roomImage`) VALUES
+(29, '2022-08-01', '2022-08-11', 'Deluxe', 2000, 1, 'paid', 86, 'resources/deluxe-room.png'),
+(30, '2022-08-01', '2022-08-02', 'Normal', 100, 1, 'paid', 87, 'resources/normal-room.png');
 
 -- --------------------------------------------------------
 
@@ -226,13 +226,13 @@ ALTER TABLE `attendancedb`
 -- AUTO_INCREMENT for table `bookingcartdb`
 --
 ALTER TABLE `bookingcartdb`
-  MODIFY `bookingcartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `bookingcartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `bookingdb`
 --
 ALTER TABLE `bookingdb`
-  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `customerdb`
