@@ -42,13 +42,34 @@
       </div>
       <form method="post" action="#" id="printJS-form">
         <div class="receipt">
-          <h3 class="card-text">Booking Receipt</h3>
-          <h3 class="card-text">Booking Receipt</h3>
-          <p class="card-text">Check-in Date: <?php echo $product_array[$key]["checkInDate"]; ?></p>
-          <p class="card-text">Check-out Date: <?php echo $product_array[$key]["checkOutDate"]; ?></p>
-          <p class="card-text">Room Type: <?php echo $product_array[$key]["roomType"]; ?></p>
-          <p class="card-text"><small class="text-muted"> <p class="card-text">Total Booking Price: <?php echo $product_array[$key]["bookingTotalPrice"]; ?></p></small></p>
-          <p class="card-text"><small class="text-muted"> <p class="card-text">Payment Status: <?php echo $product_array[$key]["paymentStatus"]; ?></p></small></p>  
+            <h1 style="text-align:center;">INVOICE</h1>
+            <h3 style="text-align:center;">Booking Receipt</h3>
+            <h4 style="text-align:center;">Hotel Mania</h4>
+            <p style="text-align:right;">2 Jalan Punchak, Off,<br> Jalan P. Ramlee,<br>50250 Kuala Lumpur</p>
+            <p style="text-align:center;"> This is an automated generation of receipt for the current booking <br> Please find below a complete version of the receipt for the hotel room booking.<br> Please do not hesitate to contact me with any questions.<br>
+            <br>Many thanks,
+            <br>Wai Siong <br></p>
+
+            <table style="margin-left: auto; margin-right: auto; border: 1px solid;border-collapse: collapse; width: 100%;">
+              <tr>
+                <td style="border: 1px solid;">Check-in Date: </td>
+                <td style="border: 1px solid;"> <?php echo  $product_array[$key]["checkInDate"]; ?></td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid;">Check-out Date: </td>
+                <td style="border: 1px solid;"> <?php echo  $product_array[$key]["checkOutDate"]; ?></td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid;">Total Booking Price: </td>
+                <td style="border: 1px solid;"> <?php echo  $product_array[$key]["bookingTotalPrice"]; ?></td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid;">Payment Status: </td>
+                <td style="border: 1px solid;"> <?php echo  $product_array[$key]["paymentStatus"]; ?></td>
+              </tr>
+            </table>
+            <br><br>
+            <p style="text-align:center;"> Hope to see you on your visit! </p>
         </div>
       </form>
     </div>
