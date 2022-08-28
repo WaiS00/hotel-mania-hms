@@ -38,7 +38,8 @@
         <p class="card-text">Check-out Date: <?php echo $product_array[$key]["checkOutDate"]; ?></p>
         <p class="card-text"><small class="text-muted"> <p class="card-text">Total Booking Price: <?php echo $product_array[$key]["bookingTotalPrice"]; ?></p></small></p>
         <p class="card-text"><small class="text-muted"> <p class="card-text">Payment Status: <?php echo $product_array[$key]["paymentStatus"]; ?></p></small></p>  
-        <a href="backend/booking_history_backend.php?bookingId=<?php echo $product_array[$key]["bookingId"];?>" onClick="return confirm('Are you sure you want to delete?')"><i class="bi bi-trash"></i> Delete Booking</a>
+        <a class="btn btn-primary" href="backend/booking_history_backend.php?bookingId=<?php echo $product_array[$key]["bookingId"];?>" onClick="return confirm('Are you sure you want to delete?')"><i class="bi bi-trash"></i> Delete Booking</a>
+        <button type="button" class="btn btn-primary" onclick="printJS('printJS-form', 'html')">Generate Receipt</button>
       </div>
       <form method="post" action="#" id="printJS-form">
         <div class="receipt">
@@ -73,7 +74,6 @@
         </div>
       </form>
     </div>
-    <button type="button" onclick="printJS('printJS-form', 'html')">Print Form</button>
   </div>
 </div>
 <?php }} ?>
