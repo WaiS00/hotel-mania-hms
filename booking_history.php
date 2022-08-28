@@ -41,7 +41,9 @@
         <a class="btn btn-primary" href="backend/booking_history_backend.php?bookingId=<?php echo $product_array[$key]["bookingId"];?>" onClick="return confirm('Are you sure you want to delete?')"><i class="bi bi-trash"></i> Delete Booking</a>
         <button type="button" class="btn btn-primary" onclick="printJS('printJS-form', 'html')">Generate Receipt</button>
       </div>
+
       <form method="post" action="#" id="printJS-form">
+
         <div class="receipt">
             <h1 style="text-align:center;">INVOICE</h1>
             <h3 style="text-align:center;">Booking Receipt</h3>
@@ -50,6 +52,13 @@
             <p style="text-align:center;"> This is an automated generation of receipt for the current booking <br> Please find below a complete version of the receipt for the hotel room booking.<br> Please do not hesitate to contact me with any questions.<br>
             <br>Many thanks,
             <br>Wai Siong <br></p>
+            <?php
+              $query = "SELECT * FROM bookingdb";
+              $product_array = $product_db->getBookingHistory($query);
+              if (!empty($product_array)) {
+                  foreach ($product_array as $key => $value) {
+              ?> 
+            <h4 style="text-align:left;">Booking: <?php echo $key+1?></h4>
             <table style="margin-left: auto; margin-right: auto; border: 1px solid;border-collapse: collapse; width: 100%;">
               <tr>
                 <td style="border: 1px solid;">Room Type: </td>
@@ -73,7 +82,10 @@
               </tr>
             </table>
             <br><br>
-            <p style="text-align:center;"> Hope to see you on your visit! </p>
+
+            <?php }}?>
+            <br><br>
+            <p style="text-align:center;"> Hope to see you on your visit!</p>
         </div>
         </form>
     </div>
