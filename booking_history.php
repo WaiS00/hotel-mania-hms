@@ -21,7 +21,8 @@
 <body>
 <h4>Booking History</h4>
 <?php
-        $query = "SELECT * FROM bookingdb";
+        require_once 'backend/SQL_login.php';
+        $query = "SELECT * FROM bookingdb WHERE userId = '{$_SESSION['userId']}'";
         $product_array = $product_db->getBookingHistory($query);
         if (!empty($product_array)) {
             foreach ($product_array as $key => $value) {
@@ -91,7 +92,7 @@
   </div>
 </div>
 
-<?php }} ?>
+<?php } }?>
 
 <?php include 'include_php/footer.php';?>
 
