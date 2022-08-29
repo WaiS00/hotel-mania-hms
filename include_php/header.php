@@ -59,19 +59,26 @@
         ?>
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="admin_home.php">Add Products</a>
+              <a class="nav-link" href="create_account.php">Create Account</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="add_services.php">Add Services</a>
+              <a class="nav-link" href="add_room.php">Add Rooms</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="admin_product_list.php">View Products</a>
+              <a class="nav-link" href="attendance.php">Attendance</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="admin_service_list.php">View Services</a>
+              <a class="nav-link" href="timeslot.php">Timeslot</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="add_admin.php">Add Admin</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Customer Services
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="dropdown-item" href="check-in.php">Check-in (Customer)</a></li>
+                <li><a class="dropdown-item" href="check-out.php">Check-out (Customer)</a></li>
+                <li><a class="dropdown-item" href="booking.php">Book Now (Rooms)</a></li>
+              </ul>
             </li>
           </ul>
         <?php
