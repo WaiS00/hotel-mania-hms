@@ -10,6 +10,10 @@
   $result4 = $pdo->query($query4);
   $result4 = $result4->fetch(PDO::FETCH_ASSOC);
 
+  $query5 = "SELECT userId FROM customerdb";
+  $result5 = $pdo->query($query5);
+  $result5 = $result5->fetch(PDO::FETCH_ASSOC);
+
   if($_POST['submit'] == 'Pay'){
                 
     $tbl_name = 'bookingcartdb';
@@ -29,6 +33,7 @@
     $roomType = $result3['roomType'];
     $dayDiff = $result3['dayDiff'];
     $roomImage = $result4['roomImage'];
+    $userId = $result5['userId'];
     
     if (!empty($product_array)) {
         foreach ($product_array as $key => $value) {
@@ -39,14 +44,14 @@
     $customerId = $result3['customerId'];
     $bookingcartId = $result3['bookingcartId'];
 
-    $query1 = "INSERT INTO $tbl_name2 (bookingId, checkInDate, checkOutDate, roomType, bookingTotalPrice, customerId, paymentStatus, bookingcartId, roomImage) 
-    VALUES(NULL, '$checkInDate', '$checkOutDate', '$roomType', '$totalPrice', '$customerId', 'paid', '$bookingcartId', '$roomImage' )";
+    $query1 = "INSERT INTO $tbl_name2 (bookingId, checkInDate, checkOutDate, roomType, bookingTotalPrice, customerId, paymentStatus, bookingcartId, roomImage, userId) 
+    VALUES(NULL, '$checkInDate', '$checkOutDate', '$roomType', '$totalPrice', '$customerId', 'paid', '$bookingcartId', '$roomImage', '$userId' )";
     
     $result = $pdo->query($query1);
 
     $query2 = "DELETE FROM bookingcartdb";
     $result = $pdo->query($query2);
-
+    
     echo "<script type='text/javascript'>alert('Payment Has Been Completed Successfully');</script>";
     echo "<script type='text/javascript'>window.location.href = './booking_history.php';</script>";
 }
