@@ -61,8 +61,8 @@ class product_db extends DBController{
 
     function getBookingHistory()
     {
-        $query = "SELECT * FROM bookingdb";
-        
+        $query = "SELECT * FROM bookingdb WHERE userId = '{$_SESSION['userId']}'";
+
         $productResult = $this->getDBResult($query);
         return $productResult;
     }
