@@ -89,10 +89,14 @@
               <tr>
                 <td style="border: 1px solid;">Check-out Date: </td>
                 <td style="border: 1px solid;"> <?php echo $product_array[$key]["checkOutDate"]; ?></td>
+              </tr>              
+              <tr>
+                <td style="border: 1px solid;">Number of Day Stay: </td>
+                <td style="border: 1px solid;"> <?php echo $product_array[$key]["dayDiff"]. " Days"; ?></td>
               </tr>
               <tr>
                 <td style="border: 1px solid;">Total Booking Price: </td>
-                <td style="border: 1px solid;"> <?php echo $product_array[$key]["bookingTotalPrice"]; ?></td>
+                <td style="border: 1px solid;"> <?php echo "RM". $product_array[$key]["bookingTotalPrice"]; ?></td>
               </tr>
               <tr>
                 <td style="border: 1px solid;">Payment Status: </td>

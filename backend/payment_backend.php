@@ -30,6 +30,7 @@
     $customerid = $result3['customerid'];
     $checkInDate = $result3['checkInDate'];
     $checkOutDate = $result3['checkoutDate'];
+    $dayDiff = $result3['dayDiff'];
     $roomType = $result3['roomType'];
     $dayDiff = $result3['dayDiff'];
     $roomImage = $result4['roomImage'];
@@ -44,8 +45,8 @@
     $customerId = $result3['customerId'];
     $bookingcartId = $result3['bookingcartId'];
 
-    $query1 = "INSERT INTO $tbl_name2 (bookingId, checkInDate, checkOutDate, roomType, bookingTotalPrice, customerId, paymentStatus, bookingcartId, roomImage, userId) 
-    VALUES(NULL, '$checkInDate', '$checkOutDate', '$roomType', '$totalPrice', '$customerId', 'paid', '$bookingcartId', '$roomImage', '$userId' )";
+    $query1 = "INSERT INTO $tbl_name2 (bookingId, checkInDate, checkOutDate, roomType, bookingTotalPrice, customerId, paymentStatus, bookingcartId, roomImage, dayDiff, userId) 
+    VALUES(NULL, '$checkInDate', '$checkOutDate', '$roomType', '$totalPrice', '$customerId', 'paid', '$bookingcartId', '$roomImage', '$dayDiff', '$userId' )";
     
     $result = $pdo->query($query1);
 
