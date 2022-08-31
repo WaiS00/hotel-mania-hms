@@ -72,24 +72,23 @@
     </div>
 </div>
 
-
 <div class="card mb-3 shadow-lg p-3 mb-5 bg-white rounded">
     <div class="row g-0 row-center row1">
+        <div class="col-md-4">
+            <img src="resources/facilities-gym2.png" class="img-fluid rounded-start dslr-image" alt="...">
+        </div>
+        <div class="col-md-2">
+        </div>
         <div class="col-md-6 justify-content-center align-self-center">
             <div class="card-body">
                 <div class="dslr-description">
-                    <h2 class="card-title">Gymnasium (GYM)</h2><br>
+                    <h2 class="card-title">Gymnasium (GYM) </h2><br>
                     <p class="card-text text-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-2">
-        </div>
-        <div class="col-md-4">
-            <img src="resources/facilities-gym2.png" class="img-fluid rounded-start dslr-image" alt="...">
-        </div>
     </div>
-    </div>
+</div>
 </div>
 
 <?php include 'include_php/footer.php';?>

@@ -77,7 +77,7 @@
                 </td>
 			</tr>
             <tr>   
-                <td><label>Difference in days:</label>
+                <td><label>Number of Day Stay:</label>
                     <h4 style="display: inline-block" id="ans">0 </h4>
                 <td><label> days</label>
                 </td>

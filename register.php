@@ -33,6 +33,14 @@
 				<td><input type="password" required  class="form-control" />
 			</tr>
 			<tr>
+				<td><label>Full Name</label></td>
+				<td><input type="text" name= "full_name" class="form-control" required  />
+			</tr> 
+			<tr>
+				<td><label>IC/Passport Number</label></td>
+				<td><input type="text" name= "ic_num" class="form-control" required  />
+			</tr> 
+			<tr>
 				<td><label>Telephone No</label></td>
 				<td><input type="text" name="telno"  class="form-control" required />
 			</tr> 
@@ -43,16 +51,7 @@
 			<tr>
 				<td><label>Email</label></td>
 				<td><input type="text" name ="email" class="form-control" required />
-			</tr>
-			<tr>
-				<td><label>Full Name</label></td>
-				<td><input type="text" name= "full_name" class="form-control" required  />
-			</tr> 
-			<tr>
-				<td><label>IC/Passport Number</label></td>
-				<td><input type="text" name= "ic_num" class="form-control" required  />
-			</tr> 
-																																		
+			</tr>																														
 			<tr>
 				<td></td>
 				<td><input type="submit" value="Submit" class="btn btn-primary submitbtn"></td>

@@ -41,7 +41,7 @@
         <p class="card-text">Check-out Date: <?php echo $product_array[$key]["checkOutDate"]; ?></p>
         <p class="card-text"><small class="text-muted"> <p class="card-text">Total Booking Price: <?php echo $product_array[$key]["bookingTotalPrice"]; ?></p></small></p>
         <p class="card-text"><small class="text-muted"> <p class="card-text">Payment Status: <?php echo $product_array[$key]["paymentStatus"]; ?></p></small></p>  
-        <a class="btn btn-primary" href="backend/booking_history_backend.php?bookingId=<?php echo $product_array[$key]["bookingId"];?>" onClick="return confirm('Are you sure you want to delete?')"><i class="bi bi-trash"></i> Delete Booking</a>
+        <a class="btn btn-primary" href="backend/booking_history_backend.php?bookingId=<?php echo $product_array[$key]["bookingId"];?>" onClick="return confirm('Are you sure you want to delete?')"><i class="bi bi-trash"></i> Cancel Booking</a>
         <button type="button" class="btn btn-primary" onclick="printJS('printJS-form', 'html')">Generate Receipt</button>
       </div>
 
@@ -50,9 +50,10 @@
             <h1 style="text-align:center;">INVOICE</h1>
             <h3 style="text-align:center;">Booking Receipt</h3>
             <h4 style="text-align:center;">Hotel Mania</h4>
+            <h4 style="text-align:center;">0122978732</h4>
             <p style="text-align:right;">2 Jalan Punchak, Off,<br> Jalan P. Ramlee,<br>50250 Kuala Lumpur</p>
-            <p style="text-align:center;"> This is an automated generation of receipt for the current booking <br> Please find below a complete version of the receipt for the hotel room booking.<br> Please do not hesitate to contact me with any questions.<br>
-            <br>Many thanks,
+            <p style="text-align:center;"> This is a system generation of receipt for the current booking and there will be no signature required. <br> Please find below a complete version of the receipt for the hotel room booking.<br> Please do not hesitate to contact us with any questions.<br>
+            <br>Yours Sincerely,
             <br>Wai Siong <br></p>
             <?php
               $query = "SELECT * FROM bookingdb";
@@ -62,6 +63,21 @@
               ?> 
             <h4 style="text-align:left;">Booking: <?php echo $key+1?></h4>
             <table style="margin-left: auto; margin-right: auto; border: 1px solid;border-collapse: collapse; width: 100%;">
+            <?php
+              $query1 = "SELECT * FROM bookingdb";
+              $product_array1 = $product_db->getUserInfo($query1);
+              if (!empty($product_array1)) {
+                  foreach ($product_array1 as $key1 => $value) {
+              ?>   
+              <tr>
+                <td style="border: 1px solid;">Full Name: </td>
+                <td style="border: 1px solid;"> <?php echo $product_array1[$key1]["fullName"]; ?></td>
+              </tr>              
+              <tr>
+                <td style="border: 1px solid;">Tel Number: </td>
+                <td style="border: 1px solid;"> <?php echo $product_array1[$key1]["telno"]; ?></td>
+              </tr>
+              <?php }} ?>
               <tr>
                 <td style="border: 1px solid;">Room Type: </td>
                 <td style="border: 1px solid;"> <?php echo $product_array[$key]["roomType"]; ?></td>

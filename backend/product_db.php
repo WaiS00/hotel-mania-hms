@@ -66,7 +66,14 @@ class product_db extends DBController{
         $productResult = $this->getDBResult($query);
         return $productResult;
     }
-    
+
+    function getUserInfo()
+    {
+        $query = "SELECT * FROM userdb WHERE userId = '{$_SESSION['userId']}'";
+
+        $productResult = $this->getDBResult($query);
+        return $productResult;
+    }
 }
 
 ?>

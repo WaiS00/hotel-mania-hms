@@ -83,7 +83,7 @@
       <p><a>Room Type</a> <span class="spanclass roomType"><?php echo $product_array[$key]["roomType"]; ?></span></p>
       <p><a>Check in Date</a> <span class="spanclass checkInDate"><?php echo $product_array[$key]["checkInDate"]; ?></span></p>
       <p><a>Check out Date</a> <span class="spanclass checkoutDate"><?php echo $product_array[$key]["checkoutDate"]; ?></span></p>
-      <p><a>Day Differences</a> <span class="spanclass dayDiff"><?php echo $product_array[$key]["dayDiff"]; ?></span></p>      <hr>
+      <p><a>Number of Day Stay</a> <span class="spanclass dayDiff"><?php echo $product_array[$key]["dayDiff"]; ?></span></p>      <hr>
       <?php }} ?>
       <?php
           $query = "SELECT * FROM bookingcartdb b, roomdb c WHERE b.roomType= c.roomType";
@@ -91,8 +91,8 @@
           if (!empty($product_array)) {
               foreach ($product_array as $key => $value) {
         ?> 
-      <p>Room Rate <span class="spanclass roomRate" style="color:black"><b><?php echo $product_array[$key]["roomRate"]; ?></b></span></p>
-      <p>Total Price<span class="spanclass roomRate" style="color:black"><b><?php echo $product_array[$key]["roomRate"]. ' x '. $product_array[$key]["dayDiff"].'='.$product_array[$key]["roomRate"]*$product_array[$key]["dayDiff"]; ?></b></span></p>
+      <p>Room Rate <span class="spanclass roomRate" style="color:black"><b><?php echo "RM". $product_array[$key]["roomRate"]; ?></b></span></p>
+      <p>Total Price<span class="spanclass roomRate" style="color:black"><b><?php echo "RM". $product_array[$key]["roomRate"]. ' x '. $product_array[$key]["dayDiff"].'='. "RM". $product_array[$key]["roomRate"]*$product_array[$key]["dayDiff"]; ?></b></span></p>
       <?php }} ?>
     </div>
   </div>
