@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <?php require_once "backend/config.php"; ?>
@@ -22,6 +23,7 @@
 <h4>Booking History</h4>
 <?php
         require_once 'backend/SQL_login.php';
+        if(isset($_SESSION['userId'])){
         $query = "SELECT * FROM bookingdb WHERE userId = '{$_SESSION['userId']}'";
         $product_array = $product_db->getBookingHistory($query);
         if (!empty($product_array)) {
@@ -92,7 +94,10 @@
   </div>
 </div>
 
-<?php } }?>
+<?php } } }else {
+    echo "<script type='text/javascript'>alert('Please login or register your account.');</script>";
+    echo "<script> location.href = './login.php';</script>";
+}?>
 
 <?php include 'include_php/footer.php';?>
 
