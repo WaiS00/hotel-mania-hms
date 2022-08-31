@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 28, 2022 at 02:20 PM
+-- Generation Time: Aug 31, 2022 at 01:31 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -65,16 +65,17 @@ CREATE TABLE `bookingdb` (
   `customerId` int(11) NOT NULL,
   `paymentStatus` enum('paid','unpaid') NOT NULL,
   `bookingcartId` int(11) NOT NULL,
-  `roomImage` text NOT NULL
+  `roomImage` text NOT NULL,
+  `userId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `bookingdb`
 --
 
-INSERT INTO `bookingdb` (`bookingId`, `checkInDate`, `checkOutDate`, `roomType`, `bookingTotalPrice`, `customerId`, `paymentStatus`, `bookingcartId`, `roomImage`) VALUES
-(29, '2022-08-01', '2022-08-11', 'Deluxe', 2000, 1, 'paid', 86, 'resources/deluxe-room.png'),
-(30, '2022-08-01', '2022-08-02', 'Normal', 100, 1, 'paid', 87, 'resources/normal-room.png');
+INSERT INTO `bookingdb` (`bookingId`, `checkInDate`, `checkOutDate`, `roomType`, `bookingTotalPrice`, `customerId`, `paymentStatus`, `bookingcartId`, `roomImage`, `userId`) VALUES
+(37, '2022-08-01', '2022-08-27', 'Deluxe', 5200, 1, 'paid', 95, 'resources/deluxe-room.png', 2),
+(38, '2022-08-01', '2022-08-06', 'Normal', 500, 3, 'paid', 96, 'resources/normal-room.png', 9);
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,7 @@ INSERT INTO `bookingdb` (`bookingId`, `checkInDate`, `checkOutDate`, `roomType`,
 
 CREATE TABLE `customerdb` (
   `customerId` int(11) NOT NULL,
-  `icNumber` int(11) NOT NULL,
+  `icNumber` int(144) NOT NULL,
   `userId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -93,7 +94,9 @@ CREATE TABLE `customerdb` (
 --
 
 INSERT INTO `customerdb` (`customerId`, `icNumber`, `userId`) VALUES
-(1, 108081312, 2);
+(1, 108081312, 2),
+(2, 108089128, 8),
+(3, 91122, 9);
 
 -- --------------------------------------------------------
 
@@ -132,7 +135,6 @@ CREATE TABLE `userdb` (
   `userid` int(11) NOT NULL,
   `fullName` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `telno` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `country` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `address` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `email` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `login` varchar(20) NOT NULL,
@@ -144,8 +146,10 @@ CREATE TABLE `userdb` (
 -- Dumping data for table `userdb`
 --
 
-INSERT INTO `userdb` (`userid`, `fullName`, `telno`, `country`, `address`, `email`, `login`, `pass`, `userType`) VALUES
-(2, 'Chin Wai Siong', '0122978732', NULL, 'No 15, Jalan Desa Bukit Tiara 3, Desa Bukit Tiara, Cheras 56000 Kuala Lumpur', 'chinwaisiong@hotmail.com', 'kok123', '$2y$10$LfzL.gH2orFtXFX6zx/IRuAjmov/zOnro5fE6GEg7LVqfEUzZC4vm', 'customer');
+INSERT INTO `userdb` (`userid`, `fullName`, `telno`, `address`, `email`, `login`, `pass`, `userType`) VALUES
+(2, 'Chin Wai Siong', '0122978732', 'No 15, Jalan Desa Bukit Tiara 3, Desa Bukit Tiara, Cheras 56000 Kuala Lumpur', 'chinwaisiong@hotmail.com', 'kok123', '$2y$10$LfzL.gH2orFtXFX6zx/IRuAjmov/zOnro5fE6GEg7LVqfEUzZC4vm', 'customer'),
+(8, 'Chin Wai Siong', '0122978732', 'No 15', 'waisiong144@gmail.com', 'admin', '$2y$10$1nXeWHar7ofganP.uraGtud46kLgFq3USvtHu7dVFy0zwjkSfEsoC', 'worker'),
+(9, 'Lol', '021893198', 'sadas', 'legend@gmail.com', 'lol123', '$2y$10$ix0CRgVMxezORM5g76lu6uYOMNCG8xt8adpLJFmwBsvqq7t.e8eh6', 'customer');
 
 -- --------------------------------------------------------
 
@@ -226,19 +230,19 @@ ALTER TABLE `attendancedb`
 -- AUTO_INCREMENT for table `bookingcartdb`
 --
 ALTER TABLE `bookingcartdb`
-  MODIFY `bookingcartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `bookingcartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT for table `bookingdb`
 --
 ALTER TABLE `bookingdb`
-  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `customerdb`
 --
 ALTER TABLE `customerdb`
-  MODIFY `customerId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `customerId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `roomdb`
@@ -250,7 +254,7 @@ ALTER TABLE `roomdb`
 -- AUTO_INCREMENT for table `userdb`
 --
 ALTER TABLE `userdb`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `workerdb`
