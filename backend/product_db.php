@@ -75,6 +75,15 @@ class product_db extends DBController{
         return $productResult;
     }
 
+    function getWorkerInformation()
+    {
+        $query = "SELECT * FROM workerdb";
+        
+        $productResult = $this->getDBResult($query);
+        return $productResult;
+    }
+
+    
 }
 
 ?>
