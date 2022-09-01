@@ -62,8 +62,14 @@
       } else if($_SESSION['userType'] != 'manager'){
         ?>
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="create_account.php">Create Account</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Account Management
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="dropdown-item" href="create_account.php">Create Account</a></li>
+                <li><a class="dropdown-item" href="worker_manager_list.php">View Worker/ Manager Accounts</a></li>
+              </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="add_room.php">Add Rooms</a>
