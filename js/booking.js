@@ -6,6 +6,20 @@ $(function() {
 });
 
 $(function() {
+    $ ( '#ddlselect1' ).change(function()  {
+        var displaycourse= $("#ddlselect1 option:selected").text();
+        document.getElementById("txtresults").innerHTML = displaycourse;
+    } ) 
+});
+
+$(function() {
+    $ ( '#ddlselect2' ).change(function()  {
+        var displaycourse= $("#ddlselect2 option:selected").text();
+        document.getElementById("txtresults").innerHTML = displaycourse;
+    } ) 
+});
+
+$(function() {
     $ ( '#datepicker' ) . datepicker ( {
         format: 'yyyy-mm-dd'
     } ) ;
