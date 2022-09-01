@@ -34,8 +34,14 @@
 			
 			$userID = $result2['userid'];
 
-			$query2 = "INSERT INTO $tbl_name1 (workerId, jobStatus, workPosition, userid) 
-			VALUES(NULL, '$jobStatus', '$workPosition', '$userID')";
+			$query4 = "SELECT fullName FROM userdb WHERE email=$email";
+			$result3 = $pdo->query($query4);
+			$result3 = $result3->fetch(PDO::FETCH_ASSOC);
+			
+			$fullName1 = $result3['fullName'];
+
+			$query2 = "INSERT INTO $tbl_name1 (workerId, fullName, jobStatus, userType, workPosition, userid) 
+			VALUES(NULL, '$fullName1', '$jobStatus', '$userType', '$workPosition', '$userID')";
 			$result = $pdo->query($query2);
 
 			if (! $result){
@@ -65,7 +71,7 @@
 	  }
 	  else {
       echo "<script type='text/javascript'>alert('invalid data for $data_type');</script>";
-		  return "location:./register.php";
+		  return "location:../register.php";
 	  }
   }
 ?>
