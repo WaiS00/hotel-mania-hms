@@ -20,44 +20,7 @@
   <div class="collapse navbar-collapse" id="navmenu">
   
   <?php 
-      if($_SESSION['userType'] == "customer"){
-  ?>
-    <ul class="navbar-nav ms-auto">
-      <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="index.php">Home</a>
-      </li>
-      <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                About Us
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="about_us.php">Location</a></li>
-                <li><a class="dropdown-item" href="about_company.php">Our Company</a></li>
-              </ul>
-            </li>
-      <li class="nav-item">
-        <a class="nav-link" href="facilities.php">Facilities</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Rooms
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-          <li><a class="dropdown-item" href="room-normal.php">Normal Room</a></li>
-          <li><a class="dropdown-item" href="room-deluxe.php">Deluxe Room</a></li>
-          <li><a class="dropdown-item" href="room-executive.php">Executive Room</a></li>
-          <li><a class="dropdown-item" href="room-list.php">View All Room</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="booking.php">Book Now</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="booking_history.php">Room Booked</a>
-      </li>
-    </ul>
-    <?php 
-      } else if($_SESSION['userType'] == "manager"){
+    if($_SESSION['userType'] == "manager"){
         ?>
           <ul class="navbar-nav ms-auto">
             <li class="nav-item dropdown">
@@ -90,7 +53,7 @@
             </li>
           </ul>
         <?php
-      }else{
+      }else if($_SESSION['userType'] == "workers"){
         // three users, if not customer and manager -> worker
         ?>
           <ul class="navbar-nav ms-auto">
@@ -112,6 +75,43 @@
             </li>
           </ul>
         <?php
+      }else{
+         ?>
+        <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="index.php">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  About Us
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                  <li><a class="dropdown-item" href="about_us.php">Location</a></li>
+                  <li><a class="dropdown-item" href="about_company.php">Our Company</a></li>
+                </ul>
+              </li>
+        <li class="nav-item">
+          <a class="nav-link" href="facilities.php">Facilities</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Rooms
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="room-normal.php">Normal Room</a></li>
+            <li><a class="dropdown-item" href="room-deluxe.php">Deluxe Room</a></li>
+            <li><a class="dropdown-item" href="room-executive.php">Executive Room</a></li>
+            <li><a class="dropdown-item" href="room-list.php">View All Room</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="booking.php">Book Now</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="booking_history.php">Room Booked</a>
+        </li>
+      </ul>
+      <?php
       }
     ?>
 
