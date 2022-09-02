@@ -20,7 +20,7 @@
   <div class="collapse navbar-collapse" id="navmenu">
   
   <?php 
-      if($_SESSION['userType'] != 'worker' && $_SESSION['userType'] != 'manager'){
+      if($_SESSION['userType'] == "customer"){
   ?>
     <ul class="navbar-nav ms-auto">
       <li class="nav-item">
@@ -57,7 +57,7 @@
       </li>
     </ul>
     <?php 
-      } else if($_SESSION['userType'] != 'customer' && $_SESSION['userType'] != 'worker'){
+      } else if($_SESSION['userType'] == "manager"){
         ?>
           <ul class="navbar-nav ms-auto">
             <li class="nav-item dropdown">
