@@ -63,6 +63,7 @@
     <section id="new-release">
     <div class="container new">
         <i href="facilities.php" class="bi bi-newspaper new-release-cam"> New Facilities !</i>
+    <i href="facilities.php" class="bi bi-newspaper new-release-cam"><?php echo $_SESSION['userType']?></i>
     </div>
         <div class="card mb-3 shadow-lg p-3 mb-5 bg-white rounded">
         <div class="row g-0 row-center">

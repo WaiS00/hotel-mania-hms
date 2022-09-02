@@ -20,9 +20,7 @@
   <div class="collapse navbar-collapse" id="navmenu">
   
   <?php 
-      if($_SESSION['userType'] != 'worker'){
-        // is user not admin, then it's customer 
-        // display cart for user to add in products
+      if($_SESSION['userType'] != 'worker' && $_SESSION['userType'] != 'manager'){
   ?>
     <ul class="navbar-nav ms-auto">
       <li class="nav-item">
@@ -59,7 +57,7 @@
       </li>
     </ul>
     <?php 
-      } else if($_SESSION['userType'] != 'manager'){
+      } else if($_SESSION['userType'] != 'customer' && $_SESSION['userType'] != 'worker'){
         ?>
           <ul class="navbar-nav ms-auto">
             <li class="nav-item dropdown">

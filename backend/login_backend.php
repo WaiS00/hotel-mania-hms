@@ -38,10 +38,8 @@ if(isset($_POST['username']) && isset($_POST['pwd'])){
       $_SESSION['fullName'] = $fn;
       $_SESSION['userType'] = $ty;
 
-      if($_SESSION['userType'] == 'customer' && isset($_SESSION['userId'])){
+      if(isset($_SESSION['userType']) && isset($_SESSION['userId'])){
         echo "<script type='text/javascript'>alert('Login Successfully');</script>";
-        echo "<script type='text/javascript'>window.location.href = './index.php';</script>";
-      }else if($_SESSION['userType'] == 'worker'){
         echo "<script type='text/javascript'>window.location.href = './index.php';</script>";
       }
 
