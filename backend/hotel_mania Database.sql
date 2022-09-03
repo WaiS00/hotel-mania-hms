@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 31, 2022 at 01:31 PM
+-- Generation Time: Sep 03, 2022 at 05:39 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -66,6 +66,7 @@ CREATE TABLE `bookingdb` (
   `paymentStatus` enum('paid','unpaid') NOT NULL,
   `bookingcartId` int(11) NOT NULL,
   `roomImage` text NOT NULL,
+  `dayDiff` varchar(144) NOT NULL,
   `userId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -73,9 +74,8 @@ CREATE TABLE `bookingdb` (
 -- Dumping data for table `bookingdb`
 --
 
-INSERT INTO `bookingdb` (`bookingId`, `checkInDate`, `checkOutDate`, `roomType`, `bookingTotalPrice`, `customerId`, `paymentStatus`, `bookingcartId`, `roomImage`, `userId`) VALUES
-(37, '2022-08-01', '2022-08-27', 'Deluxe', 5200, 1, 'paid', 95, 'resources/deluxe-room.png', 2),
-(38, '2022-08-01', '2022-08-06', 'Normal', 500, 3, 'paid', 96, 'resources/normal-room.png', 9);
+INSERT INTO `bookingdb` (`bookingId`, `checkInDate`, `checkOutDate`, `roomType`, `bookingTotalPrice`, `customerId`, `paymentStatus`, `bookingcartId`, `roomImage`, `dayDiff`, `userId`) VALUES
+(41, '2022-09-12', '2022-09-14', 'Executive', 600, 1, 'paid', 100, 'resources/executive-room.png', '2', 2);
 
 -- --------------------------------------------------------
 
@@ -95,8 +95,27 @@ CREATE TABLE `customerdb` (
 
 INSERT INTO `customerdb` (`customerId`, `icNumber`, `userId`) VALUES
 (1, 108081312, 2),
-(2, 108089128, 8),
 (3, 91122, 9);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ratingdb`
+--
+
+CREATE TABLE `ratingdb` (
+  `ratingId` int(144) NOT NULL,
+  `rate` int(144) NOT NULL,
+  `review` text NOT NULL,
+  `email` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `ratingdb`
+--
+
+INSERT INTO `ratingdb` (`ratingId`, `rate`, `review`, `email`) VALUES
+(2, 3, 'asdaasdasdasd', 'chinwaisiong@hotmail.com');
 
 -- --------------------------------------------------------
 
@@ -139,7 +158,7 @@ CREATE TABLE `userdb` (
   `email` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `login` varchar(20) NOT NULL,
   `pass` varchar(255) NOT NULL,
-  `userType` enum('worker','customer') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  `userType` enum('worker','customer','manager') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='user database';
 
 --
@@ -148,8 +167,9 @@ CREATE TABLE `userdb` (
 
 INSERT INTO `userdb` (`userid`, `fullName`, `telno`, `address`, `email`, `login`, `pass`, `userType`) VALUES
 (2, 'Chin Wai Siong', '0122978732', 'No 15, Jalan Desa Bukit Tiara 3, Desa Bukit Tiara, Cheras 56000 Kuala Lumpur', 'chinwaisiong@hotmail.com', 'kok123', '$2y$10$LfzL.gH2orFtXFX6zx/IRuAjmov/zOnro5fE6GEg7LVqfEUzZC4vm', 'customer'),
-(8, 'Chin Wai Siong', '0122978732', 'No 15', 'waisiong144@gmail.com', 'admin', '$2y$10$1nXeWHar7ofganP.uraGtud46kLgFq3USvtHu7dVFy0zwjkSfEsoC', 'worker'),
-(9, 'Lol', '021893198', 'sadas', 'legend@gmail.com', 'lol123', '$2y$10$ix0CRgVMxezORM5g76lu6uYOMNCG8xt8adpLJFmwBsvqq7t.e8eh6', 'customer');
+(9, 'Lol', '021893198', 'sadas', 'legend@gmail.com', 'lol123', '$2y$10$ix0CRgVMxezORM5g76lu6uYOMNCG8xt8adpLJFmwBsvqq7t.e8eh6', 'customer'),
+(17, 'worker', '0129876543', 'smtg', 'smtg@gmail.com', 'worker', '$2y$10$fqF08N6J2BUCi8fqoQrqk.siDmkr68pG7U4qaKDIY2ggllufVgG5.', 'worker'),
+(18, 'manager', '0123456890', 'smtg smtg', 'smtg1@gmail.com', 'manager', '$2y$10$9rv3Ik9pZKdJWC.x5xFnT.dF82jbSFhcGa229Lgsets0OhZ.5A3YS', 'manager');
 
 -- --------------------------------------------------------
 
@@ -159,10 +179,20 @@ INSERT INTO `userdb` (`userid`, `fullName`, `telno`, `address`, `email`, `login`
 
 CREATE TABLE `workerdb` (
   `workerId` int(11) NOT NULL,
-  `jobStatus` enum('Full Time','Part Time','Intern') NOT NULL,
-  `workPosition` enum('Cleaning Workers','Managers','Front Desk Workers') NOT NULL,
+  `fullName` varchar(144) NOT NULL,
+  `jobStatus` enum('Full Time','Part Time','Intern') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `userType` enum('worker','customer','manager') NOT NULL,
+  `workPosition` enum('Cleaning Workers','Front Desk Workers') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `userId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `workerdb`
+--
+
+INSERT INTO `workerdb` (`workerId`, `fullName`, `jobStatus`, `userType`, `workPosition`, `userId`) VALUES
+(2, 'worker', 'Intern', 'worker', 'Cleaning Workers', 17),
+(3, 'manager', 'Full Time', 'manager', 'Front Desk Workers', 18);
 
 --
 -- Indexes for dumped tables
@@ -194,6 +224,12 @@ ALTER TABLE `bookingdb`
 ALTER TABLE `customerdb`
   ADD PRIMARY KEY (`customerId`),
   ADD KEY `test1` (`userId`);
+
+--
+-- Indexes for table `ratingdb`
+--
+ALTER TABLE `ratingdb`
+  ADD PRIMARY KEY (`ratingId`);
 
 --
 -- Indexes for table `roomdb`
@@ -230,19 +266,25 @@ ALTER TABLE `attendancedb`
 -- AUTO_INCREMENT for table `bookingcartdb`
 --
 ALTER TABLE `bookingcartdb`
-  MODIFY `bookingcartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `bookingcartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT for table `bookingdb`
 --
 ALTER TABLE `bookingdb`
-  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `customerdb`
 --
 ALTER TABLE `customerdb`
   MODIFY `customerId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `ratingdb`
+--
+ALTER TABLE `ratingdb`
+  MODIFY `ratingId` int(144) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `roomdb`
@@ -254,13 +296,13 @@ ALTER TABLE `roomdb`
 -- AUTO_INCREMENT for table `userdb`
 --
 ALTER TABLE `userdb`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `workerdb`
 --
 ALTER TABLE `workerdb`
-  MODIFY `workerId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `workerId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
