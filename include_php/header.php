@@ -33,7 +33,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="add_room.php">Add Rooms</a>
+              <a class="nav-link" href="rating_list.php">View Ratings</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="attendance.php">Attendance</a>
@@ -53,8 +53,7 @@
             </li>
           </ul>
         <?php
-      }else if($_SESSION['userType'] == "workers"){
-        // three users, if not customer and manager -> worker
+      }else if($_SESSION['userType'] == "worker"){
         ?>
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
@@ -76,6 +75,7 @@
           </ul>
         <?php
       }else{
+        // else -> customer and guest
          ?>
         <ul class="navbar-nav ms-auto">
         <li class="nav-item">
@@ -124,6 +124,17 @@
                 <li class="nav-item">
                     <a href="backend/session_logout.php" class="nav-link"><i class="bi bi-box-arrow-right logout"></i> Logout</a>
                 </li>
+                <?php 
+                if($_SESSION['userType'] == "customer"){
+                  // only customer can rate reviews
+                  // after login in
+                 ?>
+                    <li class="nav-item">
+                      <a class="nav-link" href="rating_main.php"><i class="bi bi-star"></i> Rate Now</a>
+                    </li>
+                  <?php
+                }?>
+
         <?php 
             } else {
               // if the user havent login, display link for them to sign up
