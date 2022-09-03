@@ -83,6 +83,13 @@ class product_db extends DBController{
         return $productResult;
     }
 
+    function getRating()
+    {
+        $query = "SELECT * FROM ratingdb";
+        
+        $productResult = $this->getDBResult($query);
+        return $productResult;
+    }
     
 }
 
