@@ -32,8 +32,8 @@
   </div>
     <table style="margin-left: auto; margin-right: auto; border: 1px solid;border-collapse: collapse; width: 50%;">
         <tr>
-            <td style="border: 1px solid;text-align: center;">Clock-in Date Time </td>
-            <td style="border: 1px solid;text-align: center;">Clock-out Date Time </td>
+            <td style="border: 1px solid;text-align: center;"><b> Clock-in Date Time <b> </td>
+            <td style="border: 1px solid;text-align: center;"><b> Clock-out Date Time <b> </td>
         </tr>              
     </table>
 
