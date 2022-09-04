@@ -19,6 +19,23 @@
 
 <body>
 
+<h4>Attendance (clock-in/clock-out)</h4>
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-2">
+        <input id="Button" type="clockin" value="Clock-in" name="clockin" class="btn btn-primary submitbtn">
+    </div>
+    <div class="col col-lg-2">
+    </div>
+    <div class="col col-lg-2">
+        <input id="Button" type="clockout" value="Clock-out" name="clockout" class="btn btn-primary submitbtn">
+    </div>
+  </div>
+    <table style="margin-left: auto; margin-right: auto; border: 1px solid;border-collapse: collapse; width: 50%;">
+        <tr>
+            <td style="border: 1px solid;text-align: center;">Clock-in Date Time </td>
+            <td style="border: 1px solid;text-align: center;">Clock-out Date Time </td>
+        </tr>              
+    </table>
 
 <?php include 'include_php/footer.php';?>
 
