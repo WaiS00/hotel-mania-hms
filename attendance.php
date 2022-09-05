@@ -41,7 +41,7 @@
         </tr>
         <tr>
         <?php 
-            $query = "SELECT * FROM attendancedb WHERE userId = '{$_SESSION['userId']}'";
+            $query = "SELECT * FROM attendancedb";
             $product_array = $product_db->getAttendance($query);
             if (!empty($product_array)) {
                 foreach ($product_array as $key => $value) {
