@@ -93,7 +93,7 @@ class product_db extends DBController{
     
     function getAttendance()
     {
-        $query = "SELECT * FROM attendancedb";
+        $query = "SELECT * FROM attendancedb WHERE fullName = '{$_SESSION['fullName']}'";
         
         $productResult = $this->getDBResult($query);
         return $productResult;
