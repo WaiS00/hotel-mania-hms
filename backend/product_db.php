@@ -91,6 +91,13 @@ class product_db extends DBController{
         return $productResult;
     }
     
+    function getAttendance()
+    {
+        $query = "SELECT * FROM attendancedb WHERE fullName = '{$_SESSION['fullName']}'";
+        
+        $productResult = $this->getDBResult($query);
+        return $productResult;
+    }
 }
 
 ?>

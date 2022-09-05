@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <?php require_once "backend/attendance_backend.php"; ?>
@@ -20,21 +21,36 @@
 <body>
 
 <h4>Attendance (clock-in/clock-out)</h4>
+<form method="post">
   <div class="row justify-content-md-center">
     <div class="col col-lg-2">
-        <input id="Button" type="clockin" value="Clock-in" name="clockin" class="btn btn-primary submitbtn">
+        <input type="submit" id="Button" name="submit" value="Clock-in" class="btn btn-primary submitbtn" readonly>
     </div>
     <div class="col col-lg-2">
     </div>
     <div class="col col-lg-2">
-        <input id="Button" type="clockout" value="Clock-out" name="clockout" class="btn btn-primary submitbtn">
+        <input type="submit" id="Button" name="submit" value="Clock-out" class="btn btn-primary submitbtn" readonly>
     </div>
   </div>
+</form>
     <table style="margin-left: auto; margin-right: auto; border: 1px solid;border-collapse: collapse; width: 50%;">
         <tr>
-            <td style="border: 1px solid;text-align: center;">Clock-in Date Time </td>
-            <td style="border: 1px solid;text-align: center;">Clock-out Date Time </td>
-        </tr>              
+            <td style="border: 1px solid;text-align: center;"><b> Attendance Date Time <b> </td>
+            <td style="border: 1px solid;text-align: center;"><b> Attendance Type <b> </td>
+            <td style="border: 1px solid;text-align: center;"><b> Full Name<b> </td>
+        </tr>
+        <tr>
+        <?php 
+            $query = "SELECT * FROM attendancedb";
+            $product_array = $product_db->getAttendance($query);
+            if (!empty($product_array)) {
+                foreach ($product_array as $key => $value) {
+        ?>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["attendanceDateTime"]; ?> </td>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["attendanceType"]; ?> </td>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["fullName"]; ?> </td>
+        </tr>
+        <?php }} ?>
     </table>
 
 <?php include 'include_php/footer.php';?>
