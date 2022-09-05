@@ -39,6 +39,18 @@
             <td style="border: 1px solid;text-align: center;"><b> Attendance Type <b> </td>
             <td style="border: 1px solid;text-align: center;"><b> Full Name<b> </td>
         </tr>
+        <tr>
+        <?php 
+            $query = "SELECT * FROM attendancedb";
+            $product_array = $product_db->getAttendance($query);
+            if (!empty($product_array)) {
+                foreach ($product_array as $key => $value) {
+        ?>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["attendanceDateTime"]; ?> </td>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["attendanceType"]; ?> </td>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["fullName"]; ?> </td>
+        </tr>
+        <?php }} ?>
     </table>
 
 <?php include 'include_php/footer.php';?>
