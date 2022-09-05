@@ -14,8 +14,8 @@ require_once "config.php";
             
             $fullName = $result2['fullName'];
 
-            $query1 = "INSERT INTO $tbl_name (attendanceId, clockinDateTime, clockoutDateTime, fullName) 
-            VALUES(NULL, '$date', NULL, '$fullName')";
+            $query1 = "INSERT INTO $tbl_name (attendanceId, attendanceDateTime, attendanceType, fullName) 
+            VALUES(NULL, '$date', 'Clock-in', '$fullName')";
             
             $result = $pdo->query($query1);
             echo "<script type='text/javascript'>alert('Clock-in Successfully.');</script>";
