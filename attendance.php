@@ -35,8 +35,8 @@
 </form>
     <table style="margin-left: auto; margin-right: auto; border: 1px solid;border-collapse: collapse; width: 50%;">
         <tr>
-            <td style="border: 1px solid;text-align: center;"><b> Clock-in Date Time <b> </td>
-            <td style="border: 1px solid;text-align: center;"><b> Clock-out Date Time <b> </td>
+            <td style="border: 1px solid;text-align: center;"><b> Attendance Date Time <b> </td>
+            <td style="border: 1px solid;text-align: center;"><b> Attendance Type <b> </td>
             <td style="border: 1px solid;text-align: center;"><b> Full Name<b> </td>
         </tr>
     </table>
