@@ -24,12 +24,31 @@
 <form method="post">
   <div class="row justify-content-md-center">
     <div class="col col-lg-2">
-        <input type="submit" id="Button" name="submit" value="Clock-in" class="btn btn-primary submitbtn" readonly>
+    <?php 
+        if(isset($_SESSION['attendanceDateTime'])){
+    ?>
+        <input type="submit" id="Button" name="submit" value="Clock-in" class="btn btn-primary submitbtn" readonly disabled >
+    <?php 
+        }else{
+            ?>
+                <input type="submit" id="Button" name="submit" value="Clock-in" class="btn btn-primary submitbtn" readonly>
+            <?php 
+        }
+    ?>
     </div>
     <div class="col col-lg-2">
     </div>
     <div class="col col-lg-2">
-        <input type="submit" id="Button" name="submit" value="Clock-out" class="btn btn-primary submitbtn" readonly>
+    <?php 
+        if(isset($_SESSION['attendanceDateTime'])){
+    ?>
+        <input type="submit" id="Button" name="submit" value="Clock-out" class="btn btn-primary submitbtn" readonly disabled >
+    <?php 
+        }else{
+            ?>
+                <input type="submit" id="Button" name="submit" value="Clock-out" class="btn btn-primary submitbtn" readonly>
+            <?php 
+        }   ?>
     </div>
   </div>
 </form>

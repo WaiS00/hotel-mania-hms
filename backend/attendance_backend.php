@@ -18,12 +18,24 @@ require_once "config.php";
             VALUES(NULL, '$date', 'Clock-in', '$fullName')";
             
             $result = $pdo->query($query1);
+
+            $query   = "SELECT * FROM attendancedb";
+            $result  = $pdo->query($query);
+            $row = $result->fetch();
+            $dt  = $row['attendanceDateTime'];
+            session_start();
+            $_SESSION['attendanceDateTime'] = $dt;
+            
+            if(isset($_SESSION['attendanceDateTime'])){
             echo "<script type='text/javascript'>alert('Clock-in Successfully.');</script>";
             echo "<script type='text/javascript'>window.location.href = './attendance.php';</script>";
+            }
         }
         echo "<script type='text/javascript'>alert('Please login or register your account.');</script>";
         echo "<script> location.href = './login.php';</script>";
     }
+
+
 
     
     if($_POST['submit'] == 'Clock-out'){
