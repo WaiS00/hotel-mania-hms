@@ -19,7 +19,7 @@
 
 <?php include 'include_php/header.php';?>
 
-<h4>Timeslot</h4>
+<h4>Worker's Timeslot</h4>
 <table style="margin-left: auto; margin-right: auto; border: 1px solid;border-collapse: collapse; width: 50%;">
         <tr>
             <td style="border: 1px solid;text-align: center;"><b> Worker's Name<b> </td>
