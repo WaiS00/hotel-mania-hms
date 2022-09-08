@@ -1,4 +1,5 @@
 <?php require_once 'backend/timeslot_backend.php';?>
+<?php require_once "backend/config.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +27,19 @@
             <td style="border: 1px solid;text-align: center;"><b> Working Position<b> </td>
             <td style="border: 1px solid;text-align: center;"><b> Job Status <b> </td>
         </tr>
+        <?php
+        $query = "SELECT * FROM workerdb";
+        $product_array = $product_db->getWorkerInformation($query);
+        if (!empty($product_array)) {
+            foreach ($product_array as $key => $value) {
+                ?>
+        <tr>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["fullName"]; ?></td>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["userType"]; ?></td>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["workPosition"]; ?></td>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["jobStatus"]; ?></td>
+        </tr>
+        <?php }}?>
     </table>
 
 
