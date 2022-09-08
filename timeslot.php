@@ -18,6 +18,16 @@
 
 <?php include 'include_php/header.php';?>
 
+<h4>Timeslot</h4>
+<table style="margin-left: auto; margin-right: auto; border: 1px solid;border-collapse: collapse; width: 50%;">
+        <tr>
+            <td style="border: 1px solid;text-align: center;"><b> Worker's Name<b> </td>
+            <td style="border: 1px solid;text-align: center;"><b> User Type (Worker/ Manager) <b> </td>
+            <td style="border: 1px solid;text-align: center;"><b> Working Position<b> </td>
+            <td style="border: 1px solid;text-align: center;"><b> Job Status <b> </td>
+        </tr>
+    </table>
+
 
 <body>
 
