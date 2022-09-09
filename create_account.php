@@ -22,7 +22,7 @@
 	<?php include 'include_php/header.php';?>
 	<form method="post">
 		<table class="center">
-			<legend>Register</legend>
+			<legend>Register Account (Worker, Manager)</legend>
 			<tr>
 				<td><label>Username</label></td>
 				<td><input type="text" name="username" class="form-control" required />
