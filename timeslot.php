@@ -26,6 +26,7 @@
             <td style="border: 1px solid;text-align: center;"><b> User Type (Worker/ Manager) <b> </td>
             <td style="border: 1px solid;text-align: center;"><b> Working Position<b> </td>
             <td style="border: 1px solid;text-align: center;"><b> Job Status <b> </td>
+            <td style="border: 1px solid;text-align: center;"><b> Edit Work Position <b> </td>
         </tr>
         <?php
         $query = "SELECT * FROM workerdb";
@@ -38,11 +39,10 @@
             <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["userType"]; ?></td>
             <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["workPosition"]; ?></td>
             <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["jobStatus"]; ?></td>
-            <td><a href="editTimeslot.php?workerId=<?php echo $product_array[$key]["workerId"];?>">Edit</a></td>
+            <td style="border: 1px solid;text-align: center;"><a href="editTimeslot.php?workerId=<?php echo $product_array[$key]["workerId"];?>">Edit</a></td>
         </tr>
         <?php }}?>
     </table>
-    <input id="Button" type="submit" value="Submit" name="submit" class="btn btn-primary submitbtn">
 
 
 <body>

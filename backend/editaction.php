@@ -11,8 +11,8 @@ if(isset($_POST['update'])){
     $query = "UPDATE workerdb SET fullName='$fullName',jobStatus='$jobStatus',userType='$userType', workPosition='$workPosition' WHERE workerId=$workerId";
     $result = $pdo->query($query);
 
-    echo "<script type='text/javascript'>alert('udpate');</script>";
-    header("Location: ./timeslot.php");
+    echo "<script type='text/javascript'>alert('Working Position updated successfully.');</script>";
+    echo "<script> location.href = './timeslot.php';</script>";
 	
 }
 ?>

@@ -41,15 +41,9 @@
             <td>Working Position</td>
             <td>
                 <select id="ddlselect" name="ddlselect" required>
-                    <option value="" selected disabled><?php echo $workPosition; ?></option>
-                    <?php
-                        $query = "SELECT * FROM workerdb";
-                        $product_array = $product_db->getWorkerInformation($query);
-                        if (!empty($product_array)) {
-                            foreach ($product_array as $key => $value) {
-                    ?>
-                    <option value="<?php echo $product_array[$key]["workPosition"]; ?>"><?php echo $product_array[$key]["workPosition"]; ?></option>
-                    <?php }}?>
+                    <option value="" selected disabled>Select Working Position</option>
+                    <option value="Front-desk Workers" >Front-desk Workers</option>
+                    <option value="Cleaning Workers" >Cleaning Workers</option>
                 </select>
             </td>
 			</tr>
