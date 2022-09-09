@@ -98,6 +98,13 @@ class product_db extends DBController{
         $productResult = $this->getDBResult($query);
         return $productResult;
     }
+
+    public function getData($query)
+	{		
+        $productResult = $this->getDBResult($query);
+        return $productResult;
+	}   
+
 }
 
 ?>
