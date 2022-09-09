@@ -20,6 +20,13 @@ $(function() {
 });
 
 $(function() {
+    $ ( '#workPosition' ).change(function()  {
+        var displaycourse= $("#workPosition option:selected").text();
+        document.getElementById("txtresults").innerHTML = displaycourse;
+    } ) 
+});
+
+$(function() {
     $ ( '#datepicker' ) . datepicker ( {
         format: 'yyyy-mm-dd'
     } ) ;
