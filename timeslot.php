@@ -38,9 +38,11 @@
             <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["userType"]; ?></td>
             <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["workPosition"]; ?></td>
             <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["jobStatus"]; ?></td>
+            <td><a href="editTimeslot.php?workerId=<?php echo $product_array[$key]["workerId"];?>">Edit</a></td>
         </tr>
         <?php }}?>
     </table>
+    <input id="Button" type="submit" value="Submit" name="submit" class="btn btn-primary submitbtn">
 
 
 <body>
