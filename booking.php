@@ -91,7 +91,7 @@
             if(isset($_SESSION['fullName'])){
 ?>
 				<td><input id="Button" type="submit" value="Submit" name="submit" class="btn btn-primary submitbtn"></td>
-                <?php }else{  
+                <?php }else{
                     echo "<script type='text/javascript'>alert('Please login to perform this action.');</script>";
                     echo "<script> location.href = './login.php';</script>";
                 }?>

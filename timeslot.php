@@ -1,4 +1,5 @@
 <?php require_once 'backend/timeslot_backend.php';?>
+<?php require_once "backend/config.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +18,32 @@
 </head>
 
 <?php include 'include_php/header.php';?>
+
+<h4>Worker's Timeslot</h4>
+<table style="margin-left: auto; margin-right: auto; border: 1px solid;border-collapse: collapse; width: 50%;">
+        <tr>
+            <td style="border: 1px solid;text-align: center;"><b> Worker's Name<b> </td>
+            <td style="border: 1px solid;text-align: center;"><b> User Type (Worker/ Manager) <b> </td>
+            <td style="border: 1px solid;text-align: center;"><b> Working Position<b> </td>
+            <td style="border: 1px solid;text-align: center;"><b> Job Status <b> </td>
+            <td style="border: 1px solid;text-align: center;"><b> Edit Work Position <b> </td>
+        </tr>
+        <?php
+        $query = "SELECT * FROM workerdb";
+        $product_array = $product_db->getWorkerInformation($query);
+        if (!empty($product_array)) {
+            foreach ($product_array as $key => $value) {
+                ?>
+        <tr>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["fullName"]; ?></td>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["userType"]; ?></td>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["workPosition"]; ?></td>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["jobStatus"]; ?></td>
+            <td style="border: 1px solid;text-align: center;"><a href="editTimeslot.php?workerId=<?php echo $product_array[$key]["workerId"];?>">Edit</a></td>
+        </tr>
+        <?php }}?>
+    </table>
+
 
 <body>
 
