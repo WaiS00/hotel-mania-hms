@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2022 at 05:39 PM
+-- Generation Time: Sep 15, 2022 at 04:32 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -30,10 +30,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `attendancedb` (
   `attendanceId` int(11) NOT NULL,
-  `clockinDateTime` varchar(144) NOT NULL,
-  `clockoutDateTime` varchar(144) NOT NULL,
-  `workerId` int(11) NOT NULL
+  `attendanceDateTime` varchar(144) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `attendanceType` enum('Clock-in','Clock-out') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `fullName` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `attendancedb`
+--
+
+INSERT INTO `attendancedb` (`attendanceId`, `attendanceDateTime`, `attendanceType`, `fullName`) VALUES
+(4, '2022-09-05 16:05:06', 'Clock-in', 'manager'),
+(5, '2022-09-05 16:09:47', 'Clock-out', 'manager'),
+(6, '2022-09-05 16:15:47', 'Clock-out', 'worker');
 
 -- --------------------------------------------------------
 
@@ -115,7 +124,8 @@ CREATE TABLE `ratingdb` (
 --
 
 INSERT INTO `ratingdb` (`ratingId`, `rate`, `review`, `email`) VALUES
-(2, 3, 'asdaasdasdasd', 'chinwaisiong@hotmail.com');
+(2, 3, 'asdaasdasdasd', 'chinwaisiong@hotmail.com'),
+(3, 5, 'adasdawsdjklas asdh aslj dhasjodasho asod hasjod ashjod ash jdashdjlas hoas kopas hdasiodas as  a as a', 'chinwaisiong@hotmail.com');
 
 -- --------------------------------------------------------
 
@@ -202,8 +212,7 @@ INSERT INTO `workerdb` (`workerId`, `fullName`, `jobStatus`, `userType`, `workPo
 -- Indexes for table `attendancedb`
 --
 ALTER TABLE `attendancedb`
-  ADD PRIMARY KEY (`attendanceId`),
-  ADD KEY `test3` (`workerId`);
+  ADD PRIMARY KEY (`attendanceId`);
 
 --
 -- Indexes for table `bookingcartdb`
@@ -260,7 +269,7 @@ ALTER TABLE `workerdb`
 -- AUTO_INCREMENT for table `attendancedb`
 --
 ALTER TABLE `attendancedb`
-  MODIFY `attendanceId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `attendanceId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `bookingcartdb`
@@ -284,7 +293,7 @@ ALTER TABLE `customerdb`
 -- AUTO_INCREMENT for table `ratingdb`
 --
 ALTER TABLE `ratingdb`
-  MODIFY `ratingId` int(144) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ratingId` int(144) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `roomdb`
@@ -307,12 +316,6 @@ ALTER TABLE `workerdb`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `attendancedb`
---
-ALTER TABLE `attendancedb`
-  ADD CONSTRAINT `test3` FOREIGN KEY (`workerId`) REFERENCES `workerdb` (`workerId`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `bookingcartdb`
