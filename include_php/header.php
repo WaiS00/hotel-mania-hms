@@ -35,8 +35,16 @@
             <li class="nav-item">
               <a class="nav-link" href="rating_list.php">View Ratings</a>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Attendance Management
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="nav-link" href="attendance.php">Attendance</a></li>
+                <li><a class="nav-link" href="attendance-list.php">View Attendance List</a></li>
+              </ul>
+            </li>
             <li class="nav-item">
-              <a class="nav-link" href="attendance.php">Attendance</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="timeslot.php">Timeslot</a>
