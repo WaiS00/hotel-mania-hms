@@ -23,7 +23,7 @@
 
 <div class= "container form2">
 	<form method="post">
-		<table width="450">
+		<table class="table">
         <h1 class="titleName">Edit Timeslot</h1>
 			<tr> 
 				<td>Full Name</td>
