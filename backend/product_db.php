@@ -99,6 +99,14 @@ class product_db extends DBController{
         return $productResult;
     }
 
+    function getAllAttendance()
+    {
+        $query = "SELECT * FROM attendancedb";
+        
+        $productResult = $this->getDBResult($query);
+        return $productResult;
+    }
+
     public function getData($query)
 	{		
         $productResult = $this->getDBResult($query);
