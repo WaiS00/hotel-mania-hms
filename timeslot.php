@@ -1,5 +1,6 @@
 <?php require_once 'backend/timeslot_backend.php';?>
 <?php require_once "backend/config.php"; ?>
+<?php session_start();?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +27,10 @@
             <td style="border: 1px solid;text-align: center;"><b> User Type (Worker/ Manager) <b> </td>
             <td style="border: 1px solid;text-align: center;"><b> Working Position<b> </td>
             <td style="border: 1px solid;text-align: center;"><b> Job Status <b> </td>
+            <?php if($_SESSION['userType'] == "manager"){ ?>
             <td style="border: 1px solid;text-align: center;"><b> Edit Work Position <b> </td>
+            <?php }?>
+
         </tr>
         <?php
         $query = "SELECT * FROM workerdb";
@@ -39,8 +43,11 @@
             <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["userType"]; ?></td>
             <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["workPosition"]; ?></td>
             <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["jobStatus"]; ?></td>
+
+        <?php if($_SESSION['userType'] == "manager"){ ?>
             <td style="border: 1px solid;text-align: center;"><a href="editTimeslot.php?workerId=<?php echo $product_array[$key]["workerId"];?>">Edit</a></td>
         </tr>
+        <?php }?>
         <?php }}?>
     </table>
 
