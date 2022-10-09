@@ -20,7 +20,7 @@
 <body>
 
 <?php
-        $query = "SELECT * FROM product_list WHERE category='Executive'";
+        $query = "SELECT * FROM roomdb WHERE category='Executive'";
         $product_array = $product_db->getExecutive($query);
         if (!empty($product_array)) {
             foreach ($product_array as $key => $value) {
