@@ -3,10 +3,10 @@
   require_once 'SQL_login.php';
   require_once "config.php"; 
 
-  $query = "SELECT * FROM bookingcartdb b, roomdb c WHERE b.roomType= c.roomType";
+  $query = "SELECT * FROM bookingcartdb b, roomtypedb c WHERE b.roomType= c.roomType";
   $product_array = $product_db->getRoomRate($query);
 
-  $query4 = "SELECT r.roomImage FROM roomdb r, bookingcartdb b WHERE b.roomType = r.roomType";
+  $query4 = "SELECT r.roomImage FROM roomtypedb r, bookingcartdb b WHERE b.roomType = r.roomType";
   $result4 = $pdo->query($query4);
   $result4 = $result4->fetch(PDO::FETCH_ASSOC);
 

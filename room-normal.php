@@ -20,7 +20,7 @@
 <body>
 
 <?php
-        $query = "SELECT * FROM roomdb WHERE category='Normal'";
+        $query = "SELECT * FROM roomtypedb WHERE roomType='Normal'";
         $product_array = $product_db->getNormal($query);
         if (!empty($product_array)) {
             foreach ($product_array as $key => $value) {

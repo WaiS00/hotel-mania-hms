@@ -86,7 +86,7 @@
       <p><a>Number of Day Stay</a> <span class="spanclass dayDiff"><?php echo $product_array[$key]["dayDiff"]; ?></span></p>      <hr>
       <?php }} ?>
       <?php
-          $query = "SELECT * FROM bookingcartdb b, roomdb c WHERE b.roomType= c.roomType";
+          $query = "SELECT * FROM bookingcartdb b, roomtypedb c WHERE b.roomType= c.roomType";
           $product_array = $product_db->getRoomRate($query);
           if (!empty($product_array)) {
               foreach ($product_array as $key => $value) {

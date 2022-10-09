@@ -20,7 +20,7 @@
 <body>
 
 <?php
-        $query = "SELECT * FROM roomdb";
+        $query = "SELECT * FROM roomtypedb";
         $product_array = $product_db->getAllProduct($query);
         ?> 
 
