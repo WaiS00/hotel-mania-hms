@@ -5,7 +5,7 @@ class product_db extends DBController{
 
     function getAllProduct()
     {
-        $query = "SELECT * FROM roomdb";
+        $query = "SELECT * FROM roomtypedb";
         
         $productResult = $this->getDBResult($query);
         return $productResult;
@@ -13,7 +13,7 @@ class product_db extends DBController{
 
     function getNormal()
     {
-        $query = "SELECT * FROM roomdb WHERE roomType='Normal'";
+        $query = "SELECT * FROM roomtypedb WHERE roomType='Normal'";
         
         $productResult = $this->getDBResult($query);
         return $productResult;
@@ -21,7 +21,7 @@ class product_db extends DBController{
 
     function getDeluxe()
     {
-        $query = "SELECT * FROM roomdb WHERE roomType='Deluxe'";
+        $query = "SELECT * FROM roomtypedb WHERE roomType='Deluxe'";
         
         $productResult = $this->getDBResult($query);
         return $productResult;
@@ -29,7 +29,7 @@ class product_db extends DBController{
 
     function getExecutive()
     {
-        $query = "SELECT * FROM roomdb WHERE roomType='Executive'";
+        $query = "SELECT * FROM roomtypedb WHERE roomType='Executive'";
         
         $productResult = $this->getDBResult($query);
         return $productResult;
@@ -37,7 +37,7 @@ class product_db extends DBController{
 
     function getRoomType()
     {
-        $query = "SELECT roomType FROM roomdb";
+        $query = "SELECT roomType FROM roomtypedb";
         
         $productResult = $this->getDBResult($query);
         return $productResult;
@@ -53,7 +53,7 @@ class product_db extends DBController{
 
     function getRoomRate()
     {
-        $query   = "SELECT * FROM bookingcartdb b, roomdb c WHERE b.roomType= c.roomType";
+        $query   = "SELECT * FROM bookingcartdb b, roomtypedb c WHERE b.roomType= c.roomType";
         
         $productResult = $this->getDBResult($query);
         return $productResult;
