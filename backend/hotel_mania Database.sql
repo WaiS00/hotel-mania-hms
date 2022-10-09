@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 15, 2022 at 04:32 PM
+-- Generation Time: Oct 09, 2022 at 05:12 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -42,7 +42,8 @@ CREATE TABLE `attendancedb` (
 INSERT INTO `attendancedb` (`attendanceId`, `attendanceDateTime`, `attendanceType`, `fullName`) VALUES
 (4, '2022-09-05 16:05:06', 'Clock-in', 'manager'),
 (5, '2022-09-05 16:09:47', 'Clock-out', 'manager'),
-(6, '2022-09-05 16:15:47', 'Clock-out', 'worker');
+(6, '2022-09-05 16:15:47', 'Clock-out', 'worker'),
+(9, '2022-10-06 09:22:05', 'Clock-in', 'manager');
 
 -- --------------------------------------------------------
 
@@ -135,24 +136,34 @@ INSERT INTO `ratingdb` (`ratingId`, `rate`, `review`, `email`) VALUES
 
 CREATE TABLE `roomdb` (
   `roomId` int(11) NOT NULL,
-  `roomType` enum('Normal','Deluxe','Executive') NOT NULL,
-  `roomRate` double NOT NULL,
-  `roomDetails` varchar(255) NOT NULL,
+  `roomNumber` int(11) NOT NULL,
   `roomFloor` int(11) NOT NULL,
   `roomAvailability` enum('available','unavailable') NOT NULL,
-  `roomNumber` int(11) NOT NULL,
-  `roomImage` text NOT NULL,
   `customerId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `roomdb`
+-- Table structure for table `roomtypedb`
 --
 
-INSERT INTO `roomdb` (`roomId`, `roomType`, `roomRate`, `roomDetails`, `roomFloor`, `roomAvailability`, `roomNumber`, `roomImage`, `customerId`) VALUES
-(1, 'Normal', 100, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', 1, 'available', 1, 'resources/normal-room.png', 0),
-(2, 'Deluxe', 200, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', 2, 'available', 1, 'resources/deluxe-room.png', 0),
-(3, 'Executive', 300, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', 3, 'available', 1, 'resources/executive-room.png', 0);
+CREATE TABLE `roomtypedb` (
+  `roomTypeId` int(11) NOT NULL,
+  `roomType` enum('Normal','Executive','Deluxe') NOT NULL,
+  `roomRate` double NOT NULL,
+  `roomDetails` varchar(255) NOT NULL,
+  `roomImage` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `roomtypedb`
+--
+
+INSERT INTO `roomtypedb` (`roomTypeId`, `roomType`, `roomRate`, `roomDetails`, `roomImage`) VALUES
+(1, 'Normal', 100, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', 'resources/normal-room.png'),
+(2, 'Deluxe', 200, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', 'resources/deluxe-room.png'),
+(3, 'Executive', 300, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', 'resources/executive-room.png');
 
 -- --------------------------------------------------------
 
@@ -248,6 +259,12 @@ ALTER TABLE `roomdb`
   ADD KEY `test4` (`customerId`);
 
 --
+-- Indexes for table `roomtypedb`
+--
+ALTER TABLE `roomtypedb`
+  ADD PRIMARY KEY (`roomTypeId`);
+
+--
 -- Indexes for table `userdb`
 --
 ALTER TABLE `userdb`
@@ -269,13 +286,13 @@ ALTER TABLE `workerdb`
 -- AUTO_INCREMENT for table `attendancedb`
 --
 ALTER TABLE `attendancedb`
-  MODIFY `attendanceId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `attendanceId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `bookingcartdb`
 --
 ALTER TABLE `bookingcartdb`
-  MODIFY `bookingcartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `bookingcartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT for table `bookingdb`
@@ -300,6 +317,12 @@ ALTER TABLE `ratingdb`
 --
 ALTER TABLE `roomdb`
   MODIFY `roomId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `roomtypedb`
+--
+ALTER TABLE `roomtypedb`
+  MODIFY `roomTypeId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `userdb`
