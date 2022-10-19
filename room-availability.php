@@ -1,4 +1,6 @@
 <?php require_once 'backend/availability_backend.php';?>
+<?php require_once "backend/config.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +21,95 @@
 
 <body>
 
+<div class="plane">
+
+  <div class="exit exit--front fuselage">
+  </div>
+  <ol class="cabin fuselage">
+    <li class="row row--1">
+      <ol class="seats" type="A">
+            <?php
+            $query = "SELECT * FROM roomdb";
+            $product_array = $product_db->getRoom($query);
+            if (!empty($product_array)) {
+                foreach ($product_array as $key => $value) {
+                    if ($product_array[$key]["roomId"] <= 5) {
+            ?> 
+                <li class="seat">
+                    <input type="checkbox" id="<?php echo $product_array[$key]["roomId"]; ?>"/>
+                    <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomNumber"]; ?></label>
+                </li>
+            <?php
+                }
+            }
+        }
+            ?>
+      </ol>
+    </li>
+    <li class="row row--2">
+      <ol class="seats" type="B">
+            <?php
+            $query = "SELECT * FROM roomdb";
+            $product_array = $product_db->getRoom($query);
+            if (!empty($product_array)) {
+                foreach ($product_array as $key => $value) {
+                    if ($product_array[$key]["roomId"] >=6 &&  $product_array[$key]["roomId"] <= 10 ) {
+            ?> 
+                <li class="seat">
+                <input type="checkbox" id="<?php echo $product_array[$key]["roomId"]; ?>"/>
+                <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomNumber"]; ?></label>
+                </li>
+            <?php
+                }
+            }
+        }
+            ?>
+      </ol>
+    </li>
+    <li class="row row--3">
+      <ol class="seats" type="C">
+            <?php
+            $query = "SELECT * FROM roomdb";
+            $product_array = $product_db->getRoom($query);
+            if (!empty($product_array)) {
+                foreach ($product_array as $key => $value) {
+                    if ($product_array[$key]["roomId"] >= 11 &&  $product_array[$key]["roomId"] <= 15 ) {
+            ?> 
+                <li class="seat">
+                <input type="checkbox" id="<?php echo $product_array[$key]["roomId"]; ?>"/>
+                <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomNumber"]; ?></label>
+                </li>
+            <?php
+                }
+            }
+        }
+            ?>
+      </ol>
+    </li>
+    <li class="row row--4">
+      <ol class="seats" type="D">
+            <?php
+            $query = "SELECT * FROM roomdb";
+            $product_array = $product_db->getRoom($query);
+            if (!empty($product_array)) {
+                foreach ($product_array as $key => $value) {
+                    if ($product_array[$key]["roomId"] >= 16 &&  $product_array[$key]["roomId"] <= 20 ) {
+            ?> 
+                <li class="seat">
+                <input type="checkbox" id="<?php echo $product_array[$key]["roomId"]; ?>"/>
+                <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomNumber"]; ?></label>
+                </li>
+            <?php
+                }
+            }
+        }
+            ?>
+      </ol>
+    </li>
+  </ol>
+  <div class="exit exit--front fuselage">
+    </div>
+  </div>
 
 <?php include 'include_php/footer.php';?>
 
