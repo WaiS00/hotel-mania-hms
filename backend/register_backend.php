@@ -63,7 +63,6 @@
 	  }
 	  else {
       echo "<script type='text/javascript'>alert('invalid data for $data_type');</script>";
-		  return "location:./register.php";
 	  }
   }
 ?>
