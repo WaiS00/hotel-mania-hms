@@ -10,13 +10,14 @@
   html {
     font-size: 16px;
   }
+
   html body {
     padding-top: 10em;
 }
   
   .plane {
     margin: 20px auto;
-    max-width: 300px;
+    max-width: 60em;
   }
   
   .exit {
@@ -48,12 +49,7 @@
     border-left: 5px solid #d8d8d8;
     border-top: 5px solid #d8d8d8;
     border-bottom: 5px solid #d8d8d8;
-  }
-  
-  ol {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    padding-left: 20%;
   }
   
   .seats {
@@ -61,17 +57,16 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-  }
-  
+
+}
+
   .seat {
     display: flex;
     flex: 0 0 14.2857142857%;
     padding: 5px;
     position: relative;
   }
-  .seat:nth-child(3) {
-    margin-right: 14.2857142857%;
-  }
+
   .seat input[type=checkbox] {
     position: absolute;
     opacity: 0;
@@ -119,7 +114,7 @@
     content: "";
     position: absolute;
     width: 75%;
-    height: 75%;
+    height: 85%;
     top: 1px;
     left: 50%;
     transform: translate(-50%, 0%);
@@ -204,10 +199,6 @@
     border-spacing:0.4em;
 }
 
-html body {
-    padding-top: 15em;
-}
-
 .center2 {
     margin-top: 2em;
     margin-left: auto;
@@ -229,18 +220,6 @@ html body {
 	cursor:pointer;
 }
 
-.submitbtn2{
-    margin-bottom: 16em;
-    margin-top: 1em;
-    background-color: #5389B1 !important;
-    color: white;
-	border: 0;
-	padding: 3px 10px;
-	color: #ffffff;
-	margin-left: 2px;
-	border-radius: 2px;
-	cursor:pointer;
-}
 
 td {
     font-size: 20px;
@@ -263,14 +242,4 @@ td {
     justify-content: center;
 }
 
-.update{
-    margin-bottom: 16em;
-    margin-top: 1em;
-    background-color: #5389B1 !important;
-    color: white;
-	border: 0;
-	padding: 3px 10px;
-	color: #ffffff;
-	border-radius: 2px;
-	cursor:pointer;
-}
+
