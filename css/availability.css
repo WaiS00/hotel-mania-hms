@@ -2,6 +2,11 @@
     box-sizing: border-box;
   }
   
+  h4{
+    text-align: center;
+    padding-bottom: 1em;
+}
+
   html {
     font-size: 16px;
   }
