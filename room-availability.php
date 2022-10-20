@@ -13,6 +13,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <!-- Bootstrap Icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="js/room-availability.js"> </script>
     <title>Hotel Mania</title>
     <link rel="icon" href="resources/hm_logo.png"/>
 </head>
@@ -155,37 +162,39 @@
 
     <table class="center">
 			<tr>
-				<td><label>Room Type</label></td>
-				<td><input type="text" name="username" class="form-control" required />
+				<td><label>Address</label></td>
+				<td><input type="text" name="address" class="form-control" required />
 			</tr>
 			<tr>
-				<td><label>Password</label></td>
+				<td><label>Number of Guest</label></td>
 				<td><input type="password" name="pwd" class="form-control" required />
 			</tr>
-			<tr>
-				<td><label>Re-Enter Password</label></td>
-				<td><input type="password" required  class="form-control" />
+            <tr>
+				<td><label>Checkin Date</label></td>
+				<td>
+                    <div class="input-group date" id="datepicker">
+                        <input type="text" class="form-control" id="date1" name="date3" required></input>
+                            <div class="input-group-append">
+                                <div class="input-group-text bg-white d-block">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                            </div>
+                    </div>
+                </td>
 			</tr>
-			<tr>
-				<td><label>Full Name</label></td>
-				<td><input type="text" name= "full_name" class="form-control" required  />
-			</tr> 
-			<tr>
-				<td><label>IC/Passport Number</label></td>
-				<td><input type="text" name= "ic_num" class="form-control" required  />
-			</tr> 
-			<tr>
-				<td><label>Telephone No</label></td>
-				<td><input type="text" name="telno"  class="form-control" required />
-			</tr> 
-				<tr>
-				<td><label>Address</label></td>
-				<td><input type="text" name="address" class="form-control" required  />
-			</tr> 
-			<tr>
-				<td><label>Email</label></td>
-				<td><input type="text" name ="email" class="form-control" required />
-			</tr>																														
+            <tr>
+                <td><label>Checkout Date</label></td>
+				<td>
+                    <div class="input-group date" id="datepicker2">
+                        <input type="text" class="form-control" id="date2" name="date4" required></input>
+                            <div class="input-group-append">
+                                <div class="input-group-text bg-white d-block">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                            </div>
+                    </div>
+                </td>
+			</tr>
 			<tr>
 				<td></td>
 				<td><input type="submit" value="Submit" class="btn btn-primary submitbtn"></td>
@@ -196,7 +205,6 @@
 
 
 <?php include 'include_php/footer.php';?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    <script type="text/javascript">
    $(document).ready(function(){
 
