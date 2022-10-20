@@ -20,9 +20,10 @@
 <?php include 'include_php/header.php';?>
 
 <body>
+<h4>Room Availability</h4>
 
+<form method="post">
 <div class="plane">
-
   <div class="exit exit--front fuselage">
   </div>
   <ol class="cabin fuselage">
@@ -37,14 +38,14 @@
                         if($product_array[$key]["roomAvailability"] == "available"){
                             ?> 
                                 <li class="seat">
-                                    <input type="checkbox" id="<?php echo $product_array[$key]["roomId"]; ?>"/>
+                                    <input type="checkbox" id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomNumber"]; ?></label>
                                 </li>
                             <?php
                                 }else{
                             ?>
                                 <li class="seat">
-                                    <input type="checkbox" disabled id="<?php echo $product_array[$key]["roomId"]; ?>"/>
+                                    <input type="checkbox" disabled id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomNumber"]; ?></label>
                                 </li>
                 
@@ -67,14 +68,14 @@
                         if($product_array[$key]["roomAvailability"] == "available"){
                             ?> 
                                 <li class="seat">
-                                    <input type="checkbox" id="<?php echo $product_array[$key]["roomId"]; ?>"/>
+                                    <input type="checkbox" id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomNumber"]; ?></label>
                                 </li>
                             <?php
                                 }else{
                             ?>
                                 <li class="seat">
-                                    <input type="checkbox" disabled id="<?php echo $product_array[$key]["roomId"]; ?>"/>
+                                    <input type="checkbox" disabled id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomNumber"]; ?></label>
                                 </li>
                 
@@ -97,14 +98,14 @@
                         if($product_array[$key]["roomAvailability"] == "available"){
             ?> 
                 <li class="seat">
-                    <input type="checkbox" id="<?php echo $product_array[$key]["roomId"]; ?>"/>
+                    <input type="checkbox" id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomNumber"]; ?></label>
                 </li>
             <?php
                 }else{
             ?>
                 <li class="seat">
-                    <input type="checkbox" disabled id="<?php echo $product_array[$key]["roomId"]; ?>"/>
+                    <input type="checkbox" disabled id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomNumber"]; ?></label>
                 </li>
 
@@ -124,13 +125,22 @@
             if (!empty($product_array)) {
                 foreach ($product_array as $key => $value) {
                     if ($product_array[$key]["roomId"] >= 16 &&  $product_array[$key]["roomId"] <= 20 ) {
-            ?> 
-                <li class="seat">
-                <input type="checkbox" id="<?php echo $product_array[$key]["roomId"]; ?>"/>
-                <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomNumber"]; ?></label>
-                </li>
-            <?php
-                }
+                        if($product_array[$key]["roomAvailability"] == "available"){
+                            ?> 
+                                <li class="seat">
+                                    <input type="checkbox" id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
+                                    <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomNumber"]; ?></label>
+                                </li>
+                            <?php
+                                }else{
+                            ?>
+                                <li class="seat">
+                                    <input type="checkbox" disabled id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
+                                    <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomNumber"]; ?></label>
+                                </li>
+                
+                            <?php 
+                                   }   }
             }
         }
             ?>
