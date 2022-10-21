@@ -159,6 +159,7 @@
   <div class="exit exit--front fuselage">
     </div>
 <br>
+</div>
 
     <table class="center">
 			<tr>
@@ -195,14 +196,19 @@
                     </div>
                 </td>
 			</tr>
+            <tr>   
+                <td><label>Number of Day Stay:</label>
+                    <h4 style="display: inline-block" id="ans">0 </h4>
+                <td><label> days</label>
+                </td>
+            </tr>
 			<tr>
 				<td></td>
-				<td><input type="submit" value="Submit" class="btn btn-primary submitbtn"></td>
+                <td><input id="Button" type="submit" value="Submit" name="submit" class="btn btn-primary submitbtn"></td>
 			</tr>
 		</table>
 
-  </div>
-
+</form>
 
 <?php include 'include_php/footer.php';?>
    <script type="text/javascript">
@@ -214,8 +220,6 @@
 
    });
    </script>
-    <!-- Bootstrap JS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 
 </html>
