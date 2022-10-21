@@ -1,4 +1,3 @@
-<?php require_once 'backend/availability_backend.php';?>
 <?php require_once "backend/config.php"; ?>
 
 <!DOCTYPE html>
