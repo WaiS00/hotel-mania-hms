@@ -19,7 +19,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-    <script type="text/javascript" src="js/room-availability.js"> </script>
     <title>Hotel Mania</title>
     <link rel="icon" href="resources/hm_logo.png"/>
 </head>
@@ -160,53 +159,6 @@
     </div>
 <br>
 </div>
-
-    <table class="center">
-			<tr>
-				<td><label>Address</label></td>
-				<td><input type="text" name="address" class="form-control" required />
-			</tr>
-			<tr>
-				<td><label>Number of Guest</label></td>
-				<td><input type="password" name="pwd" class="form-control" required />
-			</tr>
-            <tr>
-				<td><label>Checkin Date</label></td>
-				<td>
-                    <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control" id="date1" name="date3" required></input>
-                            <div class="input-group-append">
-                                <div class="input-group-text bg-white d-block">
-                                    <i class="fa fa-calendar"></i>
-                                </div>
-                            </div>
-                    </div>
-                </td>
-			</tr>
-            <tr>
-                <td><label>Checkout Date</label></td>
-				<td>
-                    <div class="input-group date" id="datepicker2">
-                        <input type="text" class="form-control" id="date2" name="date4" required></input>
-                            <div class="input-group-append">
-                                <div class="input-group-text bg-white d-block">
-                                    <i class="fa fa-calendar"></i>
-                                </div>
-                            </div>
-                    </div>
-                </td>
-			</tr>
-            <tr>   
-                <td><label>Number of Day Stay:</label>
-                    <h4 style="display: inline-block" id="ans">0 </h4>
-                <td><label> days</label>
-                </td>
-            </tr>
-			<tr>
-				<td></td>
-                <td><input id="Button" type="submit" value="Submit" name="submit" class="btn btn-primary submitbtn"></td>
-			</tr>
-		</table>
 
 </form>
 
