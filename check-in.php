@@ -1,3 +1,4 @@
+<?php session_start();?>
 <?php require_once 'backend/checkin_backend.php';?>
 <?php require_once "backend/config.php"; ?>
 
@@ -46,7 +47,7 @@
                         if($product_array[$key]["roomAvailability"] == "available"){
                             ?> 
                                 <li class="seat">
-                                    <input type="checkbox" class="checkoption" value="<?php echo $product_array[$key]["roomNumber"]; ?>"id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
+                                    <input name="roomSelected" type="checkbox" class="checkoption" value="<?php echo $product_array[$key]["roomNumber"]; ?>"id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomType"]; ?> Room<br><?php echo $product_array[$key]["roomNumber"]; ?></label>
                                 </li>
                             <?php
@@ -76,7 +77,7 @@
                         if($product_array[$key]["roomAvailability"] == "available"){
                             ?> 
                                 <li class="seat">
-                                    <input type="checkbox" class="checkoption" value="<?php echo $product_array[$key]["roomNumber"]; ?>"id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
+                                    <input name="roomSelected" type="checkbox" class="checkoption" value="<?php echo $product_array[$key]["roomNumber"]; ?>"id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomType"]; ?> Room<br><?php echo $product_array[$key]["roomNumber"]; ?></label>
                                 </li>
                             <?php
@@ -106,7 +107,7 @@
                         if($product_array[$key]["roomAvailability"] == "available"){
             ?> 
                 <li class="seat">
-                    <input type="checkbox" class="checkoption" value="<?php echo $product_array[$key]["roomNumber"]; ?>"id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
+                    <input name="roomSelected" type="checkbox" class="checkoption" value="<?php echo $product_array[$key]["roomNumber"]; ?>"id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomType"]; ?> Room<br><?php echo $product_array[$key]["roomNumber"]; ?></label>
                 </li>
             <?php
@@ -136,7 +137,7 @@
                         if($product_array[$key]["roomAvailability"] == "available"){
                             ?> 
                                 <li class="seat">
-                                    <input type="checkbox" class="checkoption" value="<?php echo $product_array[$key]["roomNumber"]; ?>" id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
+                                <input name="roomSelected" type="checkbox" class="checkoption" value="<?php echo $product_array[$key]["roomNumber"]; ?>"id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomType"]; ?> Room<br><?php echo $product_array[$key]["roomNumber"]; ?></label>
                                 </li>
                             <?php
@@ -168,7 +169,11 @@
 			</tr>
 			<tr>
 				<td><label>Number of Guest</label></td>
-				<td><input type="password" name="pwd" class="form-control" required />
+				<td><input type="text" name="numguest" class="form-control" required />
+			</tr>
+            <tr>
+				<td><label>IC Number</label></td>
+				<td><input type="text" name="ic" class="form-control" required />
 			</tr>
             <tr>
 				<td><label>Checkin Date</label></td>
