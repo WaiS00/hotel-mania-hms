@@ -129,6 +129,7 @@
     <li class="row row--4">
       <ol class="seats" type="D">
             <?php
+            
             $query = "SELECT * FROM roomdb";
             $product_array = $product_db->getRoom($query);
             if (!empty($product_array)) {
@@ -179,7 +180,7 @@
 				<td><label>Checkin Date</label></td>
 				<td>
                     <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control" id="date1" name="date3" required></input>
+                        <input type="text" class="form-control" id="date1" name="date3" required value="<?php echo date("Y-m-d");?>"></input>
                             <div class="input-group-append">
                                 <div class="input-group-text bg-white d-block">
                                     <i class="fa fa-calendar"></i>

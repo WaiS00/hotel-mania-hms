@@ -34,7 +34,7 @@
                 $result5 = $pdo->query($query6);
 
                 $query = "UPDATE $tbl_name 
-                SET customerId='$customerid', checkInDate='$checkInDate', checkOutDate='$checkoutdate', numofGuest='$numguest'
+                SET customerId='$customerid', roomAvailability='unavailable', checkInDate='$checkInDate', checkOutDate='$checkoutdate', numofGuest='$numguest'
                 WHERE roomNumber=$roomSelected";
                 
                 $query1 = "UPDATE $tbl_name1 
