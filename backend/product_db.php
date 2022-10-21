@@ -113,6 +113,12 @@ class product_db extends DBController{
         return $productResult;
 	}   
 
+    public function getRoom($query)
+	{		
+        $query = "SELECT * FROM roomdb";
+        $productResult = $this->getDBResult($query);
+        return $productResult;
+	}   
 }
 
 ?>
