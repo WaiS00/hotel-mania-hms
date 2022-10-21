@@ -27,7 +27,7 @@
 <?php include 'include_php/header.php';?>
 
 <body>
-<h4>Room Availability</h4>
+<h4>Check-in</h4>
 
 <form method="post">
 <div class="plane">
