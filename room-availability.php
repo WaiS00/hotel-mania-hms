@@ -157,6 +157,29 @@
   <div class="exit exit--front fuselage">
     </div>
 <br>
+
+<table style="margin-left: auto; margin-right: auto; border: 1px solid;border-collapse: collapse; width: 70%;">
+        <tr>
+            <td style="border: 1px solid;text-align: center;"><b> Check-in Date <b> </td>
+            <td style="border: 1px solid;text-align: center;"><b> Check Out Date <b> </td>
+            <td style="border: 1px solid;text-align: center;"><b> Number of Guest<b> </td>
+            <td style="border: 1px solid;text-align: center;"><b> Room Number<b> </td>
+        </tr>
+        <tr>
+        <?php 
+            $query = "SELECT * FROM roomdb WHERE roomAvailability='unavailable'";
+            $product_array = $product_db->getRoomAvailability($query);
+            if (!empty($product_array)) {
+                foreach ($product_array as $key => $value) {
+        ?>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["checkInDate"]; ?> </td>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["checkOutDate"]; ?> </td>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["numofGuest"]; ?> </td>
+            <td style="border: 1px solid;text-align: center;"><?php echo $product_array[$key]["roomNumber"]; ?> </td>
+        </tr>
+        <?php }} ?>
+    </table>
+
 </div>
 
 </form>
