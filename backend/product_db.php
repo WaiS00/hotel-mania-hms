@@ -67,6 +67,16 @@ class product_db extends DBController{
         return $productResult;
     }
 
+    
+    function getBookingList()
+    {
+        $query = "SELECT * FROM bookingdb";
+
+        $productResult = $this->getDBResult($query);
+        return $productResult;
+    }
+
+    
     function getUserInfo()
     {
         $query = "SELECT * FROM userdb WHERE userId = '{$_SESSION['userId']}'";
@@ -94,6 +104,14 @@ class product_db extends DBController{
     function getAttendance()
     {
         $query = "SELECT * FROM attendancedb WHERE fullName = '{$_SESSION['fullName']}'";
+        
+        $productResult = $this->getDBResult($query);
+        return $productResult;
+    }
+
+    function getRoomAvailability()
+    {
+        $query = "SELECT * FROM roomdb WHERE roomAvailability='unavailable'";
         
         $productResult = $this->getDBResult($query);
         return $productResult;
