@@ -19,6 +19,23 @@
 
 <body>
 
+<form method="post">
+<h4>Check-Out</h4>
+    <table class="center">
+        <tr>
+            <td><label>IC Number</label></td>
+            <td><input type="text" name="ic" class="form-control" required />
+        </tr>
+        <tr>
+            <td><label>Room Number</label></td>
+            <td><input type="text" name="roomSelected" class="form-control" required />
+        </tr>
+        <tr>
+            <td></td>
+            <td><input id="Button" type="submit" value="Submit" name="submit" class="btn btn-primary submitbtn"></td>
+        </tr>
+	</table>
+</form>
 
 <?php include 'include_php/footer.php';?>
 
