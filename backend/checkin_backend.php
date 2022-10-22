@@ -60,6 +60,7 @@
           echo "<script type='text/javascript'>window.location.href = './check-in.php';</script>";
       }          
       echo "<script type='text/javascript'>alert('No booking has been found');</script>";
+      echo "<script type='text/javascript'>window.location.href = './booking.php';</script>";
 
 
 
