@@ -83,14 +83,12 @@
                 </td>
             </tr>
             <tr>
-                <td><label>Room Type Selected:</label>
-                <td><h4 style="display: inline-block" id="txtresults">None </h4>
-            </tr>
-            <tr>
+            <td></td>
+
                 <?php 
             if(isset($_SESSION['fullName'])){
 ?>
-				<td><input id="Button" type="submit" value="Submit" name="submit" class="btn btn-primary submitbtn"></td>
+				<td><input id="Button" type="submit" value="Submit" name="submit" class="btn btn-primary submitbtn2"></td>
                 <?php }else{
                     echo "<script type='text/javascript'>alert('Please login to perform this action.');</script>";
                     echo "<script> location.href = './login.php';</script>";
@@ -100,6 +98,8 @@
 	</form>
 
 <?php include 'include_php/footer.php';?>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
 </body>
 
