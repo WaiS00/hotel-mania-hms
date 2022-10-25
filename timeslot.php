@@ -1,4 +1,3 @@
-<?php require_once 'backend/timeslot_backend.php';?>
 <?php require_once "backend/config.php"; ?>
 <?php session_start();?>
 

@@ -8,9 +8,11 @@ if(isset($_POST['update'])){
 	$userType = $_POST['userType'];
 	$workPosition = $_POST['ddlselect'];
 	
+    // set new values 
     $query = "UPDATE workerdb SET fullName='$fullName',jobStatus='$jobStatus',userType='$userType', workPosition='$workPosition' WHERE workerId=$workerId";
     $result = $pdo->query($query);
 
+    // display success message
     echo "<script type='text/javascript'>alert('Working Position updated successfully.');</script>";
     echo "<script> location.href = './timeslot.php';</script>";
 	
