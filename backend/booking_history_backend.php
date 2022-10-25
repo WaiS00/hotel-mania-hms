@@ -2,8 +2,10 @@
 
 require_once 'SQL_login.php';
 
+    // get booking id from the get method (submit button) in booking_history.php
     $bookingId = $_GET['bookingId'];
 
+    // delete booking where booking id is fetch from the database
     $query1 = "DELETE FROM bookingdb WHERE bookingId = $bookingId";
     $result = $pdo->query($query1);
 
