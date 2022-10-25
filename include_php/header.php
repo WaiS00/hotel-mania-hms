@@ -7,18 +7,14 @@
     <a href="index.php" class="navbar-brand">
       <img src="resources/hm_logo.png" alt="logo" width="100" height="auto" class="d-inline-block align-text-top">
     </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navmenu"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
       <span class="navbar-toggler-icon"></span>
     </button>
 
   <div class="collapse navbar-collapse" id="navmenu">
   
   <?php 
+  // if user from session login is = manager,
     if($_SESSION['userType'] == "manager"){
         ?>
           <ul class="navbar-nav ms-auto">
@@ -62,7 +58,8 @@
             </li>
           </ul>
         <?php
-      }else if($_SESSION['userType'] == "worker"){
+          // if user from session login is = worker,
+          }else if($_SESSION['userType'] == "worker"){
         ?>
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
