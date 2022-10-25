@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 09, 2022 at 05:12 PM
+-- Generation Time: Oct 25, 2022 at 04:49 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -80,13 +80,6 @@ CREATE TABLE `bookingdb` (
   `userId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data for table `bookingdb`
---
-
-INSERT INTO `bookingdb` (`bookingId`, `checkInDate`, `checkOutDate`, `roomType`, `bookingTotalPrice`, `customerId`, `paymentStatus`, `bookingcartId`, `roomImage`, `dayDiff`, `userId`) VALUES
-(41, '2022-09-12', '2022-09-14', 'Executive', 600, 1, 'paid', 100, 'resources/executive-room.png', '2', 2);
-
 -- --------------------------------------------------------
 
 --
@@ -96,6 +89,10 @@ INSERT INTO `bookingdb` (`bookingId`, `checkInDate`, `checkOutDate`, `roomType`,
 CREATE TABLE `customerdb` (
   `customerId` int(11) NOT NULL,
   `icNumber` int(144) NOT NULL,
+  `roomNumber` int(11) DEFAULT NULL,
+  `checkinDate` date DEFAULT NULL,
+  `checkoutDate` date DEFAULT NULL,
+  `numberofGuest` int(11) DEFAULT NULL,
   `userId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -103,9 +100,10 @@ CREATE TABLE `customerdb` (
 -- Dumping data for table `customerdb`
 --
 
-INSERT INTO `customerdb` (`customerId`, `icNumber`, `userId`) VALUES
-(1, 108081312, 2),
-(3, 91122, 9);
+INSERT INTO `customerdb` (`customerId`, `icNumber`, `roomNumber`, `checkinDate`, `checkoutDate`, `numberofGuest`, `userId`) VALUES
+(1, 108081312, 18, '2022-10-12', '2022-10-14', 3, 2),
+(3, 91122, NULL, NULL, NULL, NULL, 9),
+(4, 1991919191, NULL, NULL, NULL, NULL, 27);
 
 -- --------------------------------------------------------
 
@@ -139,8 +137,38 @@ CREATE TABLE `roomdb` (
   `roomNumber` int(11) NOT NULL,
   `roomFloor` int(11) NOT NULL,
   `roomAvailability` enum('available','unavailable') NOT NULL,
-  `customerId` int(11) NOT NULL
+  `customerId` int(11) DEFAULT NULL,
+  `roomType` enum('Normal','Executive','Deluxe') NOT NULL,
+  `checkInDate` date DEFAULT NULL,
+  `checkOutDate` date DEFAULT NULL,
+  `numofGuest` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `roomdb`
+--
+
+INSERT INTO `roomdb` (`roomId`, `roomNumber`, `roomFloor`, `roomAvailability`, `customerId`, `roomType`, `checkInDate`, `checkOutDate`, `numofGuest`) VALUES
+(1, 1, 1, 'available', NULL, 'Normal', NULL, NULL, NULL),
+(2, 2, 1, 'available', NULL, 'Normal', NULL, NULL, NULL),
+(3, 3, 1, 'available', NULL, 'Normal', NULL, NULL, NULL),
+(4, 4, 1, 'available', NULL, 'Normal', NULL, NULL, NULL),
+(5, 5, 1, 'available', NULL, 'Normal', NULL, NULL, NULL),
+(6, 6, 1, 'available', NULL, 'Normal', NULL, NULL, NULL),
+(7, 7, 1, 'available', NULL, 'Normal', NULL, NULL, NULL),
+(8, 8, 1, 'available', NULL, 'Normal', NULL, NULL, NULL),
+(9, 9, 1, 'available', NULL, 'Normal', NULL, NULL, NULL),
+(10, 10, 1, 'available', NULL, 'Normal', NULL, NULL, NULL),
+(11, 11, 1, 'available', NULL, 'Normal', NULL, NULL, NULL),
+(12, 12, 1, 'available', NULL, 'Normal', NULL, NULL, NULL),
+(13, 13, 1, 'unavailable', 1, 'Normal', '2022-10-21', '2022-10-22', 4),
+(14, 14, 1, 'unavailable', 1, 'Executive', '2022-10-17', '2022-10-26', 5),
+(15, 15, 1, 'available', NULL, 'Executive', NULL, NULL, NULL),
+(16, 16, 1, 'available', NULL, 'Executive', NULL, NULL, NULL),
+(17, 17, 1, 'available', NULL, 'Executive', NULL, NULL, NULL),
+(18, 18, 1, 'unavailable', 1, 'Executive', '2022-10-12', '2022-10-14', 3),
+(19, 19, 1, 'available', NULL, 'Deluxe', NULL, NULL, NULL),
+(20, 20, 1, 'available', NULL, 'Deluxe', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -190,7 +218,8 @@ INSERT INTO `userdb` (`userid`, `fullName`, `telno`, `address`, `email`, `login`
 (2, 'Chin Wai Siong', '0122978732', 'No 15, Jalan Desa Bukit Tiara 3, Desa Bukit Tiara, Cheras 56000 Kuala Lumpur', 'chinwaisiong@hotmail.com', 'kok123', '$2y$10$LfzL.gH2orFtXFX6zx/IRuAjmov/zOnro5fE6GEg7LVqfEUzZC4vm', 'customer'),
 (9, 'Lol', '021893198', 'sadas', 'legend@gmail.com', 'lol123', '$2y$10$ix0CRgVMxezORM5g76lu6uYOMNCG8xt8adpLJFmwBsvqq7t.e8eh6', 'customer'),
 (17, 'worker', '0129876543', 'smtg', 'smtg@gmail.com', 'worker', '$2y$10$fqF08N6J2BUCi8fqoQrqk.siDmkr68pG7U4qaKDIY2ggllufVgG5.', 'worker'),
-(18, 'manager', '0123456890', 'smtg smtg', 'smtg1@gmail.com', 'manager', '$2y$10$9rv3Ik9pZKdJWC.x5xFnT.dF82jbSFhcGa229Lgsets0OhZ.5A3YS', 'manager');
+(18, 'manager', '0123456890', 'smtg smtg', 'smtg1@gmail.com', 'manager', '$2y$10$9rv3Ik9pZKdJWC.x5xFnT.dF82jbSFhcGa229Lgsets0OhZ.5A3YS', 'manager'),
+(27, 'Chin Wai Siong', '0122978732', 'No 15, Jalan Desa Bukit Tiara 3, Desa Bukit Tiara, Cheras 56000 Kuala Lumpur', 'legend123@gmail.com', 'wais300', '$2y$10$i3SyHo9fRunaLEDcn77X.O8tVfQCWTBD3mSGO/HpGoL/F.7wRlYCm', 'customer');
 
 -- --------------------------------------------------------
 
@@ -242,8 +271,7 @@ ALTER TABLE `bookingdb`
 -- Indexes for table `customerdb`
 --
 ALTER TABLE `customerdb`
-  ADD PRIMARY KEY (`customerId`),
-  ADD KEY `test1` (`userId`);
+  ADD PRIMARY KEY (`customerId`);
 
 --
 -- Indexes for table `ratingdb`
@@ -255,8 +283,7 @@ ALTER TABLE `ratingdb`
 -- Indexes for table `roomdb`
 --
 ALTER TABLE `roomdb`
-  ADD PRIMARY KEY (`roomId`),
-  ADD KEY `test4` (`customerId`);
+  ADD PRIMARY KEY (`roomId`);
 
 --
 -- Indexes for table `roomtypedb`
@@ -304,7 +331,7 @@ ALTER TABLE `bookingdb`
 -- AUTO_INCREMENT for table `customerdb`
 --
 ALTER TABLE `customerdb`
-  MODIFY `customerId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `customerId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `ratingdb`
@@ -316,7 +343,7 @@ ALTER TABLE `ratingdb`
 -- AUTO_INCREMENT for table `roomdb`
 --
 ALTER TABLE `roomdb`
-  MODIFY `roomId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `roomId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `roomtypedb`
@@ -328,7 +355,7 @@ ALTER TABLE `roomtypedb`
 -- AUTO_INCREMENT for table `userdb`
 --
 ALTER TABLE `userdb`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `workerdb`
@@ -345,18 +372,6 @@ ALTER TABLE `workerdb`
 --
 ALTER TABLE `bookingcartdb`
   ADD CONSTRAINT `test6` FOREIGN KEY (`customerId`) REFERENCES `customerdb` (`customerId`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
--- Constraints for table `customerdb`
---
-ALTER TABLE `customerdb`
-  ADD CONSTRAINT `test1` FOREIGN KEY (`userId`) REFERENCES `userdb` (`userid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
--- Constraints for table `roomdb`
---
-ALTER TABLE `roomdb`
-  ADD CONSTRAINT `test4` FOREIGN KEY (`customerId`) REFERENCES `customerdb` (`customerId`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `workerdb`
