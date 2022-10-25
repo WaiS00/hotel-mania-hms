@@ -27,14 +27,12 @@
 <body>
 <h4>Room Availability</h4>
 
-<form method="post">
-<div class="plane">
-  <div class="exit exit--front fuselage">
+<div class="level">
+  <div class="exit exit--front hall">
   </div>
-  <ol class="cabin fuselage">
-    <div class="room12">
+  <ol class="hall">
     <li class="row row--1">
-      <ol class="seats" type="A">
+      <ol class="rooms" type="A">
             <?php
             $query = "SELECT * FROM roomdb";
             $product_array = $product_db->getRoom($query);
@@ -43,14 +41,14 @@
                     if ($product_array[$key]["roomId"] <= 5) {
                         if($product_array[$key]["roomAvailability"] == "available"){
                             ?> 
-                                <li class="seat">
+                                <li class="room">
                                     <input type="checkbox" class="checkoption" value="<?php echo $product_array[$key]["roomNumber"]; ?>"id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomType"]; ?> Room<br><?php echo $product_array[$key]["roomNumber"]; ?></label>
                                 </li>
                             <?php
                                 }else{
                             ?>
-                                <li class="seat">
+                                <li class="room">
                                     <input type="checkbox" class="checkoption" value="<?php echo $product_array[$key]["roomNumber"]; ?>"disabled id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomType"]; ?> Room<br><?php echo $product_array[$key]["roomNumber"]; ?></label>
                                 </li>
@@ -64,7 +62,7 @@
       </ol>
     </li>
     <li class="row row--2">
-      <ol class="seats" type="B">
+      <ol class="rooms" type="B">
             <?php
             $query = "SELECT * FROM roomdb";
             $product_array = $product_db->getRoom($query);
@@ -73,14 +71,14 @@
                     if ($product_array[$key]["roomId"] >=6 &&  $product_array[$key]["roomId"] <= 10 ) {
                         if($product_array[$key]["roomAvailability"] == "available"){
                             ?> 
-                                <li class="seat">
+                                <li class="room">
                                     <input type="checkbox" class="checkoption" value="<?php echo $product_array[$key]["roomNumber"]; ?>"id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomType"]; ?> Room<br><?php echo $product_array[$key]["roomNumber"]; ?></label>
                                 </li>
                             <?php
                                 }else{
                             ?>
-                                <li class="seat">
+                                <li class="room">
                                     <input type="checkbox" class="checkoption" value="<?php echo $product_array[$key]["roomNumber"]; ?>"disabled id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomType"]; ?> Room<br><?php echo $product_array[$key]["roomNumber"]; ?></label>
                                 </li>
@@ -94,7 +92,7 @@
       </ol>
     </li>
     <li class="row row--3">
-      <ol class="seats" type="C">
+      <ol class="rooms" type="C">
             <?php
             $query = "SELECT * FROM roomdb";
             $product_array = $product_db->getRoom($query);
@@ -103,14 +101,14 @@
                     if ($product_array[$key]["roomId"] >= 11 &&  $product_array[$key]["roomId"] <= 15 ) {
                         if($product_array[$key]["roomAvailability"] == "available"){
             ?> 
-                <li class="seat">
+                <li class="room">
                     <input type="checkbox" class="checkoption" value="<?php echo $product_array[$key]["roomNumber"]; ?>"id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomType"]; ?> Room<br><?php echo $product_array[$key]["roomNumber"]; ?></label>
                 </li>
             <?php
                 }else{
             ?>
-                <li class="seat">
+                <li class="room">
                     <input type="checkbox" class="checkoption" value="<?php echo $product_array[$key]["roomNumber"]; ?>"disabled id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomType"]; ?> Room<br><?php echo $product_array[$key]["roomNumber"]; ?></label>
                 </li>
@@ -124,7 +122,7 @@
       </ol>
     </li>
     <li class="row row--4">
-      <ol class="seats" type="D">
+      <ol class="rooms" type="D">
             <?php
             $query = "SELECT * FROM roomdb";
             $product_array = $product_db->getRoom($query);
@@ -133,14 +131,14 @@
                     if ($product_array[$key]["roomId"] >= 16 &&  $product_array[$key]["roomId"] <= 20 ) {
                         if($product_array[$key]["roomAvailability"] == "available"){
                             ?> 
-                                <li class="seat">
+                                <li class="room">
                                     <input type="checkbox" class="checkoption" value="<?php echo $product_array[$key]["roomNumber"]; ?>" id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomType"]; ?> Room<br><?php echo $product_array[$key]["roomNumber"]; ?></label>
                                 </li>
                             <?php
                                 }else{
                             ?>
-                                <li class="seat">
+                                <li class="room">
                                     <input type="checkbox" class="checkoption" value="<?php echo $product_array[$key]["roomNumber"]; ?>"disabled id="<?php echo $product_array[$key]["roomNumber"]; ?>"/>
                                     <label for="<?php echo $product_array[$key]["roomId"]; ?>"><?php echo $product_array[$key]["roomType"]; ?> Room<br><?php echo $product_array[$key]["roomNumber"]; ?></label>
                                 </li>
@@ -152,10 +150,11 @@
             ?>
       </ol>
     </li>
+    </ol>
+    <div class="exit exit--front hall">
     </div>
-  </ol>
-  <div class="exit exit--front fuselage">
     </div>
+
 <br>
 
 <table style="margin-left: auto; margin-right: auto; border: 1px solid;border-collapse: collapse; width: 70%;">
