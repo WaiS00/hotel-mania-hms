@@ -4,9 +4,9 @@
   if (isset($_SESSION['fullName']))
   {
     $name = htmlspecialchars($_SESSION['fullName']);
-    
+    // call function to destroy session
     destroy_session_and_data();
-    
+    //logout success
     echo "<script type='text/javascript'>alert('Logout Successfully');</script>";
     echo "<script type='text/javascript'>window.location.href = '../login.php';</script>";
   }
@@ -14,6 +14,7 @@
   
   function destroy_session_and_data()
 {
+  // unset session variables
    unset($_SESSION['name']);
    $_SESSION = array();
    session_unset();
