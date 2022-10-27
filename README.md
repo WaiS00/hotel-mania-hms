@@ -1,16 +1,13 @@
+
 # Hotel Mania, An All-in-One Hotel Management System 
 ## Capstone Project (Chin Wai Siong 18124313)
 
-Hotel management failures are the inability to provide a service that is expected from the customer, and it is also known as service failure in a hospitality faculty. Hotel management failures can cause customers’ satisfaction to drop significantly, and they will think that their desired experience is being cheated and will be having bad feedback from the hospitality faculty [2]. 
-
-The name Hotel Mania has a deep meaning behind naming as mania has a meaning of an excessive enthusiasm towards a certain topic/ object and in this case, it’s the enthusiasm towards the hotel itself. This can encourage the workers in the hotel to perform at their very best and will need to have the amount of enthusiasm that can impress and leave meaningful positive feedback towards the customers and their satisfaction.
+The name Hotel Mania has a deep meaning as “mania” has a meaning of an excessive enthusiasm towards a certain topic/ object and in this case, it’s the enthusiasm towards the hotel itself. Hotel Mania is an all-in-one hotel management system that provides services to three users which are the managers, customers, and the hotel’s workers. This is because the system includes a hotel management system and a hotel booking system. The hotel management system is a feature that will be used by the managers to manage the hotel workers and the daily routine of the hotel’s operation such as the check-in, and check-out process. Besides that, the system also aims to provide a platform for customers to be able to book their rooms through the online platform which is an additional feature of the hotel management system, and the managers will be able to see the bookings that are done by the customers in order to check them into their respective rooms. Through the bookings for the customer side on the hotel booking system, the customers will also be able to make payments on their bookings and get their receipt through the system which will reduce unnecessary interactions for the customers with the workers. The goal of Hotel Mania is to develop a user-friendly web-based hotel management system for the hotel industry and fulfilling a client's request efficiently and effectively. 
 
 ![image](https://user-images.githubusercontent.com/56108922/180375167-40398491-008f-493b-9e9c-8d5982cbb228.png)
 
 Figure 1.0: Logo of Hotel Mania
 
-The hotel management system aims to provide hotels with a fully functional system that consists of all functions that are
-needed for a hotel manager to manage their daily routine. This includes the operation of dedicating workers to their specific working position, assigning cleaning workers as well as helping front desk workers with their daily routine which also includes check-in, check-out, payment, booking and etc
 
 There will be a total of 4 actors that will be existing in the system which are the manager, workers that includes cleaning
 workers and front desk workers and also customer as the last actor. Manager will be responsible for the assignment of
@@ -28,3 +25,6 @@ Requirements to use the system
 
 - Stable internet connectivity
 - Device with internet capability
+
+![hotelmania-edited-manager-nav-bar1](https://user-images.githubusercontent.com/56108922/198293726-30c5ca52-5007-4d79-bd91-760a39a56877.png)
+![image](https://user-images.githubusercontent.com/56108922/198293940-528fbd6f-801b-4a95-8653-7b0ae341a429.png)
