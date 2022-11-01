@@ -52,7 +52,6 @@
                 <li><a class="dropdown-item" href="check-in.php">Check-in (Customer)</a></li>
                 <li><a class="dropdown-item" href="check-out.php">Check-out (Customer)</a></li>
                 <li><a class="dropdown-item" href="room-availability.php">Room Availability</a></li>
-                <li><a class="dropdown-item" href="booking.php">Book Now (Rooms)</a></li>
                 <li><a class="dropdown-item" href="booking-list.php">List of Booking</a></li>
               </ul>
             </li>
@@ -76,7 +75,6 @@
                 <li><a class="dropdown-item" href="check-in.php">Check-in (Customer)</a></li>
                 <li><a class="dropdown-item" href="check-out.php">Check-out (Customer)</a></li>
                 <li><a class="dropdown-item" href="room-availability.php">Room Availability</a></li>
-                <li><a class="dropdown-item" href="booking.php">Book Now (Rooms)</a></li>
                 <li><a class="dropdown-item" href="booking-list.php">List of Booking</a></li>
               </ul>
             </li>
