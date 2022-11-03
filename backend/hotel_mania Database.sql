@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 25, 2022 at 04:49 PM
+-- Generation Time: Nov 03, 2022 at 05:59 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -80,6 +80,13 @@ CREATE TABLE `bookingdb` (
   `userId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `bookingdb`
+--
+
+INSERT INTO `bookingdb` (`bookingId`, `checkInDate`, `checkOutDate`, `roomType`, `bookingTotalPrice`, `customerId`, `paymentStatus`, `bookingcartId`, `roomImage`, `dayDiff`, `userId`) VALUES
+(43, '2022-11-15', '2022-11-17', 'Normal', 200, 1, 'paid', 103, 'resources/normal-room.png', '2', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -88,7 +95,7 @@ CREATE TABLE `bookingdb` (
 
 CREATE TABLE `customerdb` (
   `customerId` int(11) NOT NULL,
-  `icNumber` int(144) NOT NULL,
+  `icNumber` bigint(144) NOT NULL,
   `roomNumber` int(11) DEFAULT NULL,
   `checkinDate` date DEFAULT NULL,
   `checkoutDate` date DEFAULT NULL,
@@ -103,7 +110,8 @@ CREATE TABLE `customerdb` (
 INSERT INTO `customerdb` (`customerId`, `icNumber`, `roomNumber`, `checkinDate`, `checkoutDate`, `numberofGuest`, `userId`) VALUES
 (1, 108081312, 18, '2022-10-12', '2022-10-14', 3, 2),
 (3, 91122, NULL, NULL, NULL, NULL, 9),
-(4, 1991919191, NULL, NULL, NULL, NULL, 27);
+(4, 1991919191, NULL, NULL, NULL, NULL, 27),
+(5, 10808140487, NULL, NULL, NULL, NULL, 30);
 
 -- --------------------------------------------------------
 
@@ -219,7 +227,8 @@ INSERT INTO `userdb` (`userid`, `fullName`, `telno`, `address`, `email`, `login`
 (9, 'Lol', '021893198', 'sadas', 'legend@gmail.com', 'lol123', '$2y$10$ix0CRgVMxezORM5g76lu6uYOMNCG8xt8adpLJFmwBsvqq7t.e8eh6', 'customer'),
 (17, 'worker', '0129876543', 'smtg', 'smtg@gmail.com', 'worker', '$2y$10$fqF08N6J2BUCi8fqoQrqk.siDmkr68pG7U4qaKDIY2ggllufVgG5.', 'worker'),
 (18, 'manager', '0123456890', 'smtg smtg', 'smtg1@gmail.com', 'manager', '$2y$10$9rv3Ik9pZKdJWC.x5xFnT.dF82jbSFhcGa229Lgsets0OhZ.5A3YS', 'manager'),
-(27, 'Chin Wai Siong', '0122978732', 'No 15, Jalan Desa Bukit Tiara 3, Desa Bukit Tiara, Cheras 56000 Kuala Lumpur', 'legend123@gmail.com', 'wais300', '$2y$10$i3SyHo9fRunaLEDcn77X.O8tVfQCWTBD3mSGO/HpGoL/F.7wRlYCm', 'customer');
+(27, 'Chin Wai Siong', '0122978732', 'No 15, Jalan Desa Bukit Tiara 3, Desa Bukit Tiara, Cheras 56000 Kuala Lumpur', 'legend123@gmail.com', 'wais300', '$2y$10$i3SyHo9fRunaLEDcn77X.O8tVfQCWTBD3mSGO/HpGoL/F.7wRlYCm', 'customer'),
+(30, 'Chin Wai Siong', '0122978732', '14, jshah ', 'chinfam@gmail.com', 'wais1', '$2y$10$KQmC1JRhxahTZXiyg/YMw.VH63i2U3/SiA6MkveGtOuFNFx6SOh56', 'customer');
 
 -- --------------------------------------------------------
 
@@ -319,19 +328,19 @@ ALTER TABLE `attendancedb`
 -- AUTO_INCREMENT for table `bookingcartdb`
 --
 ALTER TABLE `bookingcartdb`
-  MODIFY `bookingcartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `bookingcartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `bookingdb`
 --
 ALTER TABLE `bookingdb`
-  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `customerdb`
 --
 ALTER TABLE `customerdb`
-  MODIFY `customerId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `customerId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `ratingdb`
@@ -355,7 +364,7 @@ ALTER TABLE `roomtypedb`
 -- AUTO_INCREMENT for table `userdb`
 --
 ALTER TABLE `userdb`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `workerdb`
