@@ -19,14 +19,14 @@
             $months = floor(($dayDiff - $years * 365*60*60*24) / (30*60*60*24));
             $days = floor(($dayDiff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
 
-                $query3 = "SELECT customerid FROM customerdb WHERE userId = '{$_SESSION['userId']}' ";
+                $query3 = "SELECT customerId FROM customerdb WHERE userId = '{$_SESSION['userId']}' ";
                 $result2 = $pdo->query($query3);
                 $result2 = $result2->fetch(PDO::FETCH_ASSOC);
                 
-                $customerid = $result2['customerid'];
+                $customerid = $result2['customerId'];
 
                 // insert into database
-                $query = "INSERT INTO $tbl_name (bookingcartId, roomType, checkInDate, checkoutDate, dayDiff, customerid) 
+                $query = "INSERT INTO $tbl_name (bookingcartId, roomType, checkInDate, checkoutDate, dayDiff, customerId) 
                 VALUES(NULL,'$select', '$checkInDate', '$checkoutdate', '$days', $customerid)";
                 
                 $result = $pdo->query($query);

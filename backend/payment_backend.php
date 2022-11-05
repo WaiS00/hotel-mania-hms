@@ -25,19 +25,21 @@
     $result2 = $pdo->query($query3);
     $result3 = $result2->fetch(PDO::FETCH_ASSOC);
     
-    $result  = $pdo->query($query);
-    $row = $result->fetch();
-    $ui  = $row['userid'];
+
+    $query10 = "SELECT userid FROM userdb WHERE userId = '{$_SESSION['userId']}' ";
+    $result10 = $pdo->query($query10);
+    $result10 = $result10->fetch(PDO::FETCH_ASSOC);
+    
+    $ui = $result10['userid'];
 
     // get booking cart data to be checkout
-    $customerid = $result3['customerid'];
+    $customerid = $result3['customerId'];
     $checkInDate = $result3['checkInDate'];
     $checkOutDate = $result3['checkoutDate'];
     $dayDiff = $result3['dayDiff'];
     $roomType = $result3['roomType'];
     $dayDiff = $result3['dayDiff'];
     $roomImage = $result4['roomImage'];
-    $userId = $result5['userId'];
     
     if (!empty($product_array)) {
         foreach ($product_array as $key => $value) {
@@ -51,7 +53,7 @@
 
     // after payment success, store booking information into bookingdb 
     $query1 = "INSERT INTO $tbl_name2 (bookingId, checkInDate, checkOutDate, roomType, bookingTotalPrice, customerId, paymentStatus, bookingcartId, roomImage, dayDiff, userId) 
-    VALUES(NULL, '$checkInDate', '$checkOutDate', '$roomType', '$totalPrice', '$customerId', 'paid', '$bookingcartId', '$roomImage', '$dayDiff', '$userId' )";
+    VALUES(NULL, '$checkInDate', '$checkOutDate', '$roomType', '$totalPrice', '$customerId', 'paid', '$bookingcartId', '$roomImage', '$dayDiff', '$ui' )";
     
     $result = $pdo->query($query1);
 
