@@ -30,8 +30,26 @@
 	$stmt->execute([$email1]);
 	$counts = $stmt->fetch();
 
+	// get email on where the user input = email
+    // so that it can detect if there is any duplication of email
+      $query5 = "SELECT login FROM userdb WHERE login = $myusername ";
+      $result4 = $pdo->query($query5);
+      $result4 = $result4->fetch(PDO::FETCH_ASSOC);
+      
+      $myusername1 = $result4['login'];
+
+
+	// count the number of email where the email = email that matches the input from register.php
+	$sql = "SELECT count(*) AS counter FROM userdb WHERE login = ?";
+	$stmt = $pdo->prepare($sql);
+	$stmt->execute([$myusername1]);
+	$counts2 = $stmt->fetch();
+
 	if($counts['counter'] == 1){
-		echo "<script type='text/javascript'>alert('Account Existed, Please proceed with login');</script>";
+		echo "<script type='text/javascript'>alert('Email Existed, Please proceed with login');</script>";
+		echo "<script type='text/javascript'>window.location.href = './login.php';</script>";
+	}else if ($counts2['counter'] == 1){
+		echo "<script type='text/javascript'>alert('Username Existed, Please proceed with login');</script>";
 		echo "<script type='text/javascript'>window.location.href = './login.php';</script>";
 	}else{
 		  // if username and password has been filled in and submitted, 
