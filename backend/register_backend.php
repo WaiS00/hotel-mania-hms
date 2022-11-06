@@ -30,8 +30,8 @@
 	$stmt->execute([$email1]);
 	$counts = $stmt->fetch();
 
-	// get email on where the user input = email
-    // so that it can detect if there is any duplication of email
+	// get username on where the user input = username
+    // so that it can detect if there is any duplication of username
       $query5 = "SELECT login FROM userdb WHERE login = $myusername ";
       $result4 = $pdo->query($query5);
       $result4 = $result4->fetch(PDO::FETCH_ASSOC);
@@ -39,7 +39,7 @@
       $myusername1 = $result4['login'];
 
 
-	// count the number of email where the email = email that matches the input from register.php
+	// count the number of username where the username = username that matches the input from register.php
 	$sql = "SELECT count(*) AS counter FROM userdb WHERE login = ?";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([$myusername1]);
