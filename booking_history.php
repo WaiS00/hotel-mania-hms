@@ -36,7 +36,7 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title"><?php echo $product_array[$key]["roomType"]; ?></h5>
+        <h5 class="card-title"><?php echo $product_array[$key]["roomType"]; ?> Room</h5>
         <p class="card-text">Check-in Date: <?php echo $product_array[$key]["checkInDate"]; ?></p>
         <p class="card-text">Check-out Date: <?php echo $product_array[$key]["checkOutDate"]; ?></p>
         <p class="card-text"><small class="text-muted"> <p class="card-text">Total Booking Price: <?php echo $product_array[$key]["bookingTotalPrice"]; ?></p></small></p>
