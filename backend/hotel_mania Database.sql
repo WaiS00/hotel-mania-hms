@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 03, 2022 at 05:59 PM
+-- Generation Time: Nov 07, 2022 at 10:21 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -85,7 +85,8 @@ CREATE TABLE `bookingdb` (
 --
 
 INSERT INTO `bookingdb` (`bookingId`, `checkInDate`, `checkOutDate`, `roomType`, `bookingTotalPrice`, `customerId`, `paymentStatus`, `bookingcartId`, `roomImage`, `dayDiff`, `userId`) VALUES
-(43, '2022-11-15', '2022-11-17', 'Normal', 200, 1, 'paid', 103, 'resources/normal-room.png', '2', 2);
+(54, '2022-11-22', '2022-11-30', 'Deluxe', 1600, 1, 'paid', 115, 'resources/deluxe-room.png', '8', 2),
+(55, '2022-11-14', '2022-11-15', 'Executive', 300, 1, 'paid', 116, 'resources/executive-room.png', '1', 2);
 
 -- --------------------------------------------------------
 
@@ -111,7 +112,11 @@ INSERT INTO `customerdb` (`customerId`, `icNumber`, `roomNumber`, `checkinDate`,
 (1, 108081312, 18, '2022-10-12', '2022-10-14', 3, 2),
 (3, 91122, NULL, NULL, NULL, NULL, 9),
 (4, 1991919191, NULL, NULL, NULL, NULL, 27),
-(5, 10808140487, NULL, NULL, NULL, NULL, 30);
+(5, 10808140487, NULL, NULL, NULL, NULL, 30),
+(6, 123456789, NULL, NULL, NULL, NULL, 31),
+(7, 108081312, NULL, NULL, NULL, NULL, 32),
+(8, 108081312, NULL, NULL, NULL, NULL, 33),
+(9, 108081312, NULL, NULL, NULL, NULL, 34);
 
 -- --------------------------------------------------------
 
@@ -132,7 +137,8 @@ CREATE TABLE `ratingdb` (
 
 INSERT INTO `ratingdb` (`ratingId`, `rate`, `review`, `email`) VALUES
 (2, 3, 'asdaasdasdasd', 'chinwaisiong@hotmail.com'),
-(3, 5, 'adasdawsdjklas asdh aslj dhasjodasho asod hasjod ashjod ash jdashdjlas hoas kopas hdasiodas as  a as a', 'chinwaisiong@hotmail.com');
+(3, 5, 'adasdawsdjklas asdh aslj dhasjodasho asod hasjod ashjod ash jdashdjlas hoas kopas hdasiodas as  a as a', 'chinwaisiong@hotmail.com'),
+(4, 4, 'dasfa d asdasd', 'sophia123@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -227,8 +233,9 @@ INSERT INTO `userdb` (`userid`, `fullName`, `telno`, `address`, `email`, `login`
 (9, 'Lol', '021893198', 'sadas', 'legend@gmail.com', 'lol123', '$2y$10$ix0CRgVMxezORM5g76lu6uYOMNCG8xt8adpLJFmwBsvqq7t.e8eh6', 'customer'),
 (17, 'worker', '0129876543', 'smtg', 'smtg@gmail.com', 'worker', '$2y$10$fqF08N6J2BUCi8fqoQrqk.siDmkr68pG7U4qaKDIY2ggllufVgG5.', 'worker'),
 (18, 'manager', '0123456890', 'smtg smtg', 'smtg1@gmail.com', 'manager', '$2y$10$9rv3Ik9pZKdJWC.x5xFnT.dF82jbSFhcGa229Lgsets0OhZ.5A3YS', 'manager'),
-(27, 'Chin Wai Siong', '0122978732', 'No 15, Jalan Desa Bukit Tiara 3, Desa Bukit Tiara, Cheras 56000 Kuala Lumpur', 'legend123@gmail.com', 'wais300', '$2y$10$i3SyHo9fRunaLEDcn77X.O8tVfQCWTBD3mSGO/HpGoL/F.7wRlYCm', 'customer'),
-(30, 'Chin Wai Siong', '0122978732', '14, jshah ', 'chinfam@gmail.com', 'wais1', '$2y$10$KQmC1JRhxahTZXiyg/YMw.VH63i2U3/SiA6MkveGtOuFNFx6SOh56', 'customer');
+(30, 'Chin Wai Siong', '0122978732', '14, jshah ', 'chinfam@gmail.com', 'wais1', '$2y$10$KQmC1JRhxahTZXiyg/YMw.VH63i2U3/SiA6MkveGtOuFNFx6SOh56', 'customer'),
+(31, 'Sophia ', '94310416', 'smtyg smtg ', 'sophia123@gmail.com', 'sophia', '$2y$10$qaIcrC62mipWB9elBJDKnuMvPTZ45iZ4dXVbOpEufPSi4p.8aI3AO', 'customer'),
+(32, 'Chin Wai Siong', '0122978732', 'No 15, Jalan Desa Bukit Tiara 3, Desa Bukit Tiara, Cheras 56000 Kuala Lumpur', 'legend123@gmail.com', 'wais000', '$2y$10$4QmxJtaA/oRhALTDn8oIhums5ZRZd5uuA7JQLpPU2/V/VQgOetQxq', 'customer');
 
 -- --------------------------------------------------------
 
@@ -328,25 +335,25 @@ ALTER TABLE `attendancedb`
 -- AUTO_INCREMENT for table `bookingcartdb`
 --
 ALTER TABLE `bookingcartdb`
-  MODIFY `bookingcartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `bookingcartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 
 --
 -- AUTO_INCREMENT for table `bookingdb`
 --
 ALTER TABLE `bookingdb`
-  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `customerdb`
 --
 ALTER TABLE `customerdb`
-  MODIFY `customerId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `customerId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `ratingdb`
 --
 ALTER TABLE `ratingdb`
-  MODIFY `ratingId` int(144) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ratingId` int(144) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `roomdb`
@@ -364,7 +371,7 @@ ALTER TABLE `roomtypedb`
 -- AUTO_INCREMENT for table `userdb`
 --
 ALTER TABLE `userdb`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `workerdb`
