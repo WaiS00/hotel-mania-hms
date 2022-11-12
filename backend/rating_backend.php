@@ -8,6 +8,7 @@
             $review = $_POST['review'];
             $tbl_name = 'ratingdb';
 
+            if(isset($rate)){
             // get user email from session login
             $query3 = "SELECT email FROM userdb WHERE userId = '{$_SESSION['userId']}' ";
             $result2 = $pdo->query($query3);
@@ -23,6 +24,11 @@
                 $result = $pdo->query($query);
                 echo "<script type='text/javascript'>alert('Review Submitted Successfully.');</script>";
                 echo "<script type='text/javascript'>window.location.href = './rating_main.php';</script>";
+
+            }else{
+              echo "<script type='text/javascript'>alert('Rating is empty');</script>";
+
+            }
 
     }else{
       // if user has not login
