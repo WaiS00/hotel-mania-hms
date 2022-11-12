@@ -33,7 +33,7 @@
 			</tr>
 			<tr>
 				<td><label>Re-Enter Password</label></td>
-				<td><input type="password" required  class="form-control" />
+				<td><input type="password" name="cfmpassword" required  class="form-control" />
 			</tr>
 			<tr>
 				<td><label>Full Name</label></td>

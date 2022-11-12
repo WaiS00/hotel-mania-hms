@@ -1,7 +1,12 @@
 <?php 
 
   require_once 'SQL_login.php';
+// check if password same with the comfirm password
+$myusername = $_POST['username'];
+$mypassword = $_POST['pwd'];
+$cfmpassword = $_POST['cfmpassword'];
 
+if($cfmpassword == $mypassword){
   // if username and password has been filled in and submitted, 
   if(isset($_POST['username']) && isset($_POST['pwd'])){
 	
@@ -60,13 +65,17 @@
 			}
 			// success message
 			echo "<script type='text/javascript'>alert('Account Registered Successfully');</script>";
-			echo "<script type='text/javascript'>window.location.href = './index.php';</script>";
+			echo "<script type='text/javascript'>window.location.href = './worker_manager_list.php';</script>";
 		}
 		else{
 			// echo invalid data for the inputs
 			echo $validation;
 		}
 	  }
+	}else{
+		echo "<script type='text/javascript'>alert('Wrong password, password do not match');</script>";
+	}
+
 
 
 
@@ -85,7 +94,7 @@
 	  }
 	  else {
       echo "<script type='text/javascript'>alert('invalid data for $data_type');</script>";
-		  return "location:../register.php";
+		  return "location:./create_account.php";
 	  }
   }
 ?>
