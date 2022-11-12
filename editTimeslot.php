@@ -27,15 +27,15 @@
         <h1 class="titleName">Edit Timeslot</h1>
 			<tr> 
 				<td>Full Name</td>
-				<td><input type="text" name="fullName" value="<?php echo $fullName;?>"></td>
+				<td><input type="text" name="fullName" value="<?php echo $fullName;?>"readonly></td>
 			</tr>
 			<tr> 
 				<td>Job Status</td>
-				<td><input type="text" name="jobStatus" value="<?php echo $jobStatus;?>"></td>
+				<td><input type="text" name="jobStatus" value="<?php echo $jobStatus;?>"readonly></td>
 			</tr>
 			<tr> 
 				<td>User Type</td>
-				<td><input type="text" name="userType" value="<?php echo $userType;?>"></td>
+				<td><input type="text" name="userType" value="<?php echo $userType;?>"readonly></td>
 			</tr>
             <tr> 
             <td>Working Position</td>
