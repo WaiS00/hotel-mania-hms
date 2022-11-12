@@ -119,7 +119,9 @@ class product_db extends DBController{
 
     function getAllAttendance()
     {
-        $query = "SELECT * FROM attendancedb";
+        // descending order for the attendance so that the newest will come first
+        $query = "SELECT * FROM attendancedb
+        ORDER BY attendanceDateTime DESC";
         
         $productResult = $this->getDBResult($query);
         return $productResult;
