@@ -2,7 +2,7 @@
 
   require_once 'SQL_login.php';
 
-// sanitise the post variables
+// check if password same with the comfirm password
 	$myusername = $_POST['username'];
 	$mypassword = $_POST['pwd'];
 	$cfmpassword = $_POST['cfmpassword'];
