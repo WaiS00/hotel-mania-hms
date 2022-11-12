@@ -5,7 +5,7 @@
     if(isset($_POST['submit'])){
 
       $ic = $_POST['ic'];
-      $roomSelected = $_POST['roomSelected'];
+      $roomSelected = $_POST['rNum'];
       $address = $_POST['address'];
       $numguest = $_POST['numguest'];
       $checkInDate = $_POST['date3'];
@@ -42,7 +42,7 @@
           // null values cant be inserted with a preset values
           $query5 = "UPDATE $tbl_name 
           SET customerId=0, checkInDate='2022-10-22', checkOutDate='2022-10-23', numofGuest=0
-          WHERE roomNumber=$roomSelected";
+          WHERE roomNumber='$roomSelected'";
 
           $result4 = $pdo->query($query5);
 
@@ -57,7 +57,7 @@
           // update values with new values and set room availability to unavailable
           $query = "UPDATE $tbl_name 
           SET customerId='$customerid', roomAvailability='unavailable', checkInDate='$checkInDate', checkOutDate='$checkoutdate', numofGuest='$numguest'
-          WHERE roomNumber=$roomSelected";
+          WHERE roomNumber='$roomSelected'";
           
           $query1 = "UPDATE $tbl_name1 
           SET roomNumber='$roomSelected', checkInDate='$checkInDate', checkOutDate='$checkoutdate', numberofGuest='$numguest'
