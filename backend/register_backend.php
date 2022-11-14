@@ -23,10 +23,10 @@
 		// get email on where the user input = email
 		// so that it can detect if there is any duplication of email
 		$query4 = "SELECT email FROM userdb WHERE email = $email ";
-		$result3 = $pdo->query($query4);
-		$result3 = $result3->fetch(PDO::FETCH_ASSOC);
+		$result5 = $pdo->query($query4);
+		$result5 = $result5->fetch(PDO::FETCH_ASSOC);
 
-		$email1 = $result3['email'];
+		$email1 = $result5['email'];
 
 
 		// count the number of email where the email = email that matches the input from register.php
@@ -86,7 +86,7 @@
 					// insert values from the previous variables
 					$query2 = "INSERT INTO $tbl_name1 (customerId, icNumber, userid) 
 					VALUES(NULL, $ic, $userID)";
-					$result = $pdo->query($query2);
+					$result3 = $pdo->query($query2);
 		
 					if (! $result){
 						die('Error: ');
@@ -105,18 +105,12 @@
 		echo "<script type='text/javascript'>alert('Wrong password, password do not match');</script>";
 	}
 
-
-
-
-
-
-
 	// sanitise method
-   function sanitise($pdo, $str)
-  {
-    $str = htmlentities($str);
-    return $pdo->quote($str);
-  }	
+	function sanitise($pdo, $str)
+	{
+	  $str = htmlentities($str);
+	  return $pdo->quote($str);
+	}	
 
   // method for calling error for invalid data
   function data_validation($data, $data_pattern, $data_type)
@@ -125,7 +119,9 @@
 		  return "";
 	  }
 	  else {
-      echo "<script type='text/javascript'>alert('invalid data for $data_type');</script>";
+      	echo "<script type='text/javascript'>alert('invalid data for $data_type');</script>";
+		return "Please try again";
 	  }
   }
+  
 ?>
