@@ -12,7 +12,7 @@
             $checkoutdate = $_POST['date4'];
             $tbl_name = 'bookingcartdb';
 
-            // change string to time variable
+            // change string to UNIX time variable
             // abstract checkout date with checkindate and calculate days based on the years and months difference 
             $dayDiff = abs(strtotime($checkoutdate) - strtotime($checkInDate));
             $years = floor($dayDiff / (365*60*60*24));
