@@ -7,8 +7,6 @@ $mypassword = $_POST['pwd'];
 $cfmpassword = $_POST['cfmpassword'];
 
 if($cfmpassword == $mypassword){
-  // if username and password has been filled in and submitted, 
-  if(isset($_POST['username']) && isset($_POST['pwd'])){
 	
 	// sanitise the post variables
 	$myusername = sanitise($pdo,$_POST['username']);
@@ -24,6 +22,46 @@ if($cfmpassword == $mypassword){
     $userType = $_POST['ddlselect'];
     $workPosition = $_POST['ddlselect1'];
     $jobStatus = $_POST['ddlselect2'];
+
+			// get email on where the user input = email
+		// so that it can detect if there is any duplication of email
+		$query4 = "SELECT email FROM userdb WHERE email = $email ";
+		$result5 = $pdo->query($query4);
+		$result5 = $result5->fetch(PDO::FETCH_ASSOC);
+
+		$email1 = $result5['email'];
+
+
+		// count the number of email where the email = email that matches the input from register.php
+		$sql = "SELECT count(*) AS counter FROM userdb WHERE email = ?";
+		$stmt = $pdo->prepare($sql);
+		$stmt->execute([$email1]);
+		$counts = $stmt->fetch();
+
+		// get username on where the user input = username
+		// so that it can detect if there is any duplication of username
+		$query5 = "SELECT login FROM userdb WHERE login = $myusername ";
+		$result4 = $pdo->query($query5);
+		$result4 = $result4->fetch(PDO::FETCH_ASSOC);
+
+		$myusername1 = $result4['login'];
+
+
+		// count the number of username where the username = username that matches the input from register.php
+		$sql = "SELECT count(*) AS counter FROM userdb WHERE login = ?";
+		$stmt = $pdo->prepare($sql);
+		$stmt->execute([$myusername1]);
+		$counts2 = $stmt->fetch();
+
+		if($counts['counter'] == 1){
+		echo "<script type='text/javascript'>alert('Email Existed, Please proceed with login');</script>";
+		echo "<script type='text/javascript'>window.location.href = './login.php';</script>";
+		}else if ($counts2['counter'] == 1){
+		echo "<script type='text/javascript'>alert('Username Existed, Please proceed with login');</script>";
+		echo "<script type='text/javascript'>window.location.href = './login.php';</script>";
+		}else{
+			// if username and password has been filled in and submitted, 
+			if(isset($_POST['username']) && isset($_POST['pwd'])){
 
 	// username must be within 5 to 20 characters
 	$validation = data_validation($_POST['username'], "/^[a-z\d_]{5,20}$/" , "username");
@@ -71,11 +109,11 @@ if($cfmpassword == $mypassword){
 			// echo invalid data for the inputs
 			echo $validation;
 		}
-	  }
-	}else{
-		echo "<script type='text/javascript'>alert('Wrong password, password do not match');</script>";
 	}
-
+}
+}else{
+echo "<script type='text/javascript'>alert('Wrong password, password do not match');</script>";
+}
 
 
 
@@ -94,7 +132,7 @@ if($cfmpassword == $mypassword){
 	  }
 	  else {
       echo "<script type='text/javascript'>alert('invalid data for $data_type');</script>";
-		  return "location:./create_account.php";
-	  }
+	  return "Please try again";
+	}
   }
 ?>
