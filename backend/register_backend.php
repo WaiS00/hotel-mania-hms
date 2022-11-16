@@ -60,6 +60,7 @@
 			// if username and password has been filled in and submitted, 
 			if(isset($_POST['username']) && isset($_POST['pwd'])){
 
+			// https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
 			// username must be within 5 to 20 characters
 			$validation = data_validation($_POST['username'], "/^[a-z\d_]{5,20}$/" , "username");
 			// password must have one letter, one digit, and be within 6 to 12 characters

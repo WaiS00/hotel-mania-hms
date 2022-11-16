@@ -11,6 +11,7 @@ $(function() {
 $ ( '#datepicker2' ) . datepicker ( {
         format: 'yyyy-mm-dd',
     } ).on("changeDate", function (e){
+        // https://stackoverflow.com/questions/4919873/how-to-get-the-date-from-jquery-ui-datepicker
         // get the variable from the date picker input 
         var start= $("#datepicker").datepicker("getDate");
         var end= $("#datepicker2").datepicker("getDate");

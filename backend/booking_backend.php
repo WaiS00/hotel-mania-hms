@@ -12,6 +12,7 @@
             $checkoutdate = $_POST['date4'];
             $tbl_name = 'bookingcartdb';
 
+            // https://stackoverflow.com/questions/676824/how-to-calculate-the-difference-between-two-dates-using-php
             // change string to UNIX time variable
             // abstract checkout date with checkindate and calculate days based on the years and months difference 
             $dayDiff = abs(strtotime($checkoutdate) - strtotime($checkInDate));
