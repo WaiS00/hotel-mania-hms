@@ -42,7 +42,7 @@
             <td>
                 <select id="ddlselect" name="ddlselect" required>
                     <option value="" selected disabled>Select Working Position</option>
-                    <option value="Front-desk Workers" >Front-desk Workers</option>
+                    <option value="Front Desk Workers" >Front Desk Workers</option>
                     <option value="Cleaning Workers" >Cleaning Workers</option>
                 </select>
             </td>
