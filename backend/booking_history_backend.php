@@ -10,6 +10,6 @@ require_once 'SQL_login.php';
     $result = $pdo->query($query1);
 
     echo "<script type='text/javascript'>alert('Booking has been successfully deleted.');</script>";
-    echo "<script type='text/javascript'>window.location.href = '../booking_history.php';</script>";
+    echo "<script type='text/javascript'>window.location.href = '../index.php';</script>";
 
 ?>
